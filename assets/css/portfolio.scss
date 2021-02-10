@@ -5,6 +5,23 @@
   }
 
   .portfolio-item {
+    display: flex;
+    flex-wrap: wrap;
     width: 50%;
+  }
+
+  .text-holder {
+    width: 80%;
+  }
+
+  .btn-holder {
+    display: flex;
+    align-items: flex-end;
+    width: 20%;
+  }
+
+  .icon-holder {
+    display: flex;
+    flex-wrap: wrap;
   }
 }

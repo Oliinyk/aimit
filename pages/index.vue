@@ -8,6 +8,9 @@
     <Specialization :content="homepage" />
     <Portfolio :content="homepage" />
     <Clients :content="homepage" />
+    <Form :content="homepage" />
+    <About :content="homepage" />
+    <Team :content="homepage" />
   </section>
 </template>
 <script>
@@ -17,6 +20,9 @@ import StandardHero from '~/components/StandardHero.vue';
 import Specialization from '~/components/Specialization.vue';
 import Portfolio from '~/components/Portfolio.vue';
 import Clients from '~/components/Clients.vue';
+import Form from '~/components/Form.vue';
+import About from '~/components/About.vue';
+import Team from '~/components/Team.vue';
 // import StandardFooter from '~/components/StandardFooter.vue';
 export default {
   name: 'Home',
@@ -27,6 +33,9 @@ export default {
     Specialization,
     Portfolio,
     Clients,
+    Form,
+    About,
+    Team,
     // StandardFooter,
   },
   async asyncData({ $siteData, $prismic, error }) {

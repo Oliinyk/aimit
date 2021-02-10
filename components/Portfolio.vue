@@ -14,22 +14,74 @@
             class="portfolio-item"
             :style="'background-image: url(' + item.portfolio_image.url + ')'"
           >
-            <div>
-              <h4 class="item-title">
+            <div class="text-holder">
+              <h4
+                v-if="item.portfolio_name && item.portfolio_name[0].text"
+                class="item-title"
+              >
                 {{ item.portfolio_name[0].text }}
               </h4>
-              <p class="item-type">
+              <p
+                v-if="item.portfolio_type && item.portfolio_type[0].text"
+                class="item-type"
+              >
                 {{ item.portfolio_type[0].text }}
               </p>
-              <p class="item-text">
+              <p
+                v-if="item.portfolio_text && item.portfolio_text[0].text"
+                class="item-text"
+              >
                 {{ item.portfolio_text[0].text }}
               </p>
               <div class="icon-holder">
-                <img :src="item.portfolio_technology[0].url" alt="" />
+                <img
+                  v-if="
+                    item.portfolio_technology_ico &&
+                    item.portfolio_technology_ico.url
+                  "
+                  :src="item.portfolio_technology_ico.url"
+                  alt=""
+                />
+                <img
+                  v-if="
+                    item.portfolio_technology_ico1 &&
+                    item.portfolio_technology_ico1.url
+                  "
+                  :src="item.portfolio_technology_ico1.url"
+                  alt=""
+                />
+                <img
+                  v-if="
+                    item.portfolio_technology_ico2 &&
+                    item.portfolio_technology_ico2.url
+                  "
+                  :src="item.portfolio_technology_ico2.url"
+                  alt=""
+                />
+                <img
+                  v-if="
+                    item.portfolio_technology_ico3 &&
+                    item.portfolio_technology_ico3.url
+                  "
+                  :src="item.portfolio_technology_ico3.url"
+                  alt=""
+                />
+                <img
+                  v-if="
+                    item.portfolio_technology_ico4 &&
+                    item.portfolio_technology_ico4.url
+                  "
+                  :src="item.portfolio_technology_ico4.url"
+                  alt=""
+                />
               </div>
             </div>
-            <div>
-              <a href="#" class="btn">
+            <div class="btn-holder">
+              <a
+                v-if="item.portfolio_btn && item.portfolio_btn[0].text"
+                href="#"
+                class="btn"
+              >
                 {{ item.portfolio_btn[0].text }}
               </a>
             </div>
