@@ -24,13 +24,21 @@ export default {
   css: ['~/assets/css/global.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/siteData.server.js'],
+  plugins: [
+    '~/plugins/siteData.server.js',
+    '~/plugins/vue-global.js',
+    '~/plugins/clipboard.js',
+
+    { src: '~/plugins/vue-touch', ssr: false },
+  ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    // https://go.nuxtjs.dev/typescript
+    // '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
@@ -42,7 +50,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxtjs/prismic'],
   prismic: {
-    endpoint: 'https://aimit.cdn.prismic.io/api/v2',
+    endpoint: 'https://deskpro-com.cdn.prismic.io/api/v2',
     linkResolver: '@/link-resolver.js',
     htmlSerializer: '@/html-serializer.js',
   },
@@ -51,5 +59,23 @@ export default {
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    postcss: {
+      // Add plugin names as key and arguments as value
+      // Install them before as dependencies with npm or yarn
+      plugins: {
+        // Disable a plugin by passing false as value
+        'postcss-url': false,
+        'postcss-nested': {},
+        'postcss-responsive-type': {},
+        'postcss-hexrgba': {},
+      },
+      preset: {
+        // Change the postcss-preset-env settings
+        // autoprefixer: {
+        //   grid: true
+        // }
+      },
+    },
+  },
 };
