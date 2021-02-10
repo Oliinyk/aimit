@@ -2,3 +2,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+.specialization {
+  .services-item {
+    box-shadow: 7px 7px 20px rgba(23, 67, 84, 0.15);
+  }
+}

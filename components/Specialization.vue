@@ -13,7 +13,6 @@
             :key="item.id"
             class="services-item"
           >
-            <!-- <li v-for="item in services" :key="item.service_name"> -->
             <h5 class="item-title">
               {{ content.services[0].service_name.text }}
             </h5>
