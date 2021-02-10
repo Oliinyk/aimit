@@ -3,10 +3,21 @@ body {
   background-color: $white;
   color: $primary;
 }
+
 .container {
   margin: 0 auto;
 }
+
 .section-title {
   font-weight: 500;
   font-size: 36px;
+}
+
+.btn {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  background: #cc2323;
+  display: inline-block;
+  padding: 10px;
 }

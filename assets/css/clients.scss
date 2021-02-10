@@ -1,0 +1,11 @@
+.clients {
+  .item-holder {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .clients-item {
+    width: 25%;
+    padding: 13px 13px;
+  }
+}
