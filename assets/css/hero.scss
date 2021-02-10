@@ -1,0 +1,35 @@
+.hero {
+  margin: 0;
+}
+.title {
+  font-weight: 500;
+  font-size: 64px;
+  line-height: 1;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.title span {
+  color: $primary_active;
+  color: #cc2323;
+}
+.hero p {
+  font-weight: 500;
+  font-size: 18px;
+}
+.hero .inner-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero .text-holder {
+  width: 50%;
+}
+.hero .img-holder {
+  width: 50%;
+}
+.btn {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  background: #cc2323;
+  display: inline-block;
+  padding: 10px;
+}

@@ -1,0 +1,5 @@
+@import './variables.scss';
+@import './tailwind.css';
+@import './main.scss';
+@import './hero.scss';
+@import './specialization.scss';
