@@ -26,10 +26,10 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/siteData.server.js',
-    '~/plugins/vue-global.js',
-    '~/plugins/clipboard.js',
+    // '~/plugins/vue-global.js',
+    // '~/plugins/clipboard.js',
 
-    { src: '~/plugins/vue-touch', ssr: false },
+    // { src: '~/plugins/vue-touch', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -50,7 +50,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: ['@nuxtjs/prismic'],
   prismic: {
-    endpoint: 'https://deskpro-com.cdn.prismic.io/api/v2',
+    endpoint: 'https://aimit.cdn.prismic.io/api/v2',
     linkResolver: '@/link-resolver.js',
     htmlSerializer: '@/html-serializer.js',
   },

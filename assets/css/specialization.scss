@@ -1,9 +1,11 @@
-.specialization .item-holder {
-  display: flex;
-  flex-wrap: wrap;
-}
 .specialization {
+  .item-holder {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .services-item {
+    width: 20%;
     box-shadow: 7px 7px 20px rgba(23, 67, 84, 0.15);
   }
 }

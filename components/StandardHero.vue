@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="container">
-      <div class="hidden1">{{ content }}</div>
+      <!-- <div class="hidden">{{ content }}</div> -->
       <div class="inner-wrap">
         <div class="text-holder">
           <h1 class="title">

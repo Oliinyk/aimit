@@ -5,16 +5,22 @@
         <img v-if="content.logo" :src="content.logo.url" alt="" />
         <!-- <img :src="homepage.logo.url" alt="" /> -->
       </a>
-      <ul class="header-navigation">
-        {{
+      <div class="nav">
+        <ul class="header-navigation">
+          <!-- {{
           content.nav
-        }}
-        <li v-for="item in content.nav" :key="item.id" class="nav-item">
-          <a :href="item.item[0].text">
-            {{ item.item[0].text }}
-          </a>
-        </li>
-      </ul>
+        }} -->
+          <li v-for="item in content.nav" :key="item.id" class="nav-item">
+            <a :href="'/' + item.item[0].text">
+              {{ item.item[0].text }}
+            </a>
+          </li>
+        </ul>
+        <ul class="lang-nav">
+          <li class="active">EN</li>
+          <li>UA</li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

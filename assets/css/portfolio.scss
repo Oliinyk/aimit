@@ -1,0 +1,10 @@
+.portfolio {
+  .item-holder {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .portfolio-item {
+    width: 50%;
+  }
+}

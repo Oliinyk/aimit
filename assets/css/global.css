@@ -1,5 +1,8 @@
 @import './variables.scss';
 @import './tailwind.css';
 @import './main.scss';
+@import './header.scss';
 @import './hero.scss';
 @import './specialization.scss';
+@import './portfolio.scss';
+@import './clients.scss';

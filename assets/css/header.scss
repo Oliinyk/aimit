@@ -1,0 +1,25 @@
+.header {
+  .nav {
+    display: flex;
+  }
+
+  .header-navigation {
+    display: flex;
+  }
+
+  .nav-item {
+    padding: 10px;
+  }
+
+  .lang-nav {
+    .active {
+      color: $primary_active;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

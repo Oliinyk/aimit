@@ -6,6 +6,8 @@
     <!-- <img :src="homepage.hero_image.url" alt="" /> -->
     <StandardHero :content="homepage" />
     <Specialization :content="homepage" />
+    <Portfolio :content="homepage" />
+    <Clients :content="homepage" />
   </section>
 </template>
 <script>
@@ -13,6 +15,8 @@
 import StandardHeader from '~/components/StandardHeader.vue';
 import StandardHero from '~/components/StandardHero.vue';
 import Specialization from '~/components/Specialization.vue';
+import Portfolio from '~/components/Portfolio.vue';
+import Clients from '~/components/Clients.vue';
 // import StandardFooter from '~/components/StandardFooter.vue';
 export default {
   name: 'Home',
@@ -21,6 +25,8 @@ export default {
     StandardHeader,
     StandardHero,
     Specialization,
+    Portfolio,
+    Clients,
     // StandardFooter,
   },
   async asyncData({ $siteData, $prismic, error }) {

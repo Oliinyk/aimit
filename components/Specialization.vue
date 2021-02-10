@@ -1,10 +1,10 @@
 <template>
   <section class="specialization">
     <div class="container">
-      <div class="hidden">{{ content }}</div>
+      <!-- <div class="hidden1">{{ content }}</div> -->
       <div class="inner-wrap">
         <h2 class="section-title">
-          {{ content.title_section[0].text }}
+          {{ content.service_title[0].text }}
         </h2>
 
         <ul class="item-holder">
@@ -14,13 +14,13 @@
             class="services-item"
           >
             <h5 class="item-title">
-              {{ content.services[0].service_name.text }}
+              {{ item.service_name[0].text }}
             </h5>
             <p>
-              <!-- {{ content.services.service_text.text }} -->
+              {{ item.service_text[0].text }}
             </p>
             <div class="icon-holder">
-              <img :src="content.services[0].service_image.url" alt="" />
+              <img :src="item.service_image.url" alt="" />
             </div>
           </li>
         </ul>
