@@ -11,7 +11,7 @@
           </h1>
 
           <p>{{ content.subtitle[0].text }}</p>
-          <div>
+          <div class="btn-holder">
             <a :href="content.hero_btn[0].spans[0].data.url" class="btn">
               {{ content.hero_btn[0].text }}
             </a>

@@ -1,7 +1,7 @@
 <template>
   <div class="footer">
     <div class="container">
-      {{ content.socials }}
+      <!-- {{ content.socials }} -->
 
       <a href="/" class="footer-logo">
         <img v-if="content.footer_logo" :src="content.footer_logo.url" alt="" />

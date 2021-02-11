@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <div class="home">
     <StandardHeader :content="Header" />
     <!-- <h1 class="title">{{ homepage.title[0].text }}</h1>
     <p>{{ homepage.subtitle[0].text }}</p> -->
@@ -12,7 +12,7 @@
     <About :content="homepage" />
     <Team :content="homepage" />
     <StandardFooter :content="Footer" />
-  </section>
+  </div>
 </template>
 <script>
 // Imports for all components
