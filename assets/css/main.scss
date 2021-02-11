@@ -18,6 +18,7 @@ body {
   padding: 5px 11px;
   border: 1px solid #cc2323;
   transition: 0.3s all;
+
   &:hover {
     background: transparent;
     color: #cc2323;
@@ -29,7 +30,8 @@ body {
   font-weight: 500;
   font-size: 36px;
   position: relative;
-  padding: 0 0 0 14px;
+  padding: 0 0 55px 14px;
+
   &::before {
     content: '';
     background: #cc2323;

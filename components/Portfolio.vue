@@ -7,6 +7,32 @@
           {{ content.portfolio_title[0].text }}
         </h2>
 
+        <div>
+          <VueSlickCarousel :arrows="true" :dots="true" v-bind="slickOptions">
+            <div
+              v-for="item in content.portfolio_filters"
+              :key="item.id"
+              class="portfolio-filter"
+            >
+              <button
+                v-if="item.filter_item && item.filter_item[0].text"
+                type="button"
+              >
+                {{ item.filter_item[0].text }}
+              </button>
+            </div>
+          </VueSlickCarousel>
+        </div>
+
+        <!-- <div>
+          <VueSlickCarousel :arrows="true" :dots="true">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </VueSlickCarousel>
+        </div> -->
+
         <ul class="item-holder">
           <li
             v-for="item in content.portfolio"
@@ -92,9 +118,14 @@
   </section>
 </template>
 <script>
+import VueSlickCarousel from 'vue-slick-carousel';
+import 'vue-slick-carousel/dist/vue-slick-carousel.css';
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+
 export default {
   name: 'Portfolio',
-  components: {},
+  components: { VueSlickCarousel },
   props: {
     content: {
       type: Object,
@@ -102,7 +133,12 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      slickOptions: {
+        slidesToShow: 3,
+        // arrows: false,
+      },
+    };
   },
 };
 </script>

@@ -3933,6 +3933,11 @@
     "memory-fs" "^0.5.0"
     "tapable" "^1.0.0"
 
+"enquire.js@2.1.6":
+  "integrity" "sha1-PoeAybi4NQhMP2DhZtvDwqPImBQ="
+  "resolved" "https://registry.npmjs.org/enquire.js/-/enquire.js-2.1.6.tgz"
+  "version" "2.1.6"
+
 "enquirer@^2.3.5", "enquirer@^2.3.6":
   "integrity" "sha512-yjNnPr315/FjS4zIsUxYguYUPP2e1NK4d7E7ZOLiyYCcbFBiTMyID+2wvm2w6+pZ/odMA7cRkjhsPbltwBOrLg=="
   "resolved" "https://registry.npmjs.org/enquirer/-/enquirer-2.3.6.tgz"
@@ -5892,6 +5897,13 @@
   "resolved" "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
   "version" "1.0.1"
 
+"json2mq@0.2.0":
+  "integrity" "sha1-tje9O6nqvhIsg+lyBIOusQ0skEo="
+  "resolved" "https://registry.npmjs.org/json2mq/-/json2mq-0.2.0.tgz"
+  "version" "0.2.0"
+  dependencies:
+    "string-convert" "^0.2.0"
+
 "json5@^1.0.1":
   "integrity" "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow=="
   "resolved" "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz"
@@ -6179,6 +6191,16 @@
   "resolved" "https://registry.npmjs.org/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz"
   "version" "3.0.0"
 
+"lodash.assign@^4.2.0":
+  "integrity" "sha1-DZnzzNem0mHRm9rrkkUAXShYCOc="
+  "resolved" "https://registry.npmjs.org/lodash.assign/-/lodash.assign-4.2.0.tgz"
+  "version" "4.2.0"
+
+"lodash.debounce@^4.0.8":
+  "integrity" "sha1-gteb/zCmfEAF/9XiUVMArZyk168="
+  "resolved" "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz"
+  "version" "4.0.8"
+
 "lodash.get@^4.4.2":
   "integrity" "sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk="
   "resolved" "https://registry.npmjs.org/lodash.get/-/lodash.get-4.4.2.tgz"
@@ -6193,6 +6215,11 @@
   "integrity" "sha1-vMbEmkKihA7Zl/Mj6tpezRguC/4="
   "resolved" "https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz"
   "version" "4.1.2"
+
+"lodash.pick@^4.4.0":
+  "integrity" "sha1-UvBWEP/53tQiYRRB7R/BI6AwAbM="
+  "resolved" "https://registry.npmjs.org/lodash.pick/-/lodash.pick-4.4.0.tgz"
+  "version" "4.4.0"
 
 "lodash.template@^4.5.0":
   "integrity" "sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A=="
@@ -8940,6 +8967,11 @@
   "resolved" "https://registry.npmjs.org/reserved-words/-/reserved-words-0.1.2.tgz"
   "version" "0.1.2"
 
+"resize-observer-polyfill@1.5.1":
+  "integrity" "sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg=="
+  "resolved" "https://registry.npmjs.org/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz"
+  "version" "1.5.1"
+
 "resolve-from@^3.0.0":
   "integrity" "sha1-six699nWiBvItuZTM17rywoYh0g="
   "resolved" "https://registry.npmjs.org/resolve-from/-/resolve-from-3.0.0.tgz"
@@ -9610,6 +9642,11 @@
   "integrity" "sha512-a1uQGz7IyVy9YwhqjZIZu1c8JO8dNIe20xBmSS6qu9kv++k3JGzCVmprbNN5Kn+BgzD5E7YYwg1CcjuJMRNsvg=="
   "resolved" "https://registry.npmjs.org/string-argv/-/string-argv-0.3.1.tgz"
   "version" "0.3.1"
+
+"string-convert@^0.2.0":
+  "integrity" "sha1-aYLMMEn7tM2F+LJFaLnZvznu/5c="
+  "resolved" "https://registry.npmjs.org/string-convert/-/string-convert-0.2.1.tgz"
+  "version" "0.2.1"
 
 "string-width@^2.0.0":
   "integrity" "sha512-nOqH59deCq9SRHlxq1Aw85Jnt4w6KvLKqWVik6oA9ZklXLNIOlqg4F2yrT1MVaTjAqvVwdfeZ7w7aCvJD7ugkw=="
@@ -10571,6 +10608,20 @@
   "resolved" "https://registry.npmjs.org/vue-slicezone/-/vue-slicezone-0.0.28.tgz"
   "version" "0.0.28"
 
+"vue-slick-carousel@^1.0.6":
+  "integrity" "sha512-1CN/hpWC8m1U/eO7Kuc71jntJqdg6Z/ieLji21OPfQUhs8ZYnnGhQSu1covpa3IyuovM9T5puPCVgexs3DDF5A=="
+  "resolved" "https://registry.npmjs.org/vue-slick-carousel/-/vue-slick-carousel-1.0.6.tgz"
+  "version" "1.0.6"
+  dependencies:
+    "enquire.js" "2.1.6"
+    "json2mq" "0.2.0"
+    "lodash.assign" "^4.2.0"
+    "lodash.debounce" "^4.0.8"
+    "lodash.get" "^4.4.2"
+    "lodash.pick" "^4.4.0"
+    "resize-observer-polyfill" "1.5.1"
+    "vue" "^2.6.10"
+
 "vue-style-loader@^4.1.0":
   "integrity" "sha512-0ip8ge6Gzz/Bk0iHovU9XAUQaFt/G2B61bnWa2tCcqqdgfHs1lF9xXorFbE55Gmy92okFT+8bfmySuUOu13vxQ=="
   "resolved" "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-4.1.2.tgz"
@@ -10592,7 +10643,7 @@
   "resolved" "https://registry.npmjs.org/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz"
   "version" "1.9.1"
 
-"vue@^2.6.12":
+"vue@^2.6.10", "vue@^2.6.12":
   "integrity" "sha512-uhmLFETqPPNyuLLbsKz6ioJ4q7AZHzD8ZVFNATNyICSZouqP2Sz0rotWQC8UNBF6VGSCs5abnKJoStA6JbCbfg=="
   "resolved" "https://registry.npmjs.org/vue/-/vue-2.6.12.tgz"
   "version" "2.6.12"
