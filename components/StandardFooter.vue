@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
     <div class="container">
+      {{ content.socials }}
+
       <a href="/" class="footer-logo">
         <img v-if="content.footer_logo" :src="content.footer_logo.url" alt="" />
       </a>
@@ -23,11 +25,12 @@
               :key="item.id"
               class="socials-item"
             >
-              <img
+              <a
                 v-if="item.social_ico && item.social_ico.url"
-                :src="item.social_ico.url"
-                :alt="item.social_ico.alt"
-              />
+                :href="item.social_ico.alt"
+              >
+                <img :src="item.social_ico.url" :alt="item.social_ico.alt" />
+              </a>
             </li>
           </ul>
         </div>
@@ -46,9 +49,12 @@
           </li>
         </ul>
       </div>
-    </div>
 
-    <hr />
+      <div class="copyright">
+        {{ currentDate.getFullYear() }}
+        All rights reserved by Aim it
+      </div>
+    </div>
 
     <!-- <ul>
       <li v-for="group in props.nav" :key="group.title">
@@ -77,7 +83,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      currentDate: new Date(),
+    };
   },
 };
 </script>
