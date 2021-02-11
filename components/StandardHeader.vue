@@ -1,7 +1,8 @@
 <template>
   <div class="header">
     <div class="container header-container">
-      <a href="" class="header-logo">
+      <!-- {{ content.standard_header }} -->
+      <a href="/" class="header-logo">
         <img v-if="content.logo" :src="content.logo.url" alt="" />
         <!-- <img :src="homepage.logo.url" alt="" /> -->
       </a>

@@ -11,6 +11,7 @@
     <Form :content="homepage" />
     <About :content="homepage" />
     <Team :content="homepage" />
+    <StandardFooter :content="Footer" />
   </section>
 </template>
 <script>
@@ -23,7 +24,7 @@ import Clients from '~/components/Clients.vue';
 import Form from '~/components/Form.vue';
 import About from '~/components/About.vue';
 import Team from '~/components/Team.vue';
-// import StandardFooter from '~/components/StandardFooter.vue';
+import StandardFooter from '~/components/StandardFooter.vue';
 export default {
   name: 'Home',
   layout: 'homepage',
@@ -36,13 +37,14 @@ export default {
     Form,
     About,
     Team,
-    // StandardFooter,
+    StandardFooter,
   },
   async asyncData({ $siteData, $prismic, error }) {
     // const footerProps = $siteData('footerProps');
     const Header = (await $prismic.api.getSingle('standard_header')).data;
     const homepage = (await $prismic.api.getSingle('homepage')).data;
-    return { Header, homepage };
+    const Footer = (await $prismic.api.getSingle('footer')).data;
+    return { Header, homepage, Footer };
   },
 };
 </script>
