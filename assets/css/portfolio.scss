@@ -1,26 +1,52 @@
 .portfolio {
+  .section-title {
+    padding: 0 0 30px 14px;
+  }
+
   .slider-wrap {
-    margin-left: -5px;
+    margin-left: -24px;
+    padding: 0 0 20px;
     .slick-slide {
-      padding-left: 5px;
+      padding-left: 24px;
     }
   }
 
   .portfolio-filter {
-    background-color: #174354;
+    background-color: #fff;
+    border: 1px solid #174354;
+    color: #174354;
+    padding: 7px 5px;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    transition: 0.3s all;
+    &.active,
+    &:hover {
+      background-color: #174354;
+      color: #fff;
+    }
+  }
+
+  .inner-item {
+    background: rgba(23, 67, 84, 0.96);
+    margin: 10px;
     color: #fff;
-    padding: 5px 5px;
   }
 
   .item-holder {
     display: flex;
     flex-wrap: wrap;
+    margin-left: -12px;
+    margin-right: -12px;
   }
 
   .portfolio-item {
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    width: calc(50% - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+    min-height: 279px;
   }
 
   .text-holder {
@@ -36,5 +62,10 @@
   .icon-holder {
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .item-title {
+    font-weight: 500;
+    font-size: 36px;
   }
 }
