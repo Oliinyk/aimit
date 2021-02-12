@@ -31,6 +31,9 @@
     background: rgba(23, 67, 84, 0.96);
     margin: 10px;
     color: #fff;
+    padding: 33px 30px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .item-holder {
@@ -59,13 +62,38 @@
     width: 20%;
   }
 
-  .icon-holder {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
   .item-title {
     font-weight: 500;
     font-size: 36px;
+    width: 100%;
+  }
+  .item-type {
+    font-weight: 500;
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .item-text {
+    font-size: 14px;
+  }
+
+  .icon-holder {
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      max-width: 32px;
+      max-height: 32px;
+      margin: 0 25px 0 0;
+    }
+  }
+  .btn {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #cc2323;
+    &:hover {
+      border: 1px solid #cc2323;
+      background-color: #cc2323;
+      color: #fff;
+    }
   }
 }
