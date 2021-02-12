@@ -7,7 +7,7 @@
           {{ content.portfolio_title[0].text }}
         </h2>
 
-        <div>
+        <div class="slider-wrap">
           <VueSlickCarousel :arrows="true" :dots="true" v-bind="slickOptions">
             <div
               v-for="item in content.portfolio_filters"
@@ -135,7 +135,7 @@ export default {
   data() {
     return {
       slickOptions: {
-        slidesToShow: 3,
+        slidesToShow: 6,
         // arrows: false,
       },
     };

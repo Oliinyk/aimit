@@ -1,4 +1,16 @@
 .portfolio {
+  .slider-wrap {
+    .slick-slide {
+      padding: 0 5px;
+    }
+  }
+
+  .portfolio-filter {
+    background-color: #174354;
+    color: #fff;
+    padding: 5px 5px;
+  }
+
   .item-holder {
     display: flex;
     flex-wrap: wrap;
