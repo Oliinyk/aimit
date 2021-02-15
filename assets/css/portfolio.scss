@@ -1,11 +1,14 @@
 .portfolio {
+  padding: 0 0 62px;
+
   .section-title {
-    padding: 0 0 30px 14px;
+    padding-bottom: 30px;
   }
 
   .slider-wrap {
     margin-left: -24px;
     padding: 0 0 20px;
+
     .slick-slide {
       padding-left: 24px;
     }
@@ -20,20 +23,12 @@
     font-size: 18px;
     text-align: center;
     transition: 0.3s all;
+
     &.active,
     &:hover {
       background-color: #174354;
       color: #fff;
     }
-  }
-
-  .inner-item {
-    background: rgba(23, 67, 84, 0.96);
-    margin: 10px;
-    color: #fff;
-    padding: 33px 30px;
-    display: flex;
-    flex-wrap: wrap;
   }
 
   .item-holder {
@@ -49,17 +44,29 @@
     width: calc(50% - 24px);
     margin-left: 12px;
     margin-right: 12px;
+    margin-bottom: 20px;
     min-height: 279px;
+
+    &:hover {
+      .inner-item {
+        opacity: 1;
+      }
+    }
+  }
+
+  .inner-item {
+    background: rgba(23, 67, 84, 0.96);
+    margin: 10px;
+    color: #fff;
+    padding: 23px 33px;
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.3s all;
+    opacity: 0;
   }
 
   .text-holder {
     width: 80%;
-  }
-
-  .btn-holder {
-    display: flex;
-    align-items: flex-end;
-    width: 20%;
   }
 
   .item-title {
@@ -67,6 +74,7 @@
     font-size: 36px;
     width: 100%;
   }
+
   .item-type {
     font-weight: 500;
     font-size: 18px;
@@ -80,16 +88,26 @@
   .icon-holder {
     display: flex;
     flex-wrap: wrap;
+
     img {
       max-width: 32px;
       max-height: 32px;
       margin: 0 25px 0 0;
     }
   }
+
+  .btn-holder {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 20%;
+  }
+
   .btn {
     border: 1px solid #fff;
     background-color: #fff;
     color: #cc2323;
+
     &:hover {
       border: 1px solid #cc2323;
       background-color: #cc2323;

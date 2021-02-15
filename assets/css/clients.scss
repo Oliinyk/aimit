@@ -1,4 +1,10 @@
 .clients {
+  padding: 0 0 55px;
+
+  .section-title {
+    padding-bottom: 15px;
+  }
+
   .item-holder {
     display: flex;
     flex-wrap: wrap;
@@ -6,6 +12,6 @@
 
   .clients-item {
     width: 25%;
-    padding: 13px 13px;
+    padding: 14px 13px;
   }
 }

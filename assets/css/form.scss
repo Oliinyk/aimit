@@ -1,7 +1,16 @@
 .form-section {
   background: linear-gradient(0deg, #174354, #174354), #369EC7;
 
+  .inner-wrap {
+    text-align: center;
+    padding: 22px 0;
+  }
+
   .section-title {
     color: #fff;
+
+    &::before {
+      display: none;
+    }
   }
 }
