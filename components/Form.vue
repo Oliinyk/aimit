@@ -5,28 +5,34 @@
         <h2 class="section-title">
           {{ content.form_title[0].text }}
         </h2>
-
-        <div>
-          <!-- <form class="layout-form">
-            <div
-              class="form-group"
-              :class="{ error: validation.hasError('email') }"
-            >
-              <div class="label">* Email</div>
-              <div class="content">
-                <input v-model="email" type="text" class="form-control" />
+        <form class="form">
+          <div class="form-row">
+            <div class="form-col input-col">
+              <div class="form-group">
+                <div class="label">Your name*</div>
+                <input type="text" class="form-control" />
               </div>
-              <div class="message">{{ validation.firstError('email') }}</div>
+              <div class="form-group">
+                <div class="label">Your email</div>
+                <input type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" />
+              </div>
             </div>
+            <div class="form-col area-col">
+              <div class="form-group">
+                <div class="label">Tell us about your project</div>
+                <textarea class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-end">
             <div class="form-group">
-              <div class="actions">
-                <button type="button" class="btn btn-primary" @click="submit">
-                  Submit
-                </button>
-              </div>
+              <button type="button" class="btn" @click="submit">Send</button>
             </div>
-          </form> -->
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>

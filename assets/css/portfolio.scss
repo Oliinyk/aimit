@@ -15,14 +15,17 @@
   }
 
   .portfolio-filter {
-    background-color: #fff;
-    border: 1px solid #174354;
-    color: #174354;
-    padding: 7px 5px;
-    font-weight: 500;
-    font-size: 18px;
-    text-align: center;
-    transition: 0.3s all;
+    button {
+      background-color: #fff;
+      border: 1px solid #174354;
+      color: #174354;
+      padding: 7px 5px;
+      font-weight: 500;
+      font-size: 18px;
+      text-align: center;
+      transition: 0.3s all;
+      width: 100%;
+    }
 
     &.active,
     &:hover {

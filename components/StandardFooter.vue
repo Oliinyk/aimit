@@ -2,52 +2,59 @@
   <div class="footer">
     <div class="container">
       <!-- {{ content.socials }} -->
+      <div class="img-row">
+        <a href="/" class="footer-logo">
+          <img
+            v-if="content.footer_logo"
+            :src="content.footer_logo.url"
+            alt=""
+          />
+        </a>
+      </div>
 
-      <a href="/" class="footer-logo">
-        <img v-if="content.footer_logo" :src="content.footer_logo.url" alt="" />
-      </a>
+      <div class="content">
+        <div>
+          <p
+            v-if="
+              content.footer_description && content.footer_description[0].text
+            "
+            class="description"
+          >
+            {{ content.footer_description[0].text }}
+          </p>
 
-      <div>
-        <p
-          v-if="
-            content.footer_description && content.footer_description[0].text
-          "
-          class="description"
-        >
-          {{ content.footer_description[0].text }}
-        </p>
+          <div class="social-items">
+            <h4 class="f-title">Follow us</h4>
+            <ul class="img-holder">
+              <li
+                v-for="item in content.socials"
+                :key="item.id"
+                class="social-item"
+              >
+                <a
+                  v-if="item.social_ico && item.social_ico.url"
+                  :href="item.social_ico.alt"
+                >
+                  <img :src="item.social_ico.url" :alt="item.social_ico.alt" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
         <div>
-          <h4>Follow us</h4>
-          <ul class="img-holder">
+          <ul class="footer-navigation">
             <li
-              v-for="item in content.socials"
+              v-for="item in content.footer_nav"
               :key="item.id"
-              class="socials-item"
+              class="nav-item"
             >
-              <a
-                v-if="item.social_ico && item.social_ico.url"
-                :href="item.social_ico.alt"
-              >
-                <img :src="item.social_ico.url" :alt="item.social_ico.alt" />
+              <a :href="'/' + item.nav_item[0].text">
+                {{ item.nav_item[0].text }}
               </a>
             </li>
           </ul>
         </div>
-      </div>
-
-      <div>
-        <ul class="footer-navigation">
-          <li
-            v-for="item in content.footer_nav"
-            :key="item.id"
-            class="nav-item"
-          >
-            <a :href="'/' + item.nav_item[0].text">
-              {{ item.nav_item[0].text }}
-            </a>
-          </li>
-        </ul>
       </div>
 
       <div class="copyright">

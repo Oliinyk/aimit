@@ -51,6 +51,9 @@ body {
   background-position: 50% 0;
 }
 
+.justify-content-end {
+  justify-content: flex-end;
+}
 @media (min-width: 1280px) {
   .container {
     max-width: 1430px;
