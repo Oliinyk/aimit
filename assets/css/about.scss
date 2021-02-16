@@ -1,14 +1,25 @@
 .about {
+  padding: 0 0 52px;
   .section-title {
     padding-bottom: 15px;
   }
 
   .about-row {
     display: flex;
+    justify-content: space-between;
 
     .col-text,
     .col-img {
       width: 50%;
+    }
+    .col-text {
+      padding: 0 12px 0;
+      max-width: 580px;
+    }
+    .col-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -16,7 +27,7 @@
     font-weight: 500;
     font-size: 64px;
     line-height: 1.18;
-    padding: 0 0 20px;
+    padding: 0 0 46px;
     color: #174354;
 
     span {
@@ -24,7 +35,14 @@
     }
   }
 
+  p {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
   .btn-holder {
     text-align: right;
+    margin: 22px 0 0;
   }
 }

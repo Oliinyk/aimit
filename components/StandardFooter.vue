@@ -13,48 +13,102 @@
       </div>
 
       <div class="content">
-        <div>
-          <p
-            v-if="
-              content.footer_description && content.footer_description[0].text
-            "
-            class="description"
-          >
-            {{ content.footer_description[0].text }}
-          </p>
+        <div class="text-holder">
+          <div>
+            <p
+              v-if="
+                content.footer_description && content.footer_description[0].text
+              "
+              class="description"
+            >
+              {{ content.footer_description[0].text }}
+            </p>
 
-          <div class="social-items">
-            <h4 class="f-title">Follow us</h4>
-            <ul class="img-holder">
-              <li
-                v-for="item in content.socials"
-                :key="item.id"
-                class="social-item"
-              >
-                <a
-                  v-if="item.social_ico && item.social_ico.url"
-                  :href="item.social_ico.alt"
+            <div class="social-items">
+              <h4 class="f-title">Follow us</h4>
+              <ul class="img-holder">
+                <li
+                  v-for="item in content.socials"
+                  :key="item.id"
+                  class="social-item"
                 >
-                  <img :src="item.social_ico.url" :alt="item.social_ico.alt" />
+                  <a
+                    v-if="item.social_ico && item.social_ico.url"
+                    :href="item.social_ico.alt"
+                  >
+                    <img
+                      :src="item.social_ico.url"
+                      :alt="item.social_ico.alt"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <ul class="footer-navigation">
+              <li
+                v-for="item in content.footer_nav"
+                :key="item.id"
+                class="nav-item"
+              >
+                <a :href="'/' + item.nav_item[0].text">
+                  {{ item.nav_item[0].text }}
                 </a>
               </li>
             </ul>
           </div>
         </div>
 
-        <div>
-          <ul class="footer-navigation">
-            <li
-              v-for="item in content.footer_nav"
-              :key="item.id"
-              class="nav-item"
-            >
-              <a :href="'/' + item.nav_item[0].text">
-                {{ item.nav_item[0].text }}
-              </a>
-            </li>
-          </ul>
-        </div>
+        <form class="form">
+          <div class="form-row">
+            <div class="form-col input-col">
+              <div class="form-group">
+                <label
+                  class="label placeholder"
+                  :class="{ active: focusedName }"
+                >
+                  Your name*
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  @focus="focusedName = true"
+                  @blur="focusedName = false"
+                />
+              </div>
+              <div class="form-group">
+                <label
+                  class="label placeholder"
+                  :class="{ active: focusedEmail }"
+                >
+                  Your email
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  @focus="focusedEmail = true"
+                  @blur="focusedEmail = false"
+                />
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="form-col area-col">
+              <div class="form-group">
+                <label class="label">Tell us about your project</label>
+                <textarea class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="form-row justify-content-end">
+            <div class="form-group">
+              <button type="button" class="btn">Send</button>
+            </div>
+          </div>
+        </form>
       </div>
 
       <div class="copyright">
@@ -91,8 +145,20 @@ export default {
   },
   data() {
     return {
+      focusedName: false,
+      focusedEmail: false,
       currentDate: new Date(),
     };
+  },
+  methods: {
+    onFocus() {
+      this.focusedName = true;
+      this.focusedEmail = true;
+    },
+    onBlur() {
+      this.focusedName = false;
+      this.focusedEmail = false;
+    },
   },
 };
 </script>

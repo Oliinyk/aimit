@@ -1,8 +1,23 @@
-.text-holder {
-  display: flex;
-  flex-wrap: wrap;
+.team {
+  padding: 0 0 70px;
+  .section-title {
+    padding-bottom: 30px;
+  }
+  .inner-title {
+    padding-bottom: 2px;
+    margin: 74px 0 0;
+  }
+  .text-holder {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -18px;
+    margin-right: -18px;
 
-  .content {
-    width: 50%;
+    .content {
+      width: 50%;
+      font-size: 14px;
+      padding: 0 30px;
+      text-align: justify;
+    }
   }
 }

@@ -2,6 +2,7 @@
   background: linear-gradient(0deg, #174354, #174354), #369ec7;
   position: relative;
   margin: 0 0 95px;
+  overflow: hidden;
 
   &::after {
     content: '';
@@ -48,7 +49,7 @@
   .form-group {
     position: relative;
 
-    &+.form-group {
+    & + .form-group {
       margin: 29px 0 0;
     }
   }

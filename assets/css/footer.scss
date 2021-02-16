@@ -4,16 +4,20 @@
   padding: 25px 0 0;
 
   .img-row {
-    margin: 0 0 22px;
+    margin: 0 0 6px;
   }
   .content {
     display: flex;
+    justify-content: space-between;
+    .text-holder {
+      display: flex;
+    }
     .description {
       max-width: 274px;
       font-weight: 500;
       font-size: 14px;
       line-height: 2;
-      margin: 0 0 22px;
+      margin: 16px 0 22px;
     }
   }
 
@@ -36,6 +40,38 @@
 
   .footer-navigation {
     column-count: 2;
+    padding: 17px 0 0 85px;
+    position: relative;
+    &::before,
+    &::after {
+      content: '';
+      background: #fff;
+      position: absolute;
+      top: 11px;
+      width: 20px;
+      height: 2px;
+    }
+    &::before {
+      left: 85px;
+    }
+    &::after {
+      right: 92px;
+    }
+    .nav-item {
+      padding: 0 40px 0 0;
+      font-size: 18px;
+    }
+  }
+
+  .form {
+    max-width: 630px;
+    margin: 0;
+    .form-col {
+      &.area-col {
+        width: 385px;
+        padding-left: 25px;
+      }
+    }
   }
 
   .copyright {

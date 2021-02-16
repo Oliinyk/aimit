@@ -17,13 +17,9 @@
           />
         </div>
 
-        <p v-if="content.about_text && content.about_text[0].text">
-          {{ content.about_text[0].text }}
-        </p>
-
         <h2
           v-if="content.team_subtitle && content.team_subtitle[0].text"
-          class="section-title"
+          class="section-title inner-title"
         >
           {{ content.team_subtitle[0].text }}
         </h2>
