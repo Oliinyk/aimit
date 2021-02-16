@@ -25,6 +25,7 @@
       text-align: center;
       transition: 0.3s all;
       width: 100%;
+
       &.active,
       &:hover {
         background-color: #174354;
@@ -69,6 +70,10 @@
 
   .text-holder {
     width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .item-title {
@@ -106,14 +111,6 @@
   }
 
   .btn {
-    border: 1px solid #fff;
-    background-color: #fff;
-    color: #cc2323;
-
-    &:hover {
-      border: 1px solid #cc2323;
-      background-color: #cc2323;
-      color: #fff;
-    }
+    padding: 5px 11px;
   }
 }

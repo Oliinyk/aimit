@@ -3,7 +3,11 @@
     <div class="container header-container">
       <!-- {{ content.standard_header }} -->
       <a href="/" class="header-logo">
-        <img v-if="content.logo" :src="content.logo.url" alt="" />
+        <img
+          v-if="content.logo"
+          :src="content.logo.url"
+          :alt="content.logo.alt"
+        />
         <!-- <img :src="homepage.logo.url" alt="" /> -->
       </a>
       <div class="nav">

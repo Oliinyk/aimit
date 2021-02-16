@@ -4,7 +4,7 @@
     <!-- <h1 class="title">{{ homepage.title[0].text }}</h1>
     <p>{{ homepage.subtitle[0].text }}</p> -->
     <!-- <img :src="homepage.hero_image.url" alt="" /> -->
-    <StandardHero :content="homepage" />
+    <Hero :content="homepage" />
     <Specialization :content="homepage" />
     <Portfolio :content="homepage" />
     <Clients :content="homepage" />
@@ -17,7 +17,7 @@
 <script>
 // Imports for all components
 import StandardHeader from '~/components/StandardHeader.vue';
-import StandardHero from '~/components/StandardHero.vue';
+import Hero from '~/components/Hero.vue';
 import Specialization from '~/components/Specialization.vue';
 import Portfolio from '~/components/Portfolio.vue';
 import Clients from '~/components/Clients.vue';
@@ -30,7 +30,7 @@ export default {
   layout: 'homepage',
   components: {
     StandardHeader,
-    StandardHero,
+    Hero,
     Specialization,
     Portfolio,
     Clients,

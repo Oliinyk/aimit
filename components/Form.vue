@@ -49,7 +49,7 @@
           </div>
           <div class="form-row justify-content-end">
             <div class="form-group">
-              <button type="button" class="btn">Send</button>
+              <button type="button" class="btn btn-white">Send</button>
             </div>
           </div>
         </form>

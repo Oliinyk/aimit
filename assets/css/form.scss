@@ -49,7 +49,7 @@
   .form-group {
     position: relative;
 
-    & + .form-group {
+    &+.form-group {
       margin: 29px 0 0;
     }
   }
@@ -106,11 +106,4 @@
     }
   }
 
-  .btn {
-    border: 1px solid #fff;
-    background-color: #fff;
-    color: #cc2323;
-    padding: 5px 23px;
-    margin: 12px 0 0;
-  }
 }

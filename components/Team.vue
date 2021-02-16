@@ -13,7 +13,7 @@
           <img
             v-if="content.team_image && content.team_image.url"
             :src="content.team_image.url"
-            alt=""
+            :alt="content.team_image.alt"
           />
         </div>
 

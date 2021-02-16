@@ -23,6 +23,20 @@ body {
     background: transparent;
     color: #cc2323;
   }
+
+  &-white {
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #cc2323;
+    padding: 5px 23px;
+    margin: 12px 0 0;
+
+    &:hover {
+      border: 1px solid #cc2323;
+      background-color: #cc2323;
+      color: #fff;
+    }
+  }
 }
 
 .section-title {
