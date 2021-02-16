@@ -76,6 +76,7 @@
                   class="form-control"
                   @focus="focusedName = true"
                   @blur="focusedName = false"
+                  v-model="name"
                 />
               </div>
               <div class="form-group">
@@ -90,6 +91,7 @@
                   class="form-control"
                   @focus="focusedEmail = true"
                   @blur="focusedEmail = false"
+                  v-model="email"
                 />
               </div>
               <div class="form-group">
@@ -145,10 +147,19 @@ export default {
   },
   data() {
     return {
+      name: '',
+      email: '',
       focusedName: false,
       focusedEmail: false,
       currentDate: new Date(),
     };
+  },
+  watch: {
+    email(value) {
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    },
   },
   methods: {
     onFocus() {
@@ -158,6 +169,13 @@ export default {
     onBlur() {
       this.focusedName = false;
       this.focusedEmail = false;
+    },
+    validateEmail(value) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
+        this.msg['email'] = '';
+      } else{
+        this.msg['email'] = 'Invalid Email Address';
+      }
     },
   },
 };
