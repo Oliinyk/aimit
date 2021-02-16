@@ -2,6 +2,7 @@
   background: linear-gradient(0deg, #174354, #174354), #369ec7;
   position: relative;
   margin: 0 0 95px;
+
   &::after {
     content: '';
     background-image: url('../img/form_bg.png');
@@ -14,6 +15,7 @@
     width: 100%;
     z-index: 0;
   }
+
   .container {
     position: relative;
     z-index: 1;
@@ -37,42 +39,63 @@
 .form {
   max-width: 720px;
   margin: 0 auto;
+
   .form-row {
     display: flex;
     text-align: left;
   }
+
   .form-group {
     position: relative;
-    & + .form-group {
+
+    &+.form-group {
       margin: 29px 0 0;
     }
   }
+
   .label {
     color: #fff;
     font-size: 14px;
   }
+
   .placeholder {
     position: absolute;
     top: 2px;
     left: 0;
     padding: 0 3px;
+    transition: 0.3s all;
+    z-index: 0;
+
+    &.active {
+      top: -15px;
+      left: -3px;
+      font-size: 10px;
+    }
   }
+
   .form-col {
     &.input-col {
       width: 250px;
+
       input {
         border: 0;
         border-bottom: 1px solid #fff;
         background: transparent;
+        color: #fff;
         width: 100%;
+        position: relative;
+        z-index: 1;
       }
     }
+
     &.area-col {
       width: 475px;
       padding-left: 25px;
+
       .form-group {
         height: 100%;
       }
+
       textarea {
         border: 1px solid #fff;
         background: transparent;
@@ -81,6 +104,7 @@
       }
     }
   }
+
   .btn {
     border: 1px solid #fff;
     background-color: #fff;

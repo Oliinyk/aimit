@@ -2,14 +2,29 @@
   .section-title {
     padding-bottom: 15px;
   }
+
+  .about-row {
+    display: flex;
+
+    .col-text,
+    .col-img {
+      width: 50%;
+    }
+  }
+
   .title {
     font-weight: 500;
     font-size: 64px;
     line-height: 1.18;
     padding: 0 0 20px;
     color: #174354;
+
     span {
       color: #cc2323;
     }
+  }
+
+  .btn-holder {
+    text-align: right;
   }
 }
