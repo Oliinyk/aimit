@@ -9,6 +9,12 @@
           {{ content.about_title[0].text }}
         </h2>
 
+        <h3 class="title">
+          We have strong experience in
+          <span>web</span>, <span>ui/ux</span>,
+          <span>e-commerce</span>
+        </h3>
+
         <p v-if="content.about_text && content.about_text[0].text">
           {{ content.about_text[0].text }}
         </p>

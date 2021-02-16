@@ -9,12 +9,32 @@
           <div class="form-row">
             <div class="form-col input-col">
               <div class="form-group">
-                <div class="label">Your name*</div>
-                <input type="text" class="form-control" />
+                <label
+                  class="label placeholder"
+                  :class="{ active: focusedName }"
+                >
+                  Your name*
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  @focus="focusedName = true"
+                  @blur="focusedName = false"
+                />
               </div>
               <div class="form-group">
-                <div class="label">Your email</div>
-                <input type="text" class="form-control" />
+                <label
+                  class="label placeholder"
+                  :class="{ active: focusedEmail }"
+                >
+                  Your email
+                </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  @focus="focusedEmail = true"
+                  @blur="focusedEmail = false"
+                />
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" />
@@ -22,14 +42,14 @@
             </div>
             <div class="form-col area-col">
               <div class="form-group">
-                <div class="label">Tell us about your project</div>
+                <label class="label">Tell us about your project</label>
                 <textarea class="form-control" />
               </div>
             </div>
           </div>
           <div class="form-row justify-content-end">
             <div class="form-group">
-              <button type="button" class="btn" @click="submit">Send</button>
+              <button type="button" class="btn">Send</button>
             </div>
           </div>
         </form>
@@ -48,7 +68,20 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      focusedName: false,
+      focusedEmail: false,
+    };
+  },
+  methods: {
+    onFocus() {
+      this.focusedName = true;
+      this.focusedEmail = true;
+    },
+    onBlur() {
+      this.focusedName = false;
+      this.focusedEmail = false;
+    },
   },
 };
 </script>

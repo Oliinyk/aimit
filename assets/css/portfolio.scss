@@ -25,12 +25,11 @@
       text-align: center;
       transition: 0.3s all;
       width: 100%;
-    }
-
-    &.active,
-    &:hover {
-      background-color: #174354;
-      color: #fff;
+      &.active,
+      &:hover {
+        background-color: #174354;
+        color: #fff;
+      }
     }
   }
 

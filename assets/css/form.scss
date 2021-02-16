@@ -1,6 +1,7 @@
 .form-section {
   background: linear-gradient(0deg, #174354, #174354), #369ec7;
   position: relative;
+  margin: 0 0 95px;
   &::after {
     content: '';
     background-image: url('../img/form_bg.png');
@@ -20,11 +21,12 @@
 
   .inner-wrap {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 0 45px;
   }
 
   .section-title {
     color: #fff;
+    padding: 0 0 36px;
 
     &::before {
       display: none;
@@ -39,9 +41,21 @@
     display: flex;
     text-align: left;
   }
+  .form-group {
+    position: relative;
+    & + .form-group {
+      margin: 29px 0 0;
+    }
+  }
   .label {
     color: #fff;
     font-size: 14px;
+  }
+  .placeholder {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    padding: 0 3px;
   }
   .form-col {
     &.input-col {
@@ -54,7 +68,8 @@
       }
     }
     &.area-col {
-      width: 450px;
+      width: 475px;
+      padding-left: 25px;
       .form-group {
         height: 100%;
       }
@@ -62,6 +77,7 @@
         border: 1px solid #fff;
         background: transparent;
         width: 100%;
+        min-height: 110px;
       }
     }
   }
@@ -69,5 +85,7 @@
     border: 1px solid #fff;
     background-color: #fff;
     color: #cc2323;
+    padding: 5px 23px;
+    margin: 12px 0 0;
   }
 }
