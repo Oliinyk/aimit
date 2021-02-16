@@ -4,7 +4,10 @@
   padding: 25px 0 0;
 
   .img-row {
-    margin: 0 0 6px;
+    margin: 0;
+  }
+  .footer-logo {
+    display: inline-block;
   }
   .content {
     display: flex;
@@ -57,9 +60,33 @@
     &::after {
       right: 92px;
     }
+    &:hover {
+      .nav-item {
+        opacity: 0.5;
+      }
+    }
     .nav-item {
       padding: 0 40px 0 0;
       font-size: 18px;
+      position: relative;
+      a {
+        &::after {
+          content: '';
+          background: #fff;
+          width: 0;
+          height: 2px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          transition: 0.3s all;
+        }
+        &:hover {
+          opacity: 1;
+          &::after {
+            width: 30px;
+          }
+        }
+      }
     }
   }
 
