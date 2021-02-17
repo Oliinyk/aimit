@@ -115,7 +115,16 @@
   ul {
     li {
       font-size: 12px;
+      font-weight: 700;
       color: #f03;
+      text-transform: uppercase;
     }
   }
+}
+
+.error-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f03;
+  text-transform: uppercase;
 }
