@@ -71,10 +71,7 @@
 
           <div class="form-row">
             <div class="form-col input-col">
-              <div
-                :class="{ 'is-valid': validate, 'is-invalid': !validate }"
-                class="form-group"
-              >
+              <div class="form-group">
                 <label
                   class="label placeholder"
                   :class="{ active: focusedName }"
@@ -87,11 +84,13 @@
                   name="name"
                   type="text"
                   class="form-control"
+                  :class="{ error: nameError }"
                   @focus="focusedName = true"
-                  @blur="onBlur"
+                  @blur="onBlurName"
                 />
-                <!-- <p v-if="name">Name required</p> -->
-                <!-- <span v-if="msg.nameIn">{{ error.name }}</span> -->
+                <p v-if="nameError" class="error-text">
+                  Please enter your name.
+                </p>
               </div>
               <div class="form-group">
                 <label
@@ -106,10 +105,16 @@
                   name="email"
                   type="text"
                   class="form-control"
+                  :class="{ error: mailError }"
                   @focus="focusedEmail = true"
-                  @blur="onBlur"
+                  @blur="onBlurMail"
                 />
-                <!-- <span v-if="msg.email">{{ msg.email }}</span> -->
+                <p v-if="mailError" class="error-text">
+                  Please enter your email address.
+                </p>
+                <p v-if="mailValidError" class="error-text">
+                  Please enter a valid email address.
+                </p>
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" />
@@ -135,21 +140,6 @@
         All rights reserved by Aim it
       </div>
     </div>
-
-    <!-- <ul>
-      <li v-for="group in props.nav" :key="group.title">
-        <strong>{{ group.title }}</strong>
-        <ul>
-          <li v-for="link in group.links" :key="link.link_label">
-            <prismic-link :field="link.link">
-              {{ link.link_label }}
-            </prismic-link>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    <hr />
-    {{ props.copyrightLine }} -->
   </div>
 </template>
 <script>
@@ -160,15 +150,16 @@ export default {
     content: {
       type: Object,
       default: null,
-      // nameIn: null,
     },
   },
   data() {
     return {
       errors: [],
       name: null,
-      // nameError: null,
       email: null,
+      nameError: false,
+      mailError: false,
+      mailValidError: false,
       focusedName: false,
       focusedEmail: false,
       currentDate: new Date(),
@@ -179,40 +170,77 @@ export default {
       this.focusedName = true;
       this.focusedEmail = true;
     },
-    onBlur() {
+    onBlurName() {
       // this.focusedName = false;
       // this.focusedEmail = false;
 
       if (!this.name) {
         this.focusedName = false;
+        this.nameError = true;
       } else {
         this.focusedName = true;
+        this.nameError = false;
+      }
+
+      // if (!this.email) {
+      //   this.focusedEmail = false;
+      // } else {
+      //   this.focusedEmail = true;
+      // }
+    },
+    onBlurMail() {
+      if (!this.email) {
+        this.focusedEmail = false;
+        this.mailError = true;
+        // this.isMailErrorMessage.push('Please enter your email address.');
+      } else if (!this.validEmail(this.email)) {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = true;
+        // this.errors.push('Please enter a valid email address.');
+      } else {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = false;
+      }
+    },
+    checkForm(e) {
+      // validation after click on submit button
+      this.errors = [];
+      if (!this.name) this.errors.push('Please enter your name.');
+
+      if (!this.email) {
+        this.errors.push('Please enter your email address.');
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Please enter a valid email address.');
+      }
+      if (!this.errors.length) return true;
+      // END validation after click on submit button
+
+      if (!this.name) {
+        this.focusedName = false;
+        this.nameError = true;
+      } else {
+        this.focusedName = true;
+        this.nameError = false;
       }
 
       if (!this.email) {
         this.focusedEmail = false;
+        this.mailError = true;
+        // this.isMailErrorMessage.push('Please enter your email address.');
+      } else if (!this.validEmail(this.email)) {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = true;
+        // this.errors.push('Please enter a valid email address.');
       } else {
         this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = false;
       }
-    },
-    checkForm(e) {
-      this.errors = [];
-      // if (!this.name) this.nameError.push('Name required.');
-      if (!this.name) this.errors.push('Name required.');
 
-      if (!this.email) {
-        this.errors.push('Email required.');
-      } else if (!this.validEmail(this.email)) {
-        this.errors.push('Enter a valid email address');
-      }
-      if (!this.errors.length) return true;
       e.preventDefault();
-
-      // if (!this.name) {
-      //   return true;
-      // } else {
-      //   return false;
-      // }
     },
     validEmail(email) {
       // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
