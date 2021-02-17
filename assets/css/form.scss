@@ -49,6 +49,26 @@
   .form-group {
     position: relative;
 
+    input {
+      border: 0;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    select {
+      border: 0;
+      border-bottom: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      font-size: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
     & + .form-group {
       margin: 29px 0 0;
     }
@@ -73,20 +93,20 @@
       font-size: 10px;
     }
   }
+  .form-group-select {
+    display: flex;
+    justify-content: space-between;
+    select {
+      width: 110px;
+    }
+    .form-control {
+      width: calc(100% - 120px);
+    }
+  }
 
   .form-col {
     &.input-col {
       width: 250px;
-
-      input {
-        border: 0;
-        border-bottom: 1px solid #fff;
-        background: transparent;
-        color: #fff;
-        width: 100%;
-        position: relative;
-        z-index: 1;
-      }
     }
 
     &.area-col {
@@ -109,8 +129,6 @@
 }
 
 .error-holder {
-  margin: 0 0 25px;
-
   ul {
     li {
       font-size: 12px;
@@ -126,4 +144,52 @@
   font-weight: 700;
   color: #f03;
   text-transform: uppercase;
+}
+
+.notification {
+  position: fixed;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  text-align: center;
+  padding: 20px;
+  background-color: #174354;
+  color: #fff;
+  transform: translate(0, -101%);
+  transition: all 0.2s ease-in-out;
+  &.show {
+    transition: all 0.2s ease-in-out;
+    transform: translate(0, 0);
+  }
+  &:hover {
+    .error-holder {
+      transform: translate(0, -100%);
+      opacity: 0;
+    }
+    &::after {
+      transform: translateY(50%) translateX(-50%);
+      opacity: 1;
+    }
+  }
+  .error-holder {
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+  &::after {
+    content: 'Got it';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(200%) translateX(-50%);
+  }
 }

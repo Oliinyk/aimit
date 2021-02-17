@@ -72,7 +72,8 @@ body {
 a,
 button,
 input,
-textarea {
+textarea,
+select {
   outline: none;
 
   &:focus {

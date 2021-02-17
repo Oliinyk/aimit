@@ -62,12 +62,12 @@
         </div>
 
         <form novalidate="true" class="form" @submit="checkForm">
-          <div v-if="errors.length" class="error-holder">
+          <!-- <div v-if="errors.length" class="error-holder">
             <b>Please correct the following error(s):</b>
             <ul>
               <li v-for="error in errors" :key="error.id">{{ error }}</li>
             </ul>
-          </div>
+          </div> -->
 
           <div class="form-row">
             <div class="form-col input-col">
@@ -97,7 +97,7 @@
                   class="label placeholder"
                   :class="{ active: focusedEmail }"
                 >
-                  Your email
+                  Your email*
                 </label>
                 <input
                   id="email"
@@ -116,7 +116,12 @@
                   Please enter a valid email address.
                 </p>
               </div>
-              <div class="form-group">
+              <div class="form-group form-group-select">
+                <select name="select">
+                  <option value="value1">Значение 1</option>
+                  <option value="value2">Значение 2</option>
+                  <option value="value3">Значение 3</option>
+                </select>
                 <input type="text" class="form-control" />
               </div>
             </div>
@@ -138,6 +143,17 @@
       <div class="copyright">
         {{ currentDate.getFullYear() }}
         All rights reserved by Aim it
+      </div>
+    </div>
+
+    <!-- <div class="notification" :class="{ show: errors.length }">-->
+    <div class="notification" :class="{ show: removeTimeError }">
+      <div v-if="errors.length" class="error-holder">
+        <p>Please fix the errors indicated</p>
+        <!-- <p>Please correct the following error(s):</p>
+        <ul>
+          <li v-for="error in errors" :key="error.id">{{ error }}</li>
+        </ul> -->
       </div>
     </div>
   </div>
@@ -163,6 +179,7 @@ export default {
       focusedName: false,
       focusedEmail: false,
       currentDate: new Date(),
+      removeTimeError: false,
     };
   },
   methods: {
@@ -207,14 +224,23 @@ export default {
     checkForm(e) {
       // validation after click on submit button
       this.errors = [];
-      if (!this.name) this.errors.push('Please enter your name.');
-
+      // if (!this.name) this.errors.push('Please enter your name.');
+      if (!this.name) {
+        this.errors.push('Name');
+        this.removeTimeError = true;
+      }
       if (!this.email) {
-        this.errors.push('Please enter your email address.');
+        // this.errors.push('Please enter your email address.');
+        this.errors.push('Email address');
+        this.removeTimeError = true;
       } else if (!this.validEmail(this.email)) {
-        this.errors.push('Please enter a valid email address.');
+        // this.errors.push('Please enter a valid email address.');
+        this.errors.push('Email address not valid');
+        this.removeTimeError = true;
       }
       if (!this.errors.length) return true;
+
+      setTimeout(() => (this.removeTimeError = false), 3000);
       // END validation after click on submit button
 
       if (!this.name) {
