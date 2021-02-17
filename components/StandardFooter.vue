@@ -61,10 +61,20 @@
           </div>
         </div>
 
-        <form class="form">
+        <form novalidate="true" class="form" @submit="checkForm">
+          <div v-if="errors.length" class="error-holder">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="error in errors" :key="error.id">{{ error }}</li>
+            </ul>
+          </div>
+
           <div class="form-row">
             <div class="form-col input-col">
-              <div class="form-group">
+              <div
+                :class="{ 'is-valid': validate, 'is-invalid': !validate }"
+                class="form-group"
+              >
                 <label
                   class="label placeholder"
                   :class="{ active: focusedName }"
@@ -72,12 +82,16 @@
                   Your name*
                 </label>
                 <input
+                  id="name"
+                  v-model="name"
+                  name="name"
                   type="text"
                   class="form-control"
                   @focus="focusedName = true"
-                  @blur="focusedName = false"
-                  v-model="name"
+                  @blur="onBlur"
                 />
+                <!-- <p v-if="name">Name required</p> -->
+                <!-- <span v-if="msg.nameIn">{{ error.name }}</span> -->
               </div>
               <div class="form-group">
                 <label
@@ -87,12 +101,15 @@
                   Your email
                 </label>
                 <input
+                  id="email"
+                  v-model="email"
+                  name="email"
                   type="text"
                   class="form-control"
                   @focus="focusedEmail = true"
-                  @blur="focusedEmail = false"
-                  v-model="email"
+                  @blur="onBlur"
                 />
+                <!-- <span v-if="msg.email">{{ msg.email }}</span> -->
               </div>
               <div class="form-group">
                 <input type="text" class="form-control" />
@@ -107,7 +124,7 @@
           </div>
           <div class="form-row justify-content-end">
             <div class="form-group">
-              <button type="button" class="btn btn-white">Send</button>
+              <button type="submit" class="btn btn-white">Send</button>
             </div>
           </div>
         </form>
@@ -143,23 +160,19 @@ export default {
     content: {
       type: Object,
       default: null,
+      // nameIn: null,
     },
   },
   data() {
     return {
-      name: '',
-      email: '',
+      errors: [],
+      name: null,
+      // nameError: null,
+      email: null,
       focusedName: false,
       focusedEmail: false,
       currentDate: new Date(),
     };
-  },
-  watch: {
-    email(value) {
-      // binding this to the data value in the email input
-      this.email = value;
-      this.validateEmail(value);
-    },
   },
   methods: {
     onFocus() {
@@ -167,16 +180,43 @@ export default {
       this.focusedEmail = true;
     },
     onBlur() {
-      this.focusedName = false;
-      this.focusedEmail = false;
-    },
-    validateEmail(value) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-        this.msg['email'] = '';
-      } else{
-        this.msg['email'] = 'Invalid Email Address';
+      // this.focusedName = false;
+      // this.focusedEmail = false;
+
+      if (!this.name) {
+        this.focusedName = false;
+      } else {
+        this.focusedName = true;
+      }
+
+      if (!this.email) {
+        this.focusedEmail = false;
+      } else {
+        this.focusedEmail = true;
       }
     },
+    checkForm(e) {
+      this.errors = [];
+      // if (!this.name) this.nameError.push('Name required.');
+      if (!this.name) this.errors.push('Name required.');
+      // if (!this.email) {
+      //   this.errors.push('Email required.');
+      // } else if (!this.validEmail(this.email)) {
+      //   this.errors.push('Valid email required.');
+      // }
+      if (!this.errors.length) return true;
+      e.preventDefault();
+
+      // if (!this.name) {
+      //   return true;
+      // } else {
+      //   return false;
+      // }
+    },
+    // validEmail(email) {
+    //   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    //   return re.test(email);
+    // },
   },
 };
 </script>

@@ -74,6 +74,10 @@ button,
 input,
 textarea {
   outline: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 @media (min-width: 1280px) {
