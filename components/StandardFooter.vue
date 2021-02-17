@@ -199,11 +199,12 @@ export default {
       this.errors = [];
       // if (!this.name) this.nameError.push('Name required.');
       if (!this.name) this.errors.push('Name required.');
-      // if (!this.email) {
-      //   this.errors.push('Email required.');
-      // } else if (!this.validEmail(this.email)) {
-      //   this.errors.push('Valid email required.');
-      // }
+
+      if (!this.email) {
+        this.errors.push('Email required.');
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Enter a valid email address');
+      }
       if (!this.errors.length) return true;
       e.preventDefault();
 
@@ -213,10 +214,11 @@ export default {
       //   return false;
       // }
     },
-    // validEmail(email) {
-    //   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //   return re.test(email);
-    // },
+    validEmail(email) {
+      // const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      const re = /^[\w-/\\/g.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      return re.test(email);
+    },
   },
 };
 </script>
