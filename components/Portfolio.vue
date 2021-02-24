@@ -23,6 +23,26 @@
               </button>
             </div>
           </VueSlickCarousel>
+
+          <div
+            v-for="item in presentationpages"
+            :key="item.id"
+            class="portfolio-filter"
+          >
+            <nuxt-link :to="'project/' + item.tags[0]">222</nuxt-link>
+            <span
+              >{{ item.data.hero_title[0].text }}
+              {{ item.data.hero_title1[0].text }}</span
+            >
+            <img :src="item.data.description_image.url" alt="" />
+
+            <!-- <button
+                v-if="item.filter_item && item.filter_item[0].text"
+                type="button"
+              >
+                {{ item.filter_item[0].text }}
+              </button> -->
+          </div>
         </div>
 
         <ul class="item-holder">
@@ -149,6 +169,10 @@ export default {
   components: { VueSlickCarousel },
   props: {
     content: {
+      type: Object,
+      default: null,
+    },
+    presentationpages: {
       type: Object,
       default: null,
     },

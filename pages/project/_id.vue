@@ -1,9 +1,10 @@
 <template>
   <div class="page-wrap presentation-page">
     <StandardHeader :content="Header" />
-    <HeroProject :content="PresentationPage" />
-    <DescriptionProject :content="PresentationPage" />
-    <BodyProject :content="PresentationPage" />
+    <HeroProject v-if="prePage" :content="prePage.data" />
+    <DescriptionProject v-if="prePage" :content="prePage.data" />
+    <BodyProject v-if="prePage" :content="prePage.data" />
+    <p v-if="!prePage">page not found</p>
     <StandardFooter :content="Footer" />
   </div>
 </template>
@@ -24,14 +25,22 @@ export default {
     BodyProject,
     StandardFooter,
   },
-  async asyncData({ $siteData, $prismic, error }) {
+  async asyncData({ $siteData, $prismic, error, route }) {
     const Header = (await $prismic.api.getSingle('standard_header')).data;
     const PresentationPage = (await $prismic.api.getSingle('presentation-page'))
       .data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
+
+    const id = route.params.id;
+    const presentationPages = $siteData('presentationPages');
+    const prePage = await presentationPages.results.find(
+      (tag) => tag.tags[0] === id
+    );
     return {
       Header,
       PresentationPage,
+      presentationPages,
+      prePage,
       Footer,
     };
   },

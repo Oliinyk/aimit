@@ -2,7 +2,10 @@
   <div class="portfolio-page">
     <StandardHeader :content="Header" />
     <HeroPortfolio :content="PortfolioPage" />
-    <Portfolio :content="Portfolio" />
+    <Portfolio
+      :content="Portfolio"
+      :presentationpages="presentationPages.results"
+    />
     <Clients :content="Clients" />
     <Form :content="Form" />
     <ColumnText :content="ColumnText" />
@@ -38,6 +41,7 @@ export default {
     const Form = (await $prismic.api.getSingle('form')).data;
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
+    const presentationPages = $siteData('presentationPages');
     return {
       Header,
       PortfolioPage,
@@ -46,6 +50,7 @@ export default {
       Form,
       ColumnText,
       Footer,
+      presentationPages,
     };
   },
 };

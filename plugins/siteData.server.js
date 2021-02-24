@@ -1,10 +1,16 @@
 /**
  * Loads common data that many pages might use
  */
+
 export default async function ({ $prismic }, inject) {
-  // const footerData = (
-  //   await $prismic.api.getByUID('standard_footer_1', 'standard')
-  // ).data;
+  const Prismic = require('@prismicio/client');
+  const presentationPages = await $prismic.api.query([
+    Prismic.Predicates.at('document.type', 'presentation-page'),
+    //  Prismic.Predicates.any('document.tags', ['secondProject'])
+  ]);
+  //  const footerData = (
+  //    await $prismic.api.getByUID('standard_footer_1', 'standard')
+  //  ).data;
 
   // const footerProps = {
   //   tagline: $prismic.asText(footerData.tagline),
@@ -23,13 +29,13 @@ export default async function ({ $prismic }, inject) {
   //     }),
   // };
 
-//   inject('siteData', (id) => {
-//     switch (id) {
-//       case 'footerProps':
-//         return footerProps;
-//     }
+  inject('siteData', (id) => {
+    switch (id) {
+      case 'presentationPages':
+        return presentationPages;
+    }
 
-//     console.error(`Unknown data id ${id}`);
-//     return undefined;
-//   });
- }
+    console.error(`Unknown data id ${id}`);
+    return undefined;
+  });
+}
