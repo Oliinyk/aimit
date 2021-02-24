@@ -16,9 +16,13 @@
           content.nav
         }} -->
           <li v-for="item in content.nav" :key="item.id" class="nav-item">
-            <a :href="'/' + item.item[0].text">
+            <nuxt-link
+              :to="
+                '/' + (item.item[0].text === 'Home' ? '' : item.item[0].text)
+              "
+            >
               {{ item.item[0].text }}
-            </a>
+            </nuxt-link>
           </li>
         </ul>
 

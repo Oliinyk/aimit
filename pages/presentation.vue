@@ -5,6 +5,7 @@
     <DescriptionProject :content="PresentationPage" />
     <BodyProject :content="PresentationPage" />
     <StandardFooter :content="Footer" />
+    {{ PresentationPage }}
   </div>
 </template>
 <script>

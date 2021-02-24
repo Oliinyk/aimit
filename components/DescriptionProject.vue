@@ -27,8 +27,14 @@
               {{ content.description_text[0].text }}
             </p>
 
-            <div v-if="content.description_list">
-              {{ content.description_list.text }}
+            <div
+              v-if="
+                content.description_list && content.description_list.length > 0
+              "
+            >
+              <ul v-for="item in content.description_list" :key="item.id">
+                <li>{{ item.text }}</li>
+              </ul>
             </div>
             <!-- <ul class="list-description">
               <li class="list-item">
