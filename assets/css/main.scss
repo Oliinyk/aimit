@@ -4,9 +4,11 @@ body {
   color: #000;
   font-family: 'Roboto', sans-serif;
 }
-
 .container {
   margin: 0 auto;
+  @media (min-width: 1480px) {
+    max-width: 1430px;
+  }
 }
 
 .btn {
@@ -58,7 +60,7 @@ body {
   }
 }
 
-.home {
+.page-wrap {
   background-image: url('../img/home_bg.png');
   background-size: 1444px;
   background-repeat: no-repeat;
@@ -78,11 +80,5 @@ select {
 
   &:focus {
     outline: none;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1430px;
   }
 }

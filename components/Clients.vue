@@ -13,7 +13,7 @@
             :key="item.id"
             class="clients-item"
           >
-            <img :src="item.clients_item[0].url" alt="" />
+            <img :src="item.clients_item.url" :alt="item.clients_item.alt" />
           </li>
         </ul>
       </div>

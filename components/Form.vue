@@ -5,7 +5,7 @@
         <h2 class="section-title">
           {{ content.form_title[0].text }}
         </h2>
-        <form class="form">
+        <form novalidate="true" class="form" @submit="checkForm">
           <div class="form-row">
             <div class="form-col input-col">
               <div class="form-group">
@@ -16,27 +16,51 @@
                   Your name*
                 </label>
                 <input
+                  id="name"
+                  v-model="name"
+                  name="name"
                   type="text"
                   class="form-control"
+                  :class="{ error: nameError }"
                   @focus="focusedName = true"
-                  @blur="focusedName = false"
+                  @blur="onBlurName"
                 />
+                <p v-if="nameError" class="error-text">
+                  Please enter your name.
+                </p>
               </div>
               <div class="form-group">
                 <label
                   class="label placeholder"
                   :class="{ active: focusedEmail }"
                 >
-                  Your email
+                  Your email*
                 </label>
                 <input
+                  id="email"
+                  v-model="email"
+                  name="email"
                   type="text"
                   class="form-control"
+                  :class="{ error: mailError }"
                   @focus="focusedEmail = true"
-                  @blur="focusedEmail = false"
+                  @blur="onBlurMail"
                 />
+                <p v-if="mailError" class="error-text">
+                  Please enter your email address.
+                </p>
+                <p v-if="mailValidError" class="error-text">
+                  Please enter a valid email address.
+                </p>
               </div>
-              <div class="form-group">
+
+              <div class="form-group form-group-select">
+                <select name="select">
+                  <option value="skype">skype</option>
+                  <option value="whatsapp">whatsapp</option>
+                  <option value="telegram">telegram</option>
+                  <option value="viber">viber</option>
+                </select>
                 <input type="text" class="form-control" />
               </div>
             </div>
@@ -49,17 +73,23 @@
           </div>
           <div class="form-row justify-content-end">
             <div class="form-group">
-              <button type="button" class="btn btn-white">Send</button>
+              <button type="submit" class="btn btn-white">Send</button>
             </div>
           </div>
         </form>
+      </div>
+    </div>
+
+    <div class="notification" :class="{ show: removeTimeError }">
+      <div v-if="errors.length" class="error-holder">
+        <p>Please fix the errors indicated</p>
       </div>
     </div>
   </section>
 </template>
 <script>
 export default {
-  name: 'Form',
+  name: 'StandardFooter',
   components: {},
   props: {
     content: {
@@ -69,8 +99,16 @@ export default {
   },
   data() {
     return {
+      errors: [],
+      name: null,
+      email: null,
+      nameError: false,
+      mailError: false,
+      mailValidError: false,
       focusedName: false,
       focusedEmail: false,
+      currentDate: new Date(),
+      removeTimeError: false,
     };
   },
   methods: {
@@ -78,9 +116,73 @@ export default {
       this.focusedName = true;
       this.focusedEmail = true;
     },
-    onBlur() {
-      this.focusedName = false;
-      this.focusedEmail = false;
+    onBlurName() {
+      if (!this.name) {
+        this.focusedName = false;
+        this.nameError = true;
+      } else {
+        this.focusedName = true;
+        this.nameError = false;
+      }
+    },
+    onBlurMail() {
+      if (!this.email) {
+        this.focusedEmail = false;
+        this.mailError = true;
+      } else if (!this.validEmail(this.email)) {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = true;
+      } else {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = false;
+      }
+    },
+    checkForm(e) {
+      // validation after click on submit button
+      this.errors = [];
+      if (!this.name) {
+        this.errors.push('Name');
+        this.removeTimeError = true;
+      }
+      if (!this.email) {
+        this.errors.push('Email address');
+        this.removeTimeError = true;
+      } else if (!this.validEmail(this.email)) {
+        this.errors.push('Email address not valid');
+        this.removeTimeError = true;
+      }
+      if (!this.errors.length) return true;
+      setTimeout(() => (this.removeTimeError = false), 3000);
+      // END validation after click on submit button
+
+      if (!this.name) {
+        this.focusedName = false;
+        this.nameError = true;
+      } else {
+        this.focusedName = true;
+        this.nameError = false;
+      }
+
+      if (!this.email) {
+        this.focusedEmail = false;
+        this.mailError = true;
+      } else if (!this.validEmail(this.email)) {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = true;
+      } else {
+        this.focusedEmail = true;
+        this.mailError = false;
+        this.mailValidError = false;
+      }
+
+      e.preventDefault();
+    },
+    validEmail(email) {
+      const re = /^[\w-/\\/g.]+@([\w-]+\.)+[\w-]{2,4}$/;
+      return re.test(email);
     },
   },
 };

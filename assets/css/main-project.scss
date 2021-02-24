@@ -1,0 +1,40 @@
+.main-project {
+  padding: 40px 0 0;
+  .section-title {
+    padding: 0 0 12px 14px;
+  }
+  .inner-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .img-holder {
+    margin: 0 0 40px;
+  }
+  .col-l {
+    width: 46%;
+  }
+  .col-r {
+    padding: 60px 0 0;
+    width: 54%;
+    .section-title {
+      margin: 0 0 0 auto;
+      width: 46%;
+    }
+    .page-item {
+      position: relative;
+      &:nth-child(1) {
+        &::after {
+          content: '';
+          background-image: url('../img/about_bg.png');
+          background-repeat: no-repeat;
+          position: absolute;
+          right: 15%;
+          top: -50px;
+          height: 100%;
+          width: 304px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}

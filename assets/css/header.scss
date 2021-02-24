@@ -9,18 +9,37 @@
   .header-navigation {
     display: flex;
     padding: 0 13px 0 0;
+    @media (max-width: 767px) {
+      background-color: var(--primary);
+      display: block;
+      position: fixed;
+      transition: all 0.5s;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      z-index: 11;
+      padding: 90px 10px 30px;
+    }
+    &.active {
+      top: 0;
+      .nav-item {
+        a {
+          color: var(--white);
+        }
+      }
+    }
   }
 
   .nav-item {
     a {
-      color: #174354;
+      color: var(--primary);
       font-size: 18px;
       margin: 10px 15px;
       display: block;
       position: relative;
       &::after {
         content: '';
-        background: #cc2323;
+        background-color: var(--primary_active);
         width: 0;
         height: 2px;
         position: absolute;
@@ -54,4 +73,130 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
+}
+
+.header-btn {
+  position: relative;
+  span {
+    height: 4px;
+    position: absolute;
+  }
+}
+.bit-1 {
+  margin-top: -1.7em;
+  width: 5em;
+  margin-left: -1.4em;
+  &::before {
+    left: 0;
+    transform-origin: left bottom;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: var(--primary);
+    top: 0;
+    transition: transform 0.1s, top 0.1s;
+  }
+  &::after {
+    right: 0;
+    transform-origin: right bottom;
+  }
+}
+.bit-2 {
+  left: 50%;
+  margin-left: -1.4em;
+  margin-top: -0.3em;
+  text-align: center;
+  &::before {
+    content: '';
+    width: 5em;
+    height: 100%;
+    background-color: var(--primary);
+    display: inline-block;
+    vertical-align: top;
+    transition: width 0.1s;
+    transition-delay: 0.1s;
+  }
+}
+.bit-3 {
+  width: 5em;
+  margin-left: -1.4em;
+  margin-top: 1.2em;
+  &::before {
+    left: 0;
+    transform-origin: left top;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: var(--primary);
+    transition: transform 0.1s, bottom 0.1s;
+    bottom: 0;
+  }
+  &::after {
+    right: 0;
+    transform-origin: right top;
+  }
+}
+.opened {
+  .bit-1 {
+    width: 3.8em;
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::before,
+    &::after {
+      top: -2px;
+      width: 2.5em;
+      transition-delay: 0.2s;
+      background-color: var(--white);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .bit-2 {
+    margin-left: -0.3em;
+    &::before {
+      width: 0;
+      transition-delay: 0;
+    }
+  }
+  .bit-3 {
+    width: 3.8em;
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::before,
+    &::after {
+      width: 2.5em;
+      transition-delay: 0.2s;
+      bottom: -0.2em;
+      background-color: var(--white);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}
+.navbar-toggler {
+  cursor: pointer;
+  position: relative;
+  z-index: 12;
+  padding: 1.8em 3.6em 1.5em 1.5em;
+  border: 1px solid transparent;
+  background-color: transparent;
+  font-size: 7px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+  &:focus {
+    outline: none;
+  }
 }

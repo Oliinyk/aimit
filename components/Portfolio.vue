@@ -1,14 +1,15 @@
 <template>
   <section class="portfolio">
     <div class="container">
-      <!-- <div class="hidden1">{{ content.portfolio }}</div> -->
+      <!-- <div class="hidden">{{ content.portfolio }}</div> -->
       <div class="inner-wrap">
         <h2 class="section-title">
           {{ content.portfolio_title[0].text }}
         </h2>
 
         <div class="slider-wrap">
-          <VueSlickCarousel :arrows="true" :dots="true" v-bind="slickOptions">
+          <!-- <VueSlickCarousel :arrows="true" :dots="true" v-bind="slickOptions"> -->
+          <VueSlickCarousel v-bind="slickOptions">
             <div
               v-for="item in content.portfolio_filters"
               :key="item.id"
@@ -60,7 +61,7 @@
                       item.portfolio_technology_ico.url
                     "
                     :src="item.portfolio_technology_ico.url"
-                    alt=""
+                    :alt="item.portfolio_technology_ico.alt"
                   />
                   <img
                     v-if="
@@ -68,7 +69,7 @@
                       item.portfolio_technology_ico1.url
                     "
                     :src="item.portfolio_technology_ico1.url"
-                    alt=""
+                    :alt="item.portfolio_technology_ico1.alt"
                   />
                   <img
                     v-if="
@@ -76,7 +77,7 @@
                       item.portfolio_technology_ico2.url
                     "
                     :src="item.portfolio_technology_ico2.url"
-                    alt=""
+                    :alt="item.portfolio_technology_ico2.alt"
                   />
                   <img
                     v-if="
@@ -84,7 +85,7 @@
                       item.portfolio_technology_ico3.url
                     "
                     :src="item.portfolio_technology_ico3.url"
-                    alt=""
+                    :alt="item.portfolio_technology_ico3.alt"
                   />
                   <img
                     v-if="
@@ -92,7 +93,23 @@
                       item.portfolio_technology_ico4.url
                     "
                     :src="item.portfolio_technology_ico4.url"
-                    alt=""
+                    :alt="item.portfolio_technology_ico4.alt"
+                  />
+                  <img
+                    v-if="
+                      item.portfolio_technology_ico5 &&
+                      item.portfolio_technology_ico5.url
+                    "
+                    :src="item.portfolio_technology_ico5.url"
+                    :alt="item.portfolio_technology_ico5.alt"
+                  />
+                  <img
+                    v-if="
+                      item.portfolio_technology_ico6 &&
+                      item.portfolio_technology_ico6.url
+                    "
+                    :src="item.portfolio_technology_ico6.url"
+                    :alt="item.portfolio_technology_ico6.alt"
                   />
                 </div>
               </div>
@@ -108,6 +125,15 @@
             </div>
           </li>
         </ul>
+
+        <div class="more-btn-holder">
+          <button
+            v-if="content.more_btn && content.more_btn[0].text"
+            class="btn more-btn"
+          >
+            {{ content.more_btn[0].text }}
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -131,7 +157,29 @@ export default {
     return {
       slickOptions: {
         slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: false,
+        // centerPadding: '24px',
+        // centerMode: true,
         // arrows: false,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 5,
+            },
+          },
+          {
+            breakpoint: 640,
+            settings: {
+              slidesToShow: 2.5,
+            },
+          },
+          // You can unslick at a given breakpoint now by adding:
+          // settings: "unslick"
+          // instead of a settings object
+        ],
       },
     };
   },

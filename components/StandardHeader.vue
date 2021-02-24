@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="container header-container">
-      <!-- {{ content.standard_header }} -->
+      {{ content.standard_header }}
       <a href="/" class="header-logo">
         <img
           v-if="content.logo"
@@ -11,7 +11,7 @@
         <!-- <img :src="homepage.logo.url" alt="" /> -->
       </a>
       <div class="nav">
-        <ul class="header-navigation">
+        <ul class="header-navigation" :class="{ active: showMobileMenu }">
           <!-- {{
           content.nav
         }} -->
@@ -21,10 +21,23 @@
             </a>
           </li>
         </ul>
+
         <ul class="lang-nav">
           <li class="active">EN</li>
           <li>UA</li>
         </ul>
+
+        <button
+          class="navbar-toggler"
+          :class="{ opened: showMobileMenu }"
+          @click="showMobileMenu = !showMobileMenu"
+        >
+          <span class="header-btn">
+            <span class="bit-1"></span>
+            <span class="bit-2"></span>
+            <span class="bit-3"></span>
+          </span>
+        </button>
       </div>
     </div>
   </div>
@@ -40,7 +53,9 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      showMobileMenu: false,
+    };
   },
 };
 </script>

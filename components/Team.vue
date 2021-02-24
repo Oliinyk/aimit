@@ -16,29 +16,6 @@
             :alt="content.team_image.alt"
           />
         </div>
-
-        <h2
-          v-if="content.team_subtitle && content.team_subtitle[0].text"
-          class="section-title inner-title"
-        >
-          {{ content.team_subtitle[0].text }}
-        </h2>
-
-        <div class="text-holder">
-          <p
-            v-if="content.team_text_left && content.team_text_left[0].text"
-            class="content"
-          >
-            {{ content.team_text_left[0].text }}
-          </p>
-
-          <p
-            v-if="content.team_text_right && content.team_text_right[0].text"
-            class="content"
-          >
-            {{ content.team_text_right[0].text }}
-          </p>
-        </div>
       </div>
     </div>
   </section>

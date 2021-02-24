@@ -1,16 +1,10 @@
 <template>
-  <div class="page-wrap home">
+  <div class="portfolio-page">
     <StandardHeader :content="Header" />
-    <!-- <h1 class="title">{{ homepage.title[0].text }}</h1>
-    <p>{{ homepage.subtitle[0].text }}</p> -->
-    <!-- <img :src="homepage.hero_image.url" alt="" /> -->
-    <Hero :content="homepage" />
-    <Specialization :content="homepage" />
+    <HeroPortfolio :content="PortfolioPage" />
     <Portfolio :content="Portfolio" />
     <Clients :content="Clients" />
     <Form :content="Form" />
-    <About :content="homepage" />
-    <Team :content="homepage" />
     <ColumnText :content="ColumnText" />
     <StandardFooter :content="Footer" />
   </div>
@@ -18,13 +12,10 @@
 <script>
 // Imports for all components
 import StandardHeader from '~/components/StandardHeader.vue';
-import Hero from '~/components/Hero.vue';
-import Specialization from '~/components/Specialization.vue';
+import HeroPortfolio from '~/components/HeroPortfolio.vue';
 import Portfolio from '~/components/Portfolio.vue';
 import Clients from '~/components/Clients.vue';
 import Form from '~/components/Form.vue';
-import About from '~/components/About.vue';
-import Team from '~/components/Team.vue';
 import ColumnText from '~/components/ColumnText.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
@@ -32,26 +23,30 @@ export default {
   layout: 'homepage',
   components: {
     StandardHeader,
-    Hero,
-    Specialization,
+    HeroPortfolio,
     Portfolio,
     Clients,
     Form,
-    About,
-    Team,
     ColumnText,
     StandardFooter,
   },
   async asyncData({ $siteData, $prismic, error }) {
-    // const footerProps = $siteData('footerProps');
     const Header = (await $prismic.api.getSingle('standard_header')).data;
-    const homepage = (await $prismic.api.getSingle('homepage')).data;
+    const PortfolioPage = (await $prismic.api.getSingle('portfolio-page')).data;
     const Portfolio = (await $prismic.api.getSingle('portfolio')).data;
     const Clients = (await $prismic.api.getSingle('clients')).data;
     const Form = (await $prismic.api.getSingle('form')).data;
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
-    return { Header, homepage, Portfolio, Clients, Form, ColumnText, Footer };
+    return {
+      Header,
+      PortfolioPage,
+      Portfolio,
+      Clients,
+      Form,
+      ColumnText,
+      Footer,
+    };
   },
 };
 </script>

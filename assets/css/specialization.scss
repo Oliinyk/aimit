@@ -1,5 +1,34 @@
 .specialization {
   padding: 0 0 125px;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    z-index: 0;
+  }
+  &::before {
+    background-image: url('../img/specialization_l_bg.png');
+    left: 32%;
+    top: 173px;
+    width: 291px;
+  }
+
+  &::after {
+    content: '';
+    background-image: url('../img/specialization_r_bg.png');
+    right: 14%;
+    top: -35px;
+    width: 343px;
+  }
+
+  .inner-wrap {
+    position: relative;
+    z-index: 1;
+  }
 
   .item-holder {
     display: flex;
@@ -9,7 +38,7 @@
   }
 
   .services-item {
-    width: calc(20% - 20px);
+    width: 100%;
     box-shadow: 7px 7px 20px rgba(23, 67, 84, 0.15);
     background: #fff;
     color: #174354;
@@ -19,6 +48,9 @@
     padding: 20px 35px;
     display: flex;
     flex-wrap: wrap;
+    @media (min-width: 640px) {
+      width: calc(20% - 20px);
+    }
 
     .inner-item {
       display: flex;

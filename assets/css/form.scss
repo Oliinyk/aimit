@@ -11,9 +11,8 @@
     position: absolute;
     left: 6%;
     top: 7px;
-    display: block;
     height: 100%;
-    width: 100%;
+    width: 304px;
     z-index: 0;
   }
 
@@ -62,11 +61,15 @@
     select {
       border: 0;
       border-bottom: 1px solid #fff;
-      background: transparent;
+      background-color: transparent;
       color: #fff;
       font-size: 14px;
       position: relative;
       z-index: 1;
+      & > option {
+        background-color: transparent;
+        color: #000;
+      }
     }
 
     & + .form-group {
@@ -98,6 +101,18 @@
     justify-content: space-between;
     select {
       width: 110px;
+      option[value='skype'] {
+        background-image: url('../img/skype.svg');
+      }
+      option[value='whatsapp'] {
+        background-image: url('../img/skype.svg');
+      }
+      option[value='telegram'] {
+        background-image: url('../img/skype.svg');
+      }
+      option[value='viber'] {
+        background-image: url('../img/skype.svg');
+      }
     }
     .form-control {
       width: calc(100% - 120px);

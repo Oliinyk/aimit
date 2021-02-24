@@ -1,5 +1,24 @@
 .about {
   padding: 0 0 52px;
+  position: relative;
+
+  &::after {
+    content: '';
+    background-image: url('../img/about_bg.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 18%;
+    top: 46%;
+    height: 100%;
+    width: 304px;
+    z-index: 0;
+  }
+
+  .inner-wrap {
+    position: relative;
+    z-index: 1;
+  }
+
   .section-title {
     padding-bottom: 15px;
   }
