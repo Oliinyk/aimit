@@ -17,7 +17,8 @@ module.exports = {
       // 	'billing-item': "url('assets/img/deskpro-billing-bg.svg')",
       // },
       fontFamily: {
-        body: ['Noto Sans', 'Rubik'],
+        // body: ['Noto Sans', 'Rubik'],
+        body: ['Roboto'],
       },
     },
     fontSize: {

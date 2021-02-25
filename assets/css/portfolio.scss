@@ -49,14 +49,19 @@
     margin-right: 12px;
     margin-bottom: 20px;
     min-height: 279px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     @media (min-width: 768px) {
       width: calc(50% - 24px);
     }
+
     &:hover {
       .inner-item {
         opacity: 1;
       }
     }
+
     .btn-holder {
       display: flex;
       align-items: flex-end;
@@ -88,6 +93,7 @@
   .item-title {
     font-weight: 500;
     font-size: 36px;
+    line-height: 1;
     width: 100%;
   }
 
@@ -101,11 +107,11 @@
     font-size: 14px;
   }
 
-  .icon-holder {
+  .icon-list {
     display: flex;
     flex-wrap: wrap;
 
-    img {
+    .icon-item {
       max-width: 32px;
       max-height: 32px;
       margin: 0 25px 0 0;
@@ -122,6 +128,7 @@
 
   .more-btn-holder {
     text-align: center;
+
     .home & {
       display: none;
     }
