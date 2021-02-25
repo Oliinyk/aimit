@@ -23,29 +23,58 @@
               </button>
             </div>
           </VueSlickCarousel>
-
-          <div
-            v-for="item in presentationpages"
-            :key="item.id"
-            class="portfolio-filter"
-          >
-            <nuxt-link :to="'project/' + item.tags[0]">222</nuxt-link>
-            <span
-              >{{ item.data.hero_title[0].text }}
-              {{ item.data.hero_title1[0].text }}</span
-            >
-            <img :src="item.data.description_image.url" alt="" />
-
-            <!-- <button
-                v-if="item.filter_item && item.filter_item[0].text"
-                type="button"
-              >
-                {{ item.filter_item[0].text }}
-              </button> -->
-          </div>
         </div>
 
+        <!-- {{ presentationpages }} -->
+
         <ul class="item-holder">
+          <li
+            v-for="item in presentationpages"
+            :key="item.id"
+            class="portfolio-item"
+            :style="
+              'background-image: url(' + item.data.description_image.url + ')'
+            "
+          >
+            <div class="inner-item">
+              <div class="text-holder">
+                <div>
+                  <h4 class="item-title">
+                    {{ item.data.hero_title[0].text }}
+                    {{ item.data.hero_title1[0].text }}
+                  </h4>
+                  <!-- <p
+                    v-if="item.portfolio_type && item.portfolio_type[0].text"
+                    class="item-type"
+                  >
+                    {{ item.portfolio_type[0].text }}
+                  </p>
+                  <p
+                    v-if="item.portfolio_text && item.portfolio_text[0].text"
+                    class="item-text"
+                  >
+                    {{ item.portfolio_text[0].text }}
+                  </p> -->
+                </div>
+                <ul class="icon-holder">
+                  <!-- <li v-for="p_item in item.technology_icons" :key="p_item.id">
+                    <img
+                      :src="p_item.technology_ico.url"
+                      :alt="p_item.technology_ico.alt"
+                    />
+                  </li> -->
+                </ul>
+              </div>
+              <div class="btn-holder">
+                <a href="#" class="btn btn-white"> More details </a>
+              </div>
+            </div>
+            <!-- <nuxt-link :to="'project/' + item.tags[0]">222</nuxt-link> -->
+            <!-- <img :src="item.data.description_image.url" alt="" /> -->
+          </li>
+        </ul>
+
+        <!-- <ul class="item-holder">
           <li
             v-for="item in content.portfolio"
             :key="item.id"
@@ -144,7 +173,7 @@
               </div>
             </div>
           </li>
-        </ul>
+        </ul> -->
 
         <div class="more-btn-holder">
           <button
@@ -168,11 +197,11 @@ export default {
   name: 'Portfolio',
   components: { VueSlickCarousel },
   props: {
-    content: {
+    presentationpages: {
       type: Object,
       default: null,
     },
-    presentationpages: {
+    content: {
       type: Object,
       default: null,
     },
