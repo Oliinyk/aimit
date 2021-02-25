@@ -1315,6 +1315,13 @@
     "mustache" "^2.3.0"
     "stack-trace" "0.0.10"
 
+"@prismicio/client@^4.0.0":
+  "integrity" "sha512-3rGie+Banm61hOQcKF75+TI8oquVDT2PyX05ho2eRKdiMu0i4raHVJCuIAGBs/CDCuVXes2h/rnfRs+eKfq7XQ=="
+  "resolved" "https://registry.npmjs.org/@prismicio/client/-/client-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "cross-fetch" "^3.0.6"
+
 "@prismicio/helpers@^1.0.4":
   "integrity" "sha512-TPpuAFHNxlCTrEihHnRKcq6zc0oZV0sfz5/iHoSpl5vorwPbwZWiF88JGeflNdefW4A69b5A3x3mfptKPdpoxg=="
   "resolved" "https://registry.npmjs.org/@prismicio/helpers/-/helpers-1.0.5.tgz"
@@ -3325,7 +3332,7 @@
   "resolved" "https://registry.npmjs.org/create-require/-/create-require-1.1.1.tgz"
   "version" "1.1.1"
 
-"cross-fetch@^3.0.5":
+"cross-fetch@^3.0.5", "cross-fetch@^3.0.6":
   "integrity" "sha512-KBPUbqgFjzWlVcURG+Svp9TlhA5uliYtiNx/0r8nv0pdypeQCRJ9IaSIc3q/x3q8t3F75cHuwxVql1HFGHCNJQ=="
   "resolved" "https://registry.npmjs.org/cross-fetch/-/cross-fetch-3.0.6.tgz"
   "version" "3.0.6"
@@ -3637,7 +3644,7 @@
   "resolved" "https://registry.npmjs.org/dedent/-/dedent-0.7.0.tgz"
   "version" "0.7.0"
 
-"deep-equal@~1.0.1", "deep-equal@1.0.1":
+"deep-equal@~1.0.1":
   "integrity" "sha1-9dJgKStmDghO/0zbyfCK0yR0SLU="
   "resolved" "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz"
   "version" "1.0.1"
@@ -4021,11 +4028,6 @@
     "is-callable" "^1.1.4"
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
-
-"es6-promise@4.0.5":
-  "integrity" "sha1-eILzCt3lskDM+n99eMVIMwlRrkI="
-  "resolved" "https://registry.npmjs.org/es6-promise/-/es6-promise-4.0.5.tgz"
-  "version" "4.0.5"
 
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
@@ -8409,10 +8411,10 @@
   "resolved" "https://registry.npmjs.org/pretty-time/-/pretty-time-1.1.0.tgz"
   "version" "1.1.0"
 
-"prismic-dom@^2.2.3", "prismic-dom@^2.2.4":
-  "integrity" "sha512-NLOfOSp7XVpdhWBd92RSiOZ75QISsSTQPTQN1AqcILtg1/zumqpwYKvz41tl+FeWJYfKPTHanvukhWkanfTngA=="
-  "resolved" "https://registry.npmjs.org/prismic-dom/-/prismic-dom-2.2.4.tgz"
-  "version" "2.2.4"
+"prismic-dom@^2.2.3", "prismic-dom@^2.2.5":
+  "integrity" "sha512-GafsY6sGet5EAWNG2w/qXaxgitU74yhEu/0vZEnwOt6PJgCClLmMkDzJHBpdl+wuEWqUhvkFMDUFPHSPwSVmKQ=="
+  "resolved" "https://registry.npmjs.org/prismic-dom/-/prismic-dom-2.2.5.tgz"
+  "version" "2.2.5"
   dependencies:
     "@prismicio/helpers" "^1.0.4"
     "@prismicio/richtext" "^1.1.0"
@@ -9355,14 +9357,6 @@
   "version" "0.2.2"
   dependencies:
     "is-arrayish" "^0.3.1"
-
-"simple-vue-validator@^0.16.0":
-  "integrity" "sha512-M9/Tgprpww/7oEv4qiXavvYVMpx6qrQ+ryJbSDOrXva8yq5SFoDfwbrL3LWGPsnNsFr4cF1y8RW+AAuC018WGg=="
-  "resolved" "https://registry.npmjs.org/simple-vue-validator/-/simple-vue-validator-0.16.0.tgz"
-  "version" "0.16.0"
-  dependencies:
-    "deep-equal" "1.0.1"
-    "es6-promise" "4.0.5"
 
 "slash@^3.0.0":
   "integrity" "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
