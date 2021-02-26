@@ -19,12 +19,12 @@
       width: 100%;
       z-index: 11;
       padding: 90px 10px 30px;
-    }
-    &.active {
-      top: 0;
-      .nav-item {
-        a {
-          color: var(--white);
+      &.active {
+        top: 0;
+        .nav-item {
+          a {
+            color: var(--white);
+          }
         }
       }
     }
@@ -47,7 +47,8 @@
         bottom: 0;
         transition: 0.3s all;
       }
-      &:hover {
+      &:hover,
+      &.nuxt-link-exact-active {
         &::after {
           width: 30px;
         }

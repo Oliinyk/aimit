@@ -1,5 +1,5 @@
 <template>
-  <div class="portfolio-page">
+  <div class="page-wrap portfolio-page">
     <StandardHeader :content="Header" />
     <HeroPortfolio :content="PortfolioPage" />
     <Portfolio

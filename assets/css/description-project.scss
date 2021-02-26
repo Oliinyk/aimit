@@ -27,6 +27,13 @@
 
     .description-text {
       font-size: 14px;
+      margin: 0 0 5px;
+    }
+
+    .description-list {
+      font-size: 14px;
+      list-style: disc;
+      padding-left: 14px;
     }
 
     .icon-holder {
@@ -36,7 +43,7 @@
     }
 
     .icon-item {
-      &+.icon-item {
+      & + .icon-item {
         margin-left: 20px;
       }
     }

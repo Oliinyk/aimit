@@ -43,20 +43,22 @@
                     {{ item.data.hero_title[0].text }}
                     {{ item.data.hero_title1[0].text }}
                   </h4>
-                  <!-- <p
-                    v-if="item.portfolio_type && item.portfolio_type[0].text"
+                  <p
+                    v-if="item.data.item_type && item.data.item_type[0].text"
                     class="item-type"
                   >
-                    {{ item.portfolio_type[0].text }}
+                    {{ item.data.item_type[0].text }}
                   </p>
                   <p
-                    v-if="item.portfolio_text && item.portfolio_text[0].text"
+                    v-if="
+                      item.data.item_description &&
+                      item.data.item_description[0].text
+                    "
                     class="item-text"
                   >
-                    {{ item.portfolio_text[0].text }}
-                  </p> -->
+                    {{ item.data.item_description[0].text }}
+                  </p>
                 </div>
-
                 <ul
                   v-if="
                     item.data.technology_icons &&
@@ -77,9 +79,6 @@
                 </ul>
               </div>
               <div class="btn-holder">
-                <!-- <a :href="item.data.hero_title[0].text" class="btn btn-white">
-                  More details
-                </a> -->
                 <nuxt-link
                   :to="'/project/' + item.tags[0]"
                   class="btn btn-white"
@@ -87,120 +86,17 @@
                 </nuxt-link>
               </div>
             </div>
-            <!-- <nuxt-link :to="'project/' + item.tags[0]">222</nuxt-link> -->
-            <!-- <img :src="item.data.description_image.url" alt="" /> -->
           </li>
         </ul>
 
-        <!-- <ul class="item-holder">
-          <li
-            v-for="item in content.portfolio"
-            :key="item.id"
-            class="portfolio-item"
-            :style="'background-image: url(' + item.portfolio_image.url + ')'"
-          >
-            <div class="inner-item">
-              <div class="text-holder">
-                <div>
-                  <h4
-                    v-if="item.portfolio_name && item.portfolio_name[0].text"
-                    class="item-title"
-                  >
-                    {{ item.portfolio_name[0].text }}
-                  </h4>
-                  <p
-                    v-if="item.portfolio_type && item.portfolio_type[0].text"
-                    class="item-type"
-                  >
-                    {{ item.portfolio_type[0].text }}
-                  </p>
-                  <p
-                    v-if="item.portfolio_text && item.portfolio_text[0].text"
-                    class="item-text"
-                  >
-                    {{ item.portfolio_text[0].text }}
-                  </p>
-                </div>
-                <div class="icon-holder">
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico &&
-                      item.portfolio_technology_ico.url
-                    "
-                    :src="item.portfolio_technology_ico.url"
-                    :alt="item.portfolio_technology_ico.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico1 &&
-                      item.portfolio_technology_ico1.url
-                    "
-                    :src="item.portfolio_technology_ico1.url"
-                    :alt="item.portfolio_technology_ico1.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico2 &&
-                      item.portfolio_technology_ico2.url
-                    "
-                    :src="item.portfolio_technology_ico2.url"
-                    :alt="item.portfolio_technology_ico2.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico3 &&
-                      item.portfolio_technology_ico3.url
-                    "
-                    :src="item.portfolio_technology_ico3.url"
-                    :alt="item.portfolio_technology_ico3.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico4 &&
-                      item.portfolio_technology_ico4.url
-                    "
-                    :src="item.portfolio_technology_ico4.url"
-                    :alt="item.portfolio_technology_ico4.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico5 &&
-                      item.portfolio_technology_ico5.url
-                    "
-                    :src="item.portfolio_technology_ico5.url"
-                    :alt="item.portfolio_technology_ico5.alt"
-                  />
-                  <img
-                    v-if="
-                      item.portfolio_technology_ico6 &&
-                      item.portfolio_technology_ico6.url
-                    "
-                    :src="item.portfolio_technology_ico6.url"
-                    :alt="item.portfolio_technology_ico6.alt"
-                  />
-                </div>
-              </div>
-              <div class="btn-holder">
-                <a
-                  v-if="item.portfolio_btn && item.portfolio_btn[0].text"
-                  href="#"
-                  class="btn btn-white"
-                >
-                  {{ item.portfolio_btn[0].text }}
-                </a>
-              </div>
-            </div>
-          </li>
-        </ul> -->
-
-        <div class="more-btn-holder">
+        <!-- <div class="more-btn-holder">
           <button
             v-if="content.more_btn && content.more_btn[0].text"
             class="btn more-btn"
           >
             {{ content.more_btn[0].text }}
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
@@ -212,7 +108,7 @@ import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 export default {
-  name: 'Portfolio',
+  name: 'PortfolioFilters',
   components: { VueSlickCarousel },
   props: {
     content: {

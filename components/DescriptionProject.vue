@@ -26,16 +26,16 @@
             >
               {{ content.description_text[0].text }}
             </p>
-
-            <div
+            <ul
               v-if="
                 content.description_list && content.description_list.length > 0
               "
+              class="description-list"
             >
-              <ul v-for="item in content.description_list" :key="item.id">
-                <li>{{ item.text }}</li>
-              </ul>
-            </div>
+              <li v-for="item in content.description_list" :key="item.id">
+                {{ item.text }}
+              </li>
+            </ul>
             <!-- <ul class="list-description">
               <li class="list-item">
                 {{ item.description_list }}

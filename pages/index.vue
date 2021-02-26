@@ -6,7 +6,11 @@
     <!-- <img :src="homepage.hero_image.url" alt="" /> -->
     <Hero :content="homepage" />
     <Specialization :content="homepage" />
-    <Portfolio :content="Portfolio" />
+    <!-- <Portfolio :content="Portfolio" /> -->
+    <Portfolio
+      :content="Portfolio"
+      :presentationpages="presentationPages.results"
+    />
     <Clients :content="Clients" />
     <Form :content="Form" />
     <About :content="homepage" />
@@ -51,7 +55,17 @@ export default {
     const Form = (await $prismic.api.getSingle('form')).data;
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
-    return { Header, homepage, Portfolio, Clients, Form, ColumnText, Footer };
+    const presentationPages = $siteData('presentationPages');
+    return {
+      Header,
+      homepage,
+      Portfolio,
+      Clients,
+      Form,
+      ColumnText,
+      Footer,
+      presentationPages,
+    };
   },
 };
 </script>

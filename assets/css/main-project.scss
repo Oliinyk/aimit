@@ -1,27 +1,70 @@
 .main-project {
   padding: 40px 0 0;
   .section-title {
-    padding: 0 0 12px 14px;
+    padding: 0 0 24px 14px;
   }
   .inner-wrap {
     display: flex;
     flex-wrap: wrap;
   }
+  .page-item {
+    position: relative;
+    margin: 0 0 85px;
+  }
   .img-holder {
     margin: 0 0 40px;
+    padding: 0 15px;
   }
   .col-l {
-    width: 46%;
+    width: 45%;
+    .page-item {
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        &::after {
+          content: '';
+          background-repeat: no-repeat;
+          position: absolute;
+          z-index: -1;
+        }
+      }
+      &:nth-child(1) {
+        &::after {
+          background-image: url('../img/specialization_l_bg.png');
+          left: 19%;
+          bottom: -57px;
+          height: 162px;
+          width: 291px;
+        }
+      }
+      &:nth-child(2) {
+        &::after {
+          background-image: url('../img/specialization_l_bg.png');
+          left: 76%;
+          bottom: 74px;
+          height: 162px;
+          width: 291px;
+        }
+      }
+      &:nth-child(3) {
+        &::after {
+          background-image: url('../img/specialization_r_bg.png');
+          left: 7%;
+          bottom: -140px;
+          height: 344px;
+          width: 344px;
+        }
+      }
+    }
   }
   .col-r {
     padding: 60px 0 0;
-    width: 54%;
+    width: 55%;
     .section-title {
       margin: 0 0 0 auto;
-      width: 46%;
+      width: 45.3%;
     }
     .page-item {
-      position: relative;
       &:nth-child(1) {
         &::after {
           content: '';
