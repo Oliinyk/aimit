@@ -127,6 +127,7 @@ export default {
         slidesToScroll: 1,
         infinite: true,
         dots: false,
+
         // centerPadding: '24px',
         // centerMode: true,
         // arrows: false,

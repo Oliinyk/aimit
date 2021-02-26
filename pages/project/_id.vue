@@ -10,6 +10,7 @@
 </template>
 <script>
 // Imports for all components
+import Prismic from '@prismicio/client';
 import StandardHeader from '~/components/StandardHeader.vue';
 import HeroProject from '~/components/HeroProject.vue';
 import DescriptionProject from '~/components/DescriptionProject.vue';
@@ -32,14 +33,25 @@ export default {
     const Footer = (await $prismic.api.getSingle('footer')).data;
 
     const id = route.params.id;
-    const presentationPages = $siteData('presentationPages');
-    const prePage = await presentationPages.results.find(
-      (tag) => tag.tags[0] === id
-    );
+
+    const prePage = (
+      await $prismic.api.query([
+        Prismic.Predicates.at('document.type', 'presentation-page'),
+        Prismic.Predicates.at('document.tags', [id]),
+      ])
+    ).results[0];
+
+    // const prePage = await $prismic.api.query({
+    //   lang: 'en-eu',
+    // });
+    //
+    console.log(prePage);
+    // const prePage = await presentationPages.results.find(
+    //   (tag) => tag.tags[0] === id
+    // );
     return {
       Header,
       PresentationPage,
-      presentationPages,
       prePage,
       Footer,
     };

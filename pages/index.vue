@@ -21,6 +21,7 @@
 </template>
 <script>
 // Imports for all components
+import Prismic from '@prismicio/client';
 import StandardHeader from '~/components/StandardHeader.vue';
 import Hero from '~/components/Hero.vue';
 import Specialization from '~/components/Specialization.vue';
@@ -46,8 +47,7 @@ export default {
     ColumnText,
     StandardFooter,
   },
-  async asyncData({ $siteData, $prismic, error }) {
-    // const footerProps = $siteData('footerProps');
+  async asyncData({ $prismic }) {
     const Header = (await $prismic.api.getSingle('standard_header')).data;
     const homepage = (await $prismic.api.getSingle('homepage')).data;
     const Portfolio = (await $prismic.api.getSingle('portfolio')).data;
@@ -55,7 +55,9 @@ export default {
     const Form = (await $prismic.api.getSingle('form')).data;
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
-    const presentationPages = $siteData('presentationPages');
+    const presentationPages = await $prismic.api.query([
+      Prismic.Predicates.at('document.type', 'presentation-page'),
+    ]);
     return {
       Header,
       homepage,
