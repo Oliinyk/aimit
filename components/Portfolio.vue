@@ -116,7 +116,7 @@ export default {
       default: null,
     },
     presentationpages: {
-      type: Object,
+      type: Array,
       default: null,
     },
   },

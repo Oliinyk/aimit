@@ -8,3 +8,12 @@
     ></script>
   </div>
 </template>
+<script>
+export default {
+  beforeMount() {
+    if (!localStorage.lang) {
+      localStorage.lang = 'en-us';
+    }
+  },
+};
+</script>

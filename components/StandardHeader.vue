@@ -27,8 +27,18 @@
         </ul>
 
         <ul class="lang-nav">
-          <li class="active">EN</li>
-          <li>UA</li>
+          <li
+            :class="{ active: curentLang === 'en-us' }"
+            @click="setLang('en-us')"
+          >
+            EN
+          </li>
+          <li
+            :class="{ active: curentLang === 'ua-ua' }"
+            @click="setLang('ua-ua')"
+          >
+            UA
+          </li>
         </ul>
 
         <button
@@ -59,7 +69,18 @@ export default {
   data() {
     return {
       showMobileMenu: false,
+      curentLang: '',
     };
+  },
+  beforeMount() {
+    this.curentLang = localStorage.lang;
+  },
+  methods: {
+    setLang(lang) {
+      localStorage.lang = lang;
+      this.curentLang = lang;
+      this.$store.commit('ChangeLang', lang);
+    },
   },
 };
 </script>
