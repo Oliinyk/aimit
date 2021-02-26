@@ -53,9 +53,16 @@
                 :key="item.id"
                 class="nav-item"
               >
-                <a :href="'/' + item.nav_item[0].text">
+                <nuxt-link
+                  :to="
+                    '/' +
+                    (item.nav_item[0].text === 'Home'
+                      ? ''
+                      : item.nav_item[0].text)
+                  "
+                >
                   {{ item.nav_item[0].text }}
-                </a>
+                </nuxt-link>
               </li>
             </ul>
           </div>

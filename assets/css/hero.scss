@@ -68,4 +68,42 @@
       }
     }
   }
+  &.hero-about {
+    .hero-text {
+      font-size: 14px;
+      font-weight: 400;
+      max-width: 490px;
+    }
+    .list-holder {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+      width: 50%;
+      .principle-item {
+        padding: 0 0 40px 60px;
+        width: 50%;
+        .ico {
+          max-width: 32px;
+          margin-bottom: 17px;
+        }
+        .list-title {
+          font-weight: 500;
+          font-size: 18px;
+          margin-bottom: 15px;
+        }
+        .list-text {
+          font-size: 14px;
+          line-height: 1.7;
+          max-width: 100%;
+        }
+      }
+    }
+    .img-holder {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: -1;
+    }
+  }
 }
