@@ -13,4 +13,6 @@
 @import './description-project.scss';
 @import './main-project.scss';
 @import './team-list.scss';
+@import './title-button.scss';
+@import './feedback.scss';
 @import './footer.scss';

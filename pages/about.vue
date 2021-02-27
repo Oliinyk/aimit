@@ -6,6 +6,8 @@
     <Form :content="Form" />
     <Clients :content="Clients" />
     <ColumnText :content="ColumnText" />
+    <TitleButton :content="TitleButton" />
+    <Feedback :content="Feedback" />
     <!-- <HeroProject :content="PresentationPage" /> -->
     <!-- <DescriptionProject :content="PresentationPage" /> -->
     <!-- <BodyProject :content="PresentationPage" /> -->
@@ -20,6 +22,8 @@ import TeamList from '~/components/TeamList.vue';
 import Form from '~/components/Form.vue';
 import Clients from '~/components/Clients.vue';
 import ColumnText from '~/components/ColumnText.vue';
+import TitleButton from '~/components/TitleButton.vue';
+import Feedback from '~/components/Feedback.vue';
 
 // import DescriptionProject from '~/components/DescriptionProject.vue';
 // import BodyProject from '~/components/BodyProject.vue';
@@ -34,6 +38,8 @@ export default {
     Form,
     Clients,
     ColumnText,
+    TitleButton,
+    Feedback,
     // HeroProject,
     // DescriptionProject,
     // BodyProject,
@@ -46,6 +52,8 @@ export default {
     const TeamList = (await $prismic.api.getSingle('team')).data;
     const Clients = (await $prismic.api.getSingle('clients')).data;
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
+    const TitleButton = (await $prismic.api.getSingle('title_and_button')).data;
+    const Feedback = (await $prismic.api.getSingle('customers_feedback')).data;
     // const PresentationPage = (await $prismic.api.getSingle('presentation-page'))
     //   .data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
@@ -56,6 +64,8 @@ export default {
       Form,
       Clients,
       ColumnText,
+      TitleButton,
+      Feedback,
       // PresentationPage,
       Footer,
     };

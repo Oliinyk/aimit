@@ -1,0 +1,94 @@
+.customers-feedback {
+  padding: 0 0 80px;
+  .section-title {
+    padding-bottom: 23px;
+  }
+  .slider-wrap {
+    color: var(--primary);
+    .slider-for {
+      max-width: 310px;
+      margin: 0 auto;
+      .img-holder {
+        border: 1px solid var(--primary);
+        object-fit: cover;
+        margin: 0 auto;
+        width: 100px;
+        position: relative;
+        &::after {
+          content: '';
+          background: linear-gradient(
+            0deg,
+            rgba(23, 67, 84, 0.75),
+            rgba(23, 67, 84, 0.75)
+          );
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .slick-current {
+        .img-holder {
+          width: 144px;
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .slick-track {
+        padding: 22px 0;
+        .slick-current {
+          margin-top: -22px;
+          margin-left: -20px;
+          margin-right: -20px;
+          z-index: 9;
+          position: relative;
+          width: 144px !important;
+        }
+      }
+    }
+    .slider-nav {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .customer {
+      position: relative;
+      text-align: center;
+    }
+    .customer-text {
+      font-size: 18px;
+    }
+    .customer-name {
+      font-weight: 500;
+      font-size: 36px;
+      margin: 5px 0 0;
+    }
+    .customer-company {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+  .slick-prev,
+  .slick-next {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxOSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMjUyNDkgMTAuMDU1NEwxOC4xMTc0IDE1LjY1ODlWMjBMMCAxMS42MDU4TDAgOC4zNzIwOUwxOC4xMTc0IDBWNC4zNDEwOEw0LjI1MjQ5IDEwLjA1NTRaIiBmaWxsPSIjMTc0MzU0Ii8+Cjwvc3ZnPgo=');
+    background-repeat: no-repeat;
+    &::before {
+      display: none;
+    }
+    &:hover,
+    &:focus {
+      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxOSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMjUyNDkgMTAuMDU1NEwxOC4xMTc0IDE1LjY1ODlWMjBMMCAxMS42MDU4TDAgOC4zNzIwOUwxOC4xMTc0IDBWNC4zNDEwOEw0LjI1MjQ5IDEwLjA1NTRaIiBmaWxsPSIjMTc0MzU0Ii8+Cjwvc3ZnPgo=');
+      background-repeat: no-repeat;
+    }
+  }
+  .slick-prev {
+    left: -65px;
+  }
+  .slick-next {
+    transform: translate(0%, -10px) rotate(180deg);
+    right: -65px;
+  }
+}
