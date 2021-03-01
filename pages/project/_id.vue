@@ -28,31 +28,33 @@ export default {
   },
   async asyncData({ $prismic, route }) {
     const Header = (await $prismic.api.getSingle('standard_header')).data;
-    const PresentationPage = (await $prismic.api.getSingle('presentation-page'))
-      .data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
     const id = route.params.id;
-    const presentationPages = await $prismic.api.query(
-      Prismic.Predicates.at('document.type', 'presentation-page'),
-      { lang: 'en-us' }
-    );
-    const presentationPagesUA = await $prismic.api.query(
-      Prismic.Predicates.at('document.type', 'presentation-page'),
-      { lang: 'ua-ua' }
-    );
-    const prePageEN = await presentationPages.results.find(
-      (tag) => tag.tags[0] === id
-    );
-    const prePageUA = await presentationPagesUA.results.find(
-      (tag) => tag.tags[0] === id
-    );
+    const prePageEN = (
+      await $prismic.api.query(
+        [
+          Prismic.Predicates.at('document.type', 'presentation-page'),
+          Prismic.Predicates.at('my.presentation-page.uid', id),
+        ],
+        { lang: 'en-us' }
+      )
+    ).results[0];
+    const prePageUA = (
+      await $prismic.api.query(
+        [
+          Prismic.Predicates.at('document.type', 'presentation-page'),
+          Prismic.Predicates.at('my.presentation-page.uid', id),
+        ],
+        { lang: 'ua-ua' }
+      )
+    ).results[0];
     const prePage = prePageEN;
     return {
       Header,
-      PresentationPage,
       prePage,
       prePageEN,
       prePageUA,
+      id,
       Footer,
     };
   },

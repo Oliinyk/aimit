@@ -6,35 +6,36 @@
         <h2 class="section-title">
           {{ content.portfolio_title[0].text }}
         </h2>
-
-        <div class="slider-wrap">
+        <div v-if="filters" class="slider-wrap">
           <!-- <VueSlickCarousel :arrows="true" :dots="true" v-bind="slickOptions"> -->
           <VueSlickCarousel v-bind="slickOptions">
             <div
-              v-for="item in content.portfolio_filters"
+              v-for="item in filters"
               :key="item.id"
               class="portfolio-filter"
             >
+              <!-- :type="button" -->
               <button
-                v-if="item.filter_item && item.filter_item[0].text"
-                type="button"
+                :class="{ active: isfilterActive(item) }"
+                @click="toggleFilter(item)"
               >
-                {{ item.filter_item[0].text }}
+                {{ item }}
               </button>
             </div>
           </VueSlickCarousel>
         </div>
 
-        <!-- {{ presentationpages }} -->
-
-        <ul class="item-holder">
+        <ul
+          v-for="item in presentationpages"
+          :key="item.id"
+          class="item-holder"
+        >
           <li
-            v-for="item in presentationpages"
-            :key="item.id"
-            class="portfolio-item"
+            v-if="filter(item.tags)"
             :style="
               'background-image: url(' + item.data.description_image.url + ')'
             "
+            class="portfolio-item"
           >
             <div class="inner-item">
               <div class="text-holder">
@@ -79,9 +80,7 @@
                 </ul>
               </div>
               <div class="btn-holder">
-                <nuxt-link
-                  :to="'/project/' + item.tags[0]"
-                  class="btn btn-white"
+                <nuxt-link :to="'/project/' + item.uid" class="btn btn-white"
                   >More details
                 </nuxt-link>
               </div>
@@ -122,6 +121,8 @@ export default {
   },
   data() {
     return {
+      filters: [],
+      selectedFilters: [],
       slickOptions: {
         slidesToShow: 6,
         slidesToScroll: 1,
@@ -150,6 +151,37 @@ export default {
         ],
       },
     };
+  },
+
+  created() {
+    const arr = [];
+    this.presentationpages.forEach((element) => {
+      element.tags.forEach((tag) => {
+        arr.push(tag);
+      });
+    });
+    this.filters = new Set(arr);
+  },
+  methods: {
+    toggleFilter(filter) {
+      const index = this.selectedFilters.findIndex((item) => filter === item);
+      index === -1
+        ? this.selectedFilters.push(filter)
+        : this.selectedFilters.splice(index, 1);
+    },
+    filter(tags) {
+      if (this.selectedFilters.length > 0) {
+        for (let i = 0; i < tags.length; i++) {
+          if (this.selectedFilters.findIndex((item) => item === tags[i]) > -1) {
+            return true;
+          }
+        }
+        return false;
+      } else return true;
+    },
+    isfilterActive(tag) {
+      return this.selectedFilters.findIndex((item) => item === tag) > -1;
+    },
   },
 };
 </script>
