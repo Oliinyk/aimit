@@ -69,7 +69,12 @@
 
         <div class="img-holder">
           <div class="img-inner">
-            <img src="../assets/img/laptop.png" class="img-wrap" alt="laptop" />
+            <img
+              :class="{ disabled: !content.isimageinlaptop }"
+              src="../assets/img/laptop.png"
+              class="img-wrap"
+              alt="laptop"
+            />
             <img
               v-if="content.description_image && content.description_image.url"
               :src="content.description_image.url"

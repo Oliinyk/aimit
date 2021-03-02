@@ -24,7 +24,6 @@
             </div>
           </VueSlickCarousel>
         </div>
-
         <ul
           v-for="item in presentationpages"
           :key="item.id"
@@ -44,11 +43,10 @@
                     {{ item.data.hero_title[0].text }}
                     {{ item.data.hero_title1[0].text }}
                   </h4>
-                  <p
-                    v-if="item.data.item_type && item.data.item_type[0].text"
-                    class="item-type"
-                  >
-                    {{ item.data.item_type[0].text }}
+                  <p v-if="item.tags" class="item-type"></p>
+
+                  <p v-for="work in item.tags" :key="work.id">
+                    {{ work }}
                   </p>
                   <p
                     v-if="

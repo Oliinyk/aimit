@@ -184,6 +184,7 @@ export default {
       const re = /^[\w-/\\/g.]+@([\w-]+\.)+[\w-]{2,4}$/;
       return re.test(email);
     },
+    sendEmail() {},
   },
 };
 </script>
