@@ -24,67 +24,73 @@
             </div>
           </VueSlickCarousel>
         </div>
-        <ul
-          v-for="item in presentationpages"
-          :key="item.id"
-          class="item-holder"
-        >
-          <li
-            v-if="filter(item.tags)"
-            :style="
-              'background-image: url(' + item.data.description_image.url + ')'
-            "
+        <div class="item-holder">
+          <div
+            v-for="item in presentationpages"
+            :key="item.id"
             class="portfolio-item"
           >
-            <div class="inner-item">
-              <div class="text-holder">
-                <div>
-                  <h4 class="item-title">
-                    {{ item.data.hero_title[0].text }}
-                    {{ item.data.hero_title1[0].text }}
-                  </h4>
-                  <p v-if="item.tags" class="item-type"></p>
+            <div
+              v-if="filter(item.tags)"
+              :style="
+                'background-image: url(' + item.data.description_image.url + ')'
+              "
+              class="portfolio-bg"
+            >
+              <div class="inner-item">
+                <div class="text-holder">
+                  <div>
+                    <h4 class="item-title">
+                      {{ item.data.hero_title[0].text }}
+                      {{ item.data.hero_title1[0].text }}
+                    </h4>
+                    <p v-if="item.tags" class="item-type"></p>
 
-                  <p v-for="work in item.tags" :key="work.id">
-                    {{ work }}
-                  </p>
-                  <p
+                    <p
+                      v-for="work in item.tags"
+                      :key="work.id"
+                      class="item-type"
+                    >
+                      {{ work }}
+                    </p>
+                    <p
+                      v-if="
+                        item.data.item_description &&
+                        item.data.item_description[0].text
+                      "
+                      class="item-text"
+                    >
+                      {{ item.data.item_description[0].text }}
+                    </p>
+                  </div>
+                  <ul
                     v-if="
-                      item.data.item_description &&
-                      item.data.item_description[0].text
+                      item.data.technology_icons &&
+                      item.data.technology_icons.length > 0
                     "
-                    class="item-text"
+                    class="icon-list"
                   >
-                    {{ item.data.item_description[0].text }}
-                  </p>
+                    <li
+                      v-for="t_item in item.data.technology_icons"
+                      :key="t_item.id"
+                      class="icon-item"
+                    >
+                      <img
+                        :src="t_item.technology_ico.url"
+                        :alt="t_item.technology_ico.alt"
+                      />
+                    </li>
+                  </ul>
                 </div>
-                <ul
-                  v-if="
-                    item.data.technology_icons &&
-                    item.data.technology_icons.length > 0
-                  "
-                  class="icon-list"
-                >
-                  <li
-                    v-for="t_item in item.data.technology_icons"
-                    :key="t_item.id"
-                    class="icon-item"
-                  >
-                    <img
-                      :src="t_item.technology_ico.url"
-                      :alt="t_item.technology_ico.alt"
-                    />
-                  </li>
-                </ul>
-              </div>
-              <div class="btn-holder">
-                <nuxt-link :to="'/project/' + item.uid" class="btn btn-white"
-                  >More details
-                </nuxt-link>
+                <div class="btn-holder">
+                  <nuxt-link :to="'/project/' + item.uid" class="btn btn-white"
+                    >More details
+                  </nuxt-link>
+                </div>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
 
         <!-- <div class="more-btn-holder">
           <button

@@ -49,8 +49,6 @@
     margin-right: 12px;
     margin-bottom: 20px;
     min-height: 279px;
-    background-size: cover;
-    background-repeat: no-repeat;
 
     @media (min-width: 768px) {
       width: calc(50% - 24px);
@@ -70,11 +68,19 @@
     }
   }
 
+  .portfolio-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
   .inner-item {
     background: rgba(23, 67, 84, 0.96);
     margin: 10px;
     color: #fff;
-    padding: 23px 33px;
+    padding: 38px 30px 30px;
     display: flex;
     flex-wrap: wrap;
     transition: 0.3s all;
@@ -93,7 +99,8 @@
   .item-title {
     font-weight: 500;
     font-size: 36px;
-    line-height: 1;
+    line-height: 0.8;
+    margin: 0 0 14px;
     width: 100%;
   }
 
@@ -105,6 +112,8 @@
 
   .item-text {
     font-size: 14px;
+    margin: 12px 0 0;
+    line-height: 1.2;
   }
 
   .icon-list {

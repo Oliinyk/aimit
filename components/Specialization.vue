@@ -26,7 +26,7 @@
                 <img
                   v-if="item.service_image && item.service_image.url"
                   :src="item.service_image.url"
-                  alt=""
+                  :alt="item.service_image.alt"
                 />
               </div>
             </div>
