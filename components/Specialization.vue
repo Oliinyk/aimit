@@ -1,13 +1,9 @@
 <template>
   <section class="specialization">
     <div class="container">
-      <!-- <div class="hidden1">{{ content.services }}</div> -->
       <div class="inner-wrap">
-        <h2
-          v-if="content.service_title && content.service_title[0].text"
-          class="section-title"
-        >
-          {{ content.service_title[0].text }}
+        <h2 class="section-title">
+          {{ content.section_title[0].text }}
         </h2>
 
         <ul class="item-holder">

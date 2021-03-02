@@ -1,5 +1,30 @@
 .customers-feedback {
   padding: 0 0 80px;
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 0;
+  }
+  &::before {
+    background-image: url('../img/specialization_l_bg.png');
+    left: 17.5%;
+    top: 44%;
+    width: 291px;
+    height: 110px;
+    transform: rotate(90deg);
+  }
+
+  &::after {
+    content: '';
+    background-image: url('../img/specialization_l_bg.png');
+    right: 13.5%;
+    top: 75px;
+    width: 291px;
+    height: 162px;
+  }
 
   .section-title {
     padding-bottom: 23px;
@@ -24,9 +49,11 @@
 
         &::after {
           content: '';
-          background: linear-gradient(0deg,
-              rgba(23, 67, 84, 0.75),
-              rgba(23, 67, 84, 0.75));
+          background: linear-gradient(
+            0deg,
+            rgba(23, 67, 84, 0.75),
+            rgba(23, 67, 84, 0.75)
+          );
           position: absolute;
           top: 0;
           right: 0;

@@ -24,18 +24,6 @@
                   :alt="item.customer_img.alt"
                 />
               </div>
-              <!-- <p v-if="item.text && item.text[0].text" class="customer-text">
-                {{ item.text[0].text }}
-              </p>
-              <h4 class="customer-name">
-                {{ item.name[0].text }}
-              </h4>
-              <p
-                v-if="item.company && item.company[0].text"
-                class="customer-company"
-              >
-                {{ item.company[0].text }}
-              </p> -->
             </div>
           </VueSlickCarousel>
           <button class="slider-nav slider-next" @click="showNext"></button>
@@ -126,12 +114,6 @@ export default {
     };
   },
   methods: {
-    // syncSliders(currentPosition, nextPosition) {
-    //   // this.$refs.slider1.next();
-    //   this.$refs.slider1.prev();
-    //   // this.$refs.slider2.next();
-    //   this.$refs.slider2.prev();
-    // },
     showNext() {
       this.$refs.slider1.next();
       this.$refs.slider2.next();

@@ -1,11 +1,9 @@
 <template>
   <div class="page-wrap home">
     <StandardHeader :content="Header" />
-    <!-- <h1 class="title">{{ homepage.title[0].text }}</h1>
-    <p>{{ homepage.subtitle[0].text }}</p> -->
     <!-- <img :src="homepage.hero_image.url" alt="" /> -->
     <Hero :content="homepage" />
-    <Specialization :content="homepage" />
+    <Specialization :content="Specialization" />
     <!-- <Portfolio :content="Portfolio" /> -->
     <Portfolio
       :content="Portfolio"
@@ -50,6 +48,8 @@ export default {
   async asyncData({ $prismic }) {
     const Header = (await $prismic.api.getSingle('standard_header')).data;
     const homepage = (await $prismic.api.getSingle('homepage')).data;
+    const Specialization = (await $prismic.api.getSingle('specialization'))
+      .data;
     const Portfolio = (await $prismic.api.getSingle('portfolio')).data;
     const Clients = (await $prismic.api.getSingle('clients')).data;
     const Form = (await $prismic.api.getSingle('form')).data;
@@ -61,6 +61,7 @@ export default {
     return {
       Header,
       homepage,
+      Specialization,
       Portfolio,
       Clients,
       Form,
