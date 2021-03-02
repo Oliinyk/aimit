@@ -7,11 +7,11 @@
         </h2>
 
         <div class="slider-wrap">
+          <button class="slider-nav slider-prev" @click="showPrev"></button>
           <VueSlickCarousel
             ref="slider1"
             v-bind="slickOptionsImg"
             class="slider-for"
-            @beforeChange="syncSliders"
           >
             <div
               v-for="item in content.customers"
@@ -38,12 +38,12 @@
               </p> -->
             </div>
           </VueSlickCarousel>
+          <button class="slider-nav slider-next" @click="showNext"></button>
 
           <VueSlickCarousel
             ref="slider2"
             v-bind="slickOptions"
-            class="slider-nav"
-            @beforeChange="syncSliders"
+            class="slider-thumb"
           >
             <div
               v-for="item in content.customers"
@@ -73,7 +73,7 @@
 import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
 // optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 
 export default {
   name: 'CustomersFeedback',
@@ -91,7 +91,7 @@ export default {
         slidesToScroll: 1,
         infinite: true,
         dots: false,
-        arrows: true,
+        arrows: false,
         centerMode: true,
         centerPadding: '0',
         asNavFor: this.$refs.slider2,
@@ -126,9 +126,19 @@ export default {
     };
   },
   methods: {
-    syncSliders(currentPosition, nextPosition) {
+    // syncSliders(currentPosition, nextPosition) {
+    //   // this.$refs.slider1.next();
+    //   this.$refs.slider1.prev();
+    //   // this.$refs.slider2.next();
+    //   this.$refs.slider2.prev();
+    // },
+    showNext() {
       this.$refs.slider1.next();
       this.$refs.slider2.next();
+    },
+    showPrev() {
+      this.$refs.slider1.prev();
+      this.$refs.slider2.prev();
     },
   },
 };
