@@ -1,10 +1,11 @@
 <template>
-  <section class="contacts portfolio">
-    <h3>{{ title }}</h3>
+  <section class="buttons-row">
+    <h4 class="item-title">{{ title }}</h4>
     <VueSlickCarousel v-bind="slickOptions">
       <div v-for="item in buttons" :key="item.id" class="portfolio-filter">
         <!-- :type="button" -->
         <button
+          class="slide-btn"
           :class="{ active: isfilterActive(item) }"
           @click="toggleFilter(item)"
         >
@@ -17,7 +18,7 @@
 <script>
 import VueSlickCarousel from 'vue-slick-carousel';
 import 'vue-slick-carousel/dist/vue-slick-carousel.css';
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
+// import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css';
 export default {
   name: 'Contacts',
   components: { VueSlickCarousel },
@@ -35,14 +36,10 @@ export default {
     return {
       selectedFilters: [],
       slickOptions: {
-        slidesToShow: 6,
+        slidesToShow: 8,
         slidesToScroll: 1,
         infinite: true,
         dots: false,
-
-        // centerPadding: '24px',
-        // centerMode: true,
-        // arrows: false,
         responsive: [
           {
             breakpoint: 1024,
@@ -56,9 +53,6 @@ export default {
               slidesToShow: 2.5,
             },
           },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
         ],
       },
     };

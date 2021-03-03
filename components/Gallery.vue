@@ -8,11 +8,6 @@
           {{ content.section_title[0].text }}
         </h2>
 
-        <!-- <div
-          v-for="(item, i) in content.gallery_list"
-          :key="i"
-          class="gallery-list"
-        > -->
         <img
           v-for="(item, i) in content.gallery_list"
           :key="i"
@@ -20,7 +15,7 @@
           class="image"
           @click="index = i"
         />
-        <client-only placeholder="Loading...">
+        <!-- <client-only placeholder="Loading...">
           <vue-gallery-slideshow
             v-for="(item, i) in content.gallery_list"
             :key="i"
@@ -28,18 +23,17 @@
             :index="index"
             @close="index = null"
           ></vue-gallery-slideshow>
-        </client-only>
-        <!-- </div> -->
+        </client-only> -->
       </div>
     </div>
   </section>
 </template>
 <script>
-import VueGallerySlideshow from 'vue-gallery-slideshow';
+// import VueGallerySlideshow from 'vue-gallery-slideshow';
 export default {
   name: 'Gallery',
   components: {
-    VueGallerySlideshow,
+    // VueGallerySlideshow,
   },
   props: {
     content: {
