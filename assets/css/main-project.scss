@@ -9,8 +9,8 @@
     padding: 40px 0 0;
   }
   .big-body-wrap {
-    div[class^='block-'],
-    div[class*='block-'] {
+    [class^='block-'],
+    [class*='block-'] {
       width: 100%;
       .img-holder {
         display: flex;
@@ -26,9 +26,7 @@
       max-width: 715px;
       margin: 0 0 0 auto;
       .img-holder {
-        img {
-          flex-wrap: nowrap;
-        }
+        flex-wrap: nowrap;
       }
     }
     .block-2 {

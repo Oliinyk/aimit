@@ -1,8 +1,9 @@
 .footer {
-  background-color: #174354;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--white);
   padding: 25px 0 0;
-
+  position: relative;
+  z-index: 1;
   .img-row {
     margin: 0;
   }
@@ -40,7 +41,7 @@
     }
 
     .social-item {
-      &+.social-item {
+      & + .social-item {
         margin-left: 22px;
       }
     }
@@ -54,7 +55,7 @@
     &::before,
     &::after {
       content: '';
-      background: #fff;
+      background: var(--white);
       position: absolute;
       top: 11px;
       width: 20px;
@@ -87,7 +88,7 @@
 
         &::after {
           content: '';
-          background: #fff;
+          background: var(--white);
           width: 0;
           height: 2px;
           position: absolute;
@@ -120,7 +121,7 @@
   }
 
   .copyright {
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--white);
     text-align: center;
     font-size: 14px;
     padding: 24px 0;
