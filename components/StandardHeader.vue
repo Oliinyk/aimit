@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" :class="{ stickyHeader: scrollPosition > 100 }">
     <div class="container header-container">
       {{ content.standard_header }}
       <a href="/" class="header-logo">
@@ -70,16 +70,23 @@ export default {
     return {
       showMobileMenu: false,
       curentLang: '',
+      scrollPosition: null,
     };
   },
   beforeMount() {
     this.curentLang = localStorage.lang;
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
   },
   methods: {
     setLang(lang) {
       localStorage.lang = lang;
       this.curentLang = lang;
       this.$store.commit('ChangeLang', lang);
+    },
+    updateScroll() {
+      this.scrollPosition = window.scrollY;
     },
   },
 };

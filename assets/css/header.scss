@@ -1,4 +1,17 @@
 .header {
+  transition: 0.3s all;
+  &.stickyHeader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--white);
+    width: 100%;
+    z-index: 99;
+    .header-container {
+      padding: 0;
+    }
+  }
   .header-logo {
     padding: 0 15px;
   }

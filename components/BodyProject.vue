@@ -212,11 +212,6 @@
           <div class="container">
             <h2 class="section-title">{{ item.title }}</h2>
             <div class="img-holder">
-              <!-- <img v-if="item.image.length > 0" :src="item.image.url" alt="" /> -->
-              <!-- <img v-if="item.otherimage2.length > 0" :src="item.otherimage2.url" alt="" /> -->
-              <!-- <img v-if="item.otherimage3.length > 0" :src="item.otherimage3.url" alt="" /> -->
-              <!-- <img v-if="item.otherimage4.length > 0" :src="item.otherimage4.url" alt="" /> -->
-
               <div v-if="item.image.url">
                 <img :src="item.image.url" :alt="item.otherimage2.alt" />
               </div>

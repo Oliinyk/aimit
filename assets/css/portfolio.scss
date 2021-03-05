@@ -65,7 +65,7 @@
   .inner-item {
     background: rgba(23, 67, 84, 0.96);
     margin: 10px;
-    color: #fff;
+    color: var(--white);
     padding: 30px 30px 30px;
     display: flex;
     flex-wrap: wrap;
@@ -132,7 +132,7 @@
 
 .portfolio-filter {
   button {
-    background-color: #fff;
+    background-color: var(--white);
     border: 1px solid #174354;
     color: #174354;
     padding: 7px 5px;
@@ -145,7 +145,7 @@
     &.active,
     &:hover {
       background-color: #174354;
-      color: #fff;
+      color: var(--white);
     }
   }
 }

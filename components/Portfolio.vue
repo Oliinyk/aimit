@@ -33,7 +33,7 @@
             <div
               v-if="filter(item.tags)"
               :style="
-                'background-image: url(' + item.data.description_image.url + ')'
+                'background-image: url(' + item.data.image_preview.url + ')'
               "
               class="portfolio-bg"
             >
