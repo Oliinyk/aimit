@@ -13,8 +13,8 @@ import Contacts from '~/components/Contacts.vue';
 // import Form from '~/components/Form.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
-  name: 'About',
-  layout: 'about-page',
+  name: 'Contacts',
+  layout: 'contacts-page',
   components: {
     StandardHeader,
     // Form,

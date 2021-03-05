@@ -1,4 +1,5 @@
 <template>
+  <!-- <div class="page-wrap presentation-page bigPortfolio"> -->
   <div class="page-wrap presentation-page">
     <StandardHeader :content="Header" />
     <HeroProject :content="PresentationPage" />
@@ -15,8 +16,8 @@ import DescriptionProject from '~/components/DescriptionProject.vue';
 import BodyProject from '~/components/BodyProject.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
-  name: 'Home',
-  layout: 'homepage',
+  name: 'Presentation',
+  layout: '',
   components: {
     StandardHeader,
     HeroProject,

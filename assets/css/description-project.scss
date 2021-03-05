@@ -6,6 +6,12 @@
 
   .text-holder {
     width: 40%;
+    .bigPortfolio & {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
     .section-title {
       padding: 0 0 0 14px;
@@ -36,6 +42,12 @@
       padding-left: 14px;
     }
 
+    .technologies {
+      .bigPortfolio & {
+        padding: 0 0 70px;
+      }
+    }
+
     .icon-holder {
       display: flex;
       flex-wrap: wrap;
@@ -57,6 +69,9 @@
       right: -85px;
       position: relative;
       overflow: hidden;
+      .bigPortfolio & {
+        right: -25px;
+      }
     }
 
     .img-wrap {
@@ -64,6 +79,7 @@
       z-index: 1;
       &.disabled {
         opacity: 0;
+        display: none;
       }
     }
 
@@ -79,6 +95,13 @@
       margin: 0 auto;
       height: 100%;
       object-fit: cover;
+      .bigPortfolio & {
+        max-width: 746px;
+        margin: 0 0 0 auto;
+        position: relative;
+        top: 0;
+        width: 100%;
+      }
     }
   }
 }

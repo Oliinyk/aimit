@@ -1,5 +1,15 @@
+.inner-wrap {
+  &.small-body-wrap {
+    .bigPortfolio & {
+      display: none;
+    }
+  }
+}
+
 .main-project {
-  padding: 40px 0 0;
+  .small-body-wrap {
+    padding: 40px 0 0;
+  }
   .section-title {
     padding: 0 0 24px 14px;
   }
@@ -77,6 +87,56 @@
           width: 304px;
           z-index: -1;
         }
+      }
+    }
+  }
+
+  .typography {
+    width: 100%;
+    padding: 35px 0 80px;
+    .color-item-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 890px;
+      margin: 50px auto 70px;
+    }
+    .color-item {
+      text-align: center;
+    }
+    .color-circle {
+      background-color: #2d4e09;
+      box-shadow: 7px 7px 20px rgb(23 67 84 / 15%);
+      border-radius: 50%;
+      border: 10px solid var(--white);
+      height: 120px;
+      width: 120px;
+    }
+    .color-title {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--primary);
+      margin: 22px 0 0;
+      display: block;
+    }
+    .font-item-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 890px;
+      margin: 50px auto 220px;
+    }
+    .grid-item-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .grid-item-text {
+        color: var(--primary);
+        font-weight: 500;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 0 17px;
+        width: 100%;
       }
     }
   }

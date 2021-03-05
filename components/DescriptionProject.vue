@@ -4,67 +4,67 @@
       <!-- <div class="hidden">{{ content }}</div> -->
       <div class="inner-wrap">
         <div class="text-holder">
-          <h2
-            v-if="
-              content.description_title && content.description_title[0].text
-            "
-            class="section-title"
-          >
-            {{ content.description_title[0].text }}
-          </h2>
-
-          <a :href="content.project_link.url" class="link">
-            {{ content.project_link.url }}
-          </a>
-
-          <div class="list-holder">
-            <p
+          <div>
+            <h2
               v-if="
-                content.description_text && content.description_text[0].text
+                content.description_title && content.description_title[0].text
               "
-              class="description-text"
+              class="section-title"
             >
-              {{ content.description_text[0].text }}
-            </p>
-            <ul
-              v-if="
-                content.description_list && content.description_list.length > 0
-              "
-              class="description-list"
-            >
-              <li v-for="item in content.description_list" :key="item.id">
-                {{ item.text }}
-              </li>
-            </ul>
-            <!-- <ul class="list-description">
-              <li class="list-item">
-                {{ item.description_list }}
-              </li>
-            </ul> -->
+              {{ content.description_title[0].text }}
+            </h2>
+
+            <a :href="content.project_link.url" class="link">
+              {{ content.project_link.url }}
+            </a>
+
+            <div class="list-holder">
+              <p
+                v-if="
+                  content.description_text && content.description_text[0].text
+                "
+                class="description-text"
+              >
+                {{ content.description_text[0].text }}
+              </p>
+              <ul
+                v-if="
+                  content.description_list &&
+                  content.description_list.length > 0
+                "
+                class="description-list"
+              >
+                <li v-for="item in content.description_list" :key="item.id">
+                  {{ item.text }}
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <h2
-            v-if="
-              content.technologies_title && content.technologies_title[0].text
-            "
-            class="section-title"
-          >
-            {{ content.technologies_title[0].text }}
-          </h2>
-
-          <ul class="icon-holder">
-            <li
-              v-for="item in content.technology_icons"
-              :key="item.id"
-              class="icon-item"
+          <div class="technologies">
+            <h2
+              v-if="
+                content.technologies_title && content.technologies_title[0].text
+              "
+              class="section-title"
             >
-              <img
-                v-if="item.technology_ico && item.technology_ico.url"
-                :src="item.technology_ico.url"
-                :alt="item.technology_ico.alt"
-              />
-            </li>
-          </ul>
+              {{ content.technologies_title[0].text }}
+            </h2>
+
+            <ul class="icon-holder">
+              <li
+                v-for="item in content.technology_icons"
+                :key="item.id"
+                class="icon-item"
+              >
+                <img
+                  v-if="item.technology_ico && item.technology_ico.url"
+                  :src="item.technology_ico.url"
+                  :alt="item.technology_ico.alt"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div class="img-holder">

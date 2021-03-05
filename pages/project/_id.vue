@@ -1,5 +1,9 @@
 <template>
-  <div class="page-wrap presentation-page">
+  <!-- <div class="page-wrap presentation-page"> -->
+  <div
+    class="page-wrap presentation-page"
+    :class="{ bigPortfolio: prePage.data.using_colors }"
+  >
     <StandardHeader :content="Header" />
     <HeroProject v-if="prePage" :content="prePage.data" />
     <DescriptionProject v-if="prePage" :content="prePage.data" />
@@ -17,8 +21,8 @@ import DescriptionProject from '~/components/DescriptionProject.vue';
 import BodyProject from '~/components/BodyProject.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
-  name: 'Home',
-  layout: 'homepage',
+  name: 'PortfolioItem',
+  layout: '',
   components: {
     StandardHeader,
     HeroProject,

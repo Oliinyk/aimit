@@ -24,8 +24,8 @@ import ColumnText from '~/components/ColumnText.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 
 export default {
-  name: 'Home',
-  layout: 'homepage',
+  name: 'Portfolio',
+  layout: 'portfolio-page',
   components: {
     StandardHeader,
     HeroPortfolio,

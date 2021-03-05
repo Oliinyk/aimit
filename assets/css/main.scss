@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--white);
+  color: var(--black);
   font-family: 'Roboto', sans-serif;
 }
 .container {
@@ -12,31 +12,31 @@ body {
 }
 
 .btn {
-  color: #fff;
+  color: var(--white);
   font-weight: 500;
   font-size: 14px;
-  background: #cc2323;
+  background: var(--primary_active);
   display: inline-block;
   padding: 5px 11px;
-  border: 1px solid #cc2323;
+  border: 1px solid var(--primary_active);
   transition: 0.3s all;
 
   &:hover {
     background: transparent;
-    color: #cc2323;
+    color: var(--primary_active);
   }
 
   &-white {
-    border: 1px solid #fff;
-    background-color: #fff;
-    color: #cc2323;
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    color: var(--primary_active);
     padding: 5px 23px;
     margin: 12px 0 0;
 
     &:hover {
-      border: 1px solid #cc2323;
-      background-color: #cc2323;
-      color: #fff;
+      border: 1px solid var(--primary_active);
+      background-color: var(--primary_active);
+      color: var(--white);
     }
   }
 }
@@ -50,7 +50,7 @@ body {
 
   &::before {
     content: '';
-    background: #cc2323;
+    background: var(--primary_active);
     transform: rotate(-90deg);
     position: absolute;
     top: 26px;
@@ -81,4 +81,8 @@ select {
   &:focus {
     outline: none;
   }
+}
+
+.light-gray-bg {
+  background-color: var(--light-gray);
 }
