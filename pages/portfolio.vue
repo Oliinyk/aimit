@@ -2,7 +2,7 @@
   <div class="page-wrap portfolio-page">
     <StandardHeader :content="Header" />
     <HeroPortfolio :content="PortfolioPage" />
-    <Portfolio
+    <PortfolioComp
       :content="Portfolio"
       :presentationpages="presentationPages.results"
     />
@@ -17,7 +17,7 @@
 import Prismic from '@prismicio/client';
 import StandardHeader from '~/components/StandardHeader.vue';
 import HeroPortfolio from '~/components/HeroPortfolio.vue';
-import Portfolio from '~/components/Portfolio.vue';
+import PortfolioComp from '~/components/Portfolio.vue';
 import Clients from '~/components/Clients.vue';
 import Form from '~/components/Form.vue';
 import ColumnText from '~/components/ColumnText.vue';
@@ -29,7 +29,7 @@ export default {
   components: {
     StandardHeader,
     HeroPortfolio,
-    Portfolio,
+    PortfolioComp,
     Clients,
     Form,
     ColumnText,

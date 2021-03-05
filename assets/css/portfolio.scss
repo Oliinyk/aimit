@@ -3,6 +3,9 @@
 
   .section-title {
     padding-bottom: 30px;
+    .portfolio-page & {
+      display: none;
+    }
   }
 
   .slider-wrap {

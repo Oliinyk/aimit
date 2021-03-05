@@ -107,4 +107,15 @@
       z-index: -1;
     }
   }
+  &.hero-portfolio {
+    padding: 50px 0 0;
+  }
+  &.hero-services {
+    padding: 50px 0 0;
+    .img-holder {
+      img {
+        margin: -80px 40px -130px auto;
+      }
+    }
+  }
 }

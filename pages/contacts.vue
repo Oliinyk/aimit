@@ -1,7 +1,7 @@
 <template>
   <div class="page-wrap contact-page">
     <StandardHeader :content="Header" />
-    <Contacts :content="Contacts" />
+    <ContactsComp :content="Contacts" />
     <!-- <Form :content="Form" /> -->
     <StandardFooter :content="Footer" />
   </div>
@@ -9,7 +9,7 @@
 <script>
 // Imports for all components
 import StandardHeader from '~/components/StandardHeader.vue';
-import Contacts from '~/components/Contacts.vue';
+import ContactsComp from '~/components/Contacts.vue';
 // import Form from '~/components/Form.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
@@ -19,7 +19,7 @@ export default {
     StandardHeader,
     // Form,
     StandardFooter,
-    Contacts,
+    ContactsComp,
   },
   async asyncData({ $prismic }) {
     const Header = (await $prismic.api.getSingle('standard_header')).data;
