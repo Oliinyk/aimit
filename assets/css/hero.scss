@@ -12,6 +12,7 @@
     }
     span {
       color: #cc2323;
+      margin-right: -15px;
     }
   }
   p {
@@ -33,7 +34,6 @@
   }
   .text-holder {
     width: 100%;
-    padding: 0 15px;
     @media (min-width: 1024px) {
       width: 50%;
     }
@@ -52,6 +52,11 @@
       @media (max-width: 1023px) {
         margin: 0 0 0 auto;
       }
+    }
+  }
+  &.hero-home {
+    .text-holder {
+      padding-right: 50px;
     }
   }
   &.hero-project {

@@ -4,6 +4,11 @@
   padding: 25px 0 0;
   position: relative;
   z-index: 1;
+  .container {
+    @media (min-width: 1450px) {
+      padding: 0;
+    }
+  }
   .img-row {
     margin: 0;
   }

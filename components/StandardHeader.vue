@@ -8,7 +8,6 @@
           :src="content.logo.url"
           :alt="content.logo.alt"
         />
-        <!-- <img :src="homepage.logo.url" alt="" /> -->
       </a>
       <div class="nav">
         <ul class="header-navigation" :class="{ active: showMobileMenu }">

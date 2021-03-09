@@ -1,5 +1,5 @@
 <template>
-  <section class="hero">
+  <section class="hero hero-home">
     <div class="container">
       <!-- <div class="hidden">{{ content }}</div> -->
       <div class="inner-wrap">

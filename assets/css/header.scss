@@ -1,15 +1,16 @@
 .header {
-  transition: 0.3s all;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
   &.stickyHeader {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
     background-color: var(--white);
+    box-shadow: 7px 7px 20px rgb(23 67 84 / 15%);
     width: 100%;
     z-index: 99;
     .header-container {
-      padding: 0;
+      padding: 5px 0;
     }
   }
   .header-logo {
@@ -32,9 +33,24 @@
       width: 100%;
       z-index: 11;
       padding: 90px 10px 30px;
+      text-align: right;
       &.active {
         top: 0;
+        &::after {
+          content: '';
+          background: rgba(23, 67, 84, 0.3);
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 1;
+        }
         .nav-item {
+          position: relative;
+          z-index: 2;
           a {
             color: var(--white);
           }
@@ -50,6 +66,9 @@
       margin: 10px 15px;
       display: block;
       position: relative;
+      @media (max-width: 767px) {
+        font-size: 36px;
+      }
       &::after {
         content: '';
         background-color: var(--primary_active);
@@ -59,6 +78,10 @@
         left: 0;
         bottom: 0;
         transition: 0.3s all;
+        @media (max-width: 767px) {
+          right: 0;
+          left: auto;
+        }
       }
       &:hover,
       &.nuxt-link-exact-active {

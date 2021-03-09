@@ -6,6 +6,8 @@ body {
 }
 .container {
   margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
   @media (min-width: 1480px) {
     max-width: 1430px;
   }
@@ -46,7 +48,7 @@ body {
   font-weight: 500;
   font-size: 36px;
   position: relative;
-  padding: 0 0 55px 14px;
+  padding: 0 0 55px 0;
 
   &::before {
     content: '';
@@ -54,7 +56,7 @@ body {
     transform: rotate(-90deg);
     position: absolute;
     top: 26px;
-    left: -15px;
+    left: -30px;
     height: 2px;
     width: 30px;
   }
