@@ -9,15 +9,15 @@
     box-shadow: 7px 7px 20px rgb(23 67 84 / 15%);
     width: 100%;
     z-index: 99;
-    .header-container {
-      padding: 5px 0;
-    }
   }
   .header-logo {
     padding: 0 15px;
   }
   .nav {
     display: flex;
+    @media (max-width: 1279px) {
+      padding: 0 15px;
+    }
   }
 
   .header-navigation {
@@ -101,7 +101,7 @@
       cursor: pointer;
     }
     .active {
-      color: #cc2323;
+      color: var(--primary_active);
     }
   }
 }

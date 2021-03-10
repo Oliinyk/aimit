@@ -44,21 +44,38 @@ body {
 }
 
 .section-title {
-  color: #174354;
+  color: var(--primary);
   font-weight: 500;
-  font-size: 36px;
+  font-size: 24px;
   position: relative;
-  padding: 0 0 55px 0;
-
+  padding: 0 0 55px 10px;
+  @media (min-width: 640px) {
+    font-size: 36px;
+  }
+  @media (min-width: 640px) and (max-width: 1479px) {
+    padding: 0 0 55px 15px;
+  }
+  @media (min-width: 1480px) {
+    padding: 0 0 55px 0;
+  }
   &::before {
     content: '';
     background: var(--primary_active);
     transform: rotate(-90deg);
     position: absolute;
-    top: 26px;
-    left: -30px;
+    top: 17px;
+    left: -15px;
     height: 2px;
     width: 30px;
+    @media (min-width: 640px) {
+      top: 26px;
+    }
+    @media (min-width: 640px) and (max-width: 1479px) {
+      left: -15px;
+    }
+    @media (min-width: 1480px) {
+      left: -30px;
+    }
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{ stickyHeader: scrollPosition > 100 }">
+  <div class="header" :class="{ stickyHeader: scrollPosition > 1 }">
     <div class="container header-container">
       {{ content.standard_header }}
       <a href="/" class="header-logo">

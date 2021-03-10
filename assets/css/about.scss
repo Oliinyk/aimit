@@ -26,40 +26,66 @@
   .about-row {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: wrap;
     .col-text,
     .col-img {
-      width: 50%;
+      width: 100%;
+      @media (min-width: 1024px) {
+        width: 50%;
+      }
     }
     .col-text {
       max-width: 560px;
+      p {
+        color: var(--primary);
+        text-align: justify;
+      }
     }
     .col-img {
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 1023px) {
+        padding: 80px 0 0;
+      }
+      @media (min-width: 1024px) {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
       img {
-        max-width: 600px;
+        @media (min-width: 1280px) {
+          max-width: 600px;
+        }
       }
     }
   }
 
   .title {
     font-weight: 500;
-    font-size: 64px;
+    font-size: 32px;
     line-height: 1.18;
     padding: 0 0 46px;
-    color: #174354;
-
+    color: var(--primary);
+    @media (min-width: 640px) {
+      font-size: 54px;
+    }
+    @media (min-width: 1280px) {
+      font-size: 64px;
+    }
     span {
-      color: #cc2323;
+      color: var(--primary_active);
     }
   }
 
   p {
+    color: var(--primary);
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.6;
+    text-align: justify;
+    @media (min-width: 640px) {
+      font-size: 18px;
+    }
   }
 
   .btn-holder {

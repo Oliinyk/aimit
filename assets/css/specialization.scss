@@ -1,7 +1,7 @@
 .specialization {
   padding: 0 0 85px;
   position: relative;
-
+  overflow: hidden;
   &::before,
   &::after {
     content: '';
@@ -16,7 +16,6 @@
     top: 173px;
     width: 291px;
   }
-
   &::after {
     content: '';
     background-image: url('../img/specialization_r_bg.png');
@@ -24,12 +23,10 @@
     top: -35px;
     width: 343px;
   }
-
   .inner-wrap {
     position: relative;
     z-index: 1;
   }
-
   .item-holder {
     display: flex;
     flex-wrap: wrap;
@@ -40,23 +37,29 @@
       margin-right: -20px;
     }
   }
-
   .services-item {
     width: 100%;
     box-shadow: 7px 7px 20px rgba(23, 67, 84, 0.15);
-    background: #fff;
-    color: #174354;
-    margin-right: 15px;
-    margin-left: 15px;
-    margin-bottom: 30px;
+    background-color: var(--white);
+    color: var(--primary);
     min-height: 250px;
     padding: 20px 25px;
     display: flex;
     flex-wrap: wrap;
-    @media (min-width: 640px) {
-      width: calc(20% - 30px);
+    @media (max-width: 575px) {
+      max-width: 250px;
+      margin: 0 auto 20px;
     }
-    @media (min-width: 992px) {
+    @media (min-width: 576px) {
+      width: calc(50% - 30px);
+      margin-right: 15px;
+      margin-left: 15px;
+      margin-bottom: 30px;
+    }
+    @media (min-width: 767px) {
+      width: calc(33.33% - 30px);
+    }
+    @media (min-width: 1024px) {
       width: calc(25% - 30px);
     }
     @media (min-width: 1480px) {
@@ -65,24 +68,20 @@
       margin-left: 20px;
       margin-bottom: 40px;
     }
-
     .inner-item {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: space-between;
     }
-
     .item-title {
       font-weight: 500;
       font-size: 18px;
     }
-
     p {
       font-size: 14px;
       padding: 0 0 0 17px;
     }
-
     .icon-holder {
       display: flex;
       justify-content: flex-end;
