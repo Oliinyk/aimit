@@ -96,9 +96,10 @@
         width: 50%;
       }
       .principle-item {
-        padding: 0 0 40px 0;
+        padding: 0 45px 40px;
         width: 100%;
         @media (min-width: 640px) {
+          padding: 0 0 40px;
           width: 50%;
           &:nth-child(2n) {
             padding: 0 0 40px 60px;

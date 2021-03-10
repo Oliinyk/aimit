@@ -6,7 +6,7 @@
           {{ content.section_title[0].text }}
         </h2>
 
-        <div class="text-holder">
+        <div class="text-holder" :class="{ active: showMore }">
           <div class="content-wrap">
             <div
               v-for="item in content.column_text_left"
@@ -41,6 +41,17 @@
             </div>
           </div>
         </div>
+
+        <div class="btn-holder">
+          <button
+            type="button"
+            class="btn"
+            :class="{ more: showMore }"
+            @click="showMore = !showMore"
+          >
+            {{ buttonText }}
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -56,7 +67,19 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      showMore: false,
+    };
+  },
+  computed: {
+    buttonText() {
+      return this.showMore ? 'Less' : 'More';
+    },
+  },
+  methods: {
+    toggleText() {
+      this.showMore = !this.showMore;
+    },
   },
 };
 </script>

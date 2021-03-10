@@ -1,29 +1,36 @@
 .customers-feedback {
   padding: 0 0 80px;
   position: relative;
-  &::before,
-  &::after {
-    content: '';
-    background-repeat: no-repeat;
-    position: absolute;
-    z-index: 0;
-  }
-  &::before {
-    background-image: url('../img/specialization_l_bg.png');
-    left: 17.5%;
-    top: 44%;
-    width: 291px;
-    height: 110px;
-    transform: rotate(90deg);
+  @media (min-width: 640px) {
+    &::before,
+    &::after {
+      content: '';
+      background-repeat: no-repeat;
+      position: absolute;
+      z-index: 0;
+    }
+    &::before {
+      background-image: url('../img/specialization_l_bg.png');
+      left: 17.5%;
+      top: 44%;
+      width: 291px;
+      height: 110px;
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      content: '';
+      background-image: url('../img/specialization_l_bg.png');
+      right: 13.5%;
+      top: 75px;
+      width: 291px;
+      height: 162px;
+    }
   }
 
-  &::after {
-    content: '';
-    background-image: url('../img/specialization_l_bg.png');
-    right: 13.5%;
-    top: 75px;
-    width: 291px;
-    height: 162px;
+  .inner-wrap {
+    position: relative;
+    z-index: 1;
   }
 
   .section-title {
@@ -87,11 +94,15 @@
 
         .slick-current {
           margin-top: -22px;
-          margin-left: -20px;
-          margin-right: -20px;
+          margin-left: -31px;
+          margin-right: -31px;
           z-index: 9;
           position: relative;
           width: 144px !important;
+          @media (min-width: 640px) {
+            margin-left: -20px;
+            margin-right: -20px;
+          }
         }
       }
     }
@@ -126,13 +137,28 @@
   }
 
   .slider-prev {
-    top: 75px;
-    left: calc(50% - 220px);
+    transform: translate(0%, -10px);
+    top: 65px;
+    left: 0;
+    @media (min-width: 480px) {
+      left: calc(50% - 200px);
+    }
+    @media (min-width: 640px) {
+      top: 75px;
+      left: calc(50% - 220px);
+    }
   }
 
   .slider-next {
     transform: translate(0%, -10px) rotate(180deg);
-    top: 75px;
-    right: calc(50% - 220px);
+    top: 65px;
+    right: 0;
+    @media (min-width: 480px) {
+      right: calc(50% - 200px);
+    }
+    @media (min-width: 640px) {
+      top: 75px;
+      right: calc(50% - 220px);
+    }
   }
 }
