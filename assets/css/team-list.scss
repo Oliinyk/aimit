@@ -6,9 +6,22 @@
   }
   .team-item {
     border: 1px solid var(--primary);
-    margin: 0 10px 20px;
     position: relative;
-    width: calc(25% - 20px);
+    max-width: 332px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 100%;
+    @media (min-width: 640px) {
+      margin: 0 10px 20px;
+      width: calc(50% - 20px);
+    }
+    @media (min-width: 768px) {
+      width: calc(33.33% - 20px);
+    }
+    @media (min-width: 1280px) {
+      width: calc(25% - 20px);
+    }
     &:hover {
       .inner-item {
         opacity: 1;
@@ -38,11 +51,31 @@
     object-fit: cover;
     height: 332px;
     width: 100%;
+    @media (min-width: 640px) {
+      height: 254px;
+    }
+    @media (min-width: 768px) {
+      height: 223px;
+    }
+    @media (min-width: 1024px) {
+      height: 286px;
+    }
+    @media (min-width: 1480px) {
+      height: 332px;
+    }
   }
   .user-name {
     font-weight: 500;
     font-size: 36px;
+    line-height: 1;
+    margin: 0 0 10px;
     width: 100%;
+    @media (min-width: 1024px) {
+      font-size: 30px;
+    }
+    @media (min-width: 1480px) {
+      font-size: 36px;
+    }
   }
   .user-position {
     font-weight: 500;

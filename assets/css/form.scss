@@ -1,19 +1,24 @@
 .form-section {
-  background: linear-gradient(0deg, #174354, #174354), #369ec7;
+  background: linear-gradient(0deg, var(--primary), var(--primary)), #369ec7;
   position: relative;
   margin: 0 0 95px;
   overflow: hidden;
 
   &::after {
-    content: '';
-    background-image: url('../img/form_bg.png');
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 6%;
-    top: 7px;
-    height: 100%;
-    width: 304px;
-    z-index: 0;
+    @media (min-width: 1280px) {
+      content: '';
+      background-image: url('../img/form_bg.png');
+      background-repeat: no-repeat;
+      position: absolute;
+      left: 1%;
+      top: 7px;
+      height: 100%;
+      width: 304px;
+      z-index: 0;
+    }
+    @media (min-width: 1480px) {
+      left: 6%;
+    }
   }
 
   .container {
@@ -23,13 +28,18 @@
 
   .inner-wrap {
     text-align: center;
-    padding: 20px 0 45px;
+    padding: 40px 0 45px;
+    @media (min-width: 768px) {
+      padding: 20px 0 45px;
+    }
   }
 
   .section-title {
-    color: #fff;
+    color: var(--white);
     padding: 0 0 36px;
-
+    @media (max-width: 767px) {
+      text-align: left;
+    }
     &::before {
       display: none;
     }
@@ -43,6 +53,9 @@
   .form-row {
     display: flex;
     text-align: left;
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+    }
   }
 
   .form-group {
@@ -50,9 +63,9 @@
 
     input {
       border: 0;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid var(--white);
       background: transparent;
-      color: #fff;
+      color: var(--white);
       width: 100%;
       position: relative;
       z-index: 1;
@@ -60,15 +73,15 @@
 
     select {
       border: 0;
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid var(--white);
       background-color: transparent;
-      color: #fff;
+      color: var(--white);
       font-size: 14px;
       position: relative;
       z-index: 1;
       & > option {
         background-color: transparent;
-        color: #000;
+        color: var(--black);
       }
     }
 
@@ -78,7 +91,7 @@
   }
 
   .label {
-    color: #fff;
+    color: var(--white);
     font-size: 14px;
   }
 
@@ -121,20 +134,29 @@
 
   .form-col {
     &.input-col {
-      width: 250px;
+      width: 100%;
+      margin: 0 0 29px;
+      @media (min-width: 768px) {
+        width: 250px;
+        margin: 0;
+      }
     }
 
     &.area-col {
-      width: 475px;
-      padding-left: 25px;
+      width: 100%;
+      @media (min-width: 768px) {
+        width: 475px;
+        padding-left: 25px;
+      }
 
       .form-group {
         height: 100%;
       }
 
       textarea {
-        border: 1px solid #fff;
+        border: 1px solid var(--white);
         background: transparent;
+        color: var(--white);
         width: 100%;
         min-height: 110px;
         padding: 5px 10px;
@@ -148,7 +170,7 @@
     li {
       font-size: 12px;
       font-weight: 700;
-      color: #f03;
+      color: var(--error);
       text-transform: uppercase;
     }
   }
@@ -157,7 +179,7 @@
 .error-text {
   font-size: 12px;
   font-weight: 700;
-  color: #f03;
+  color: var(--error);
   text-transform: uppercase;
 }
 
@@ -170,8 +192,8 @@
   z-index: 99;
   text-align: center;
   padding: 20px;
-  background-color: #174354;
-  color: #fff;
+  background-color: var(--primary);
+  color: var(--white);
   transform: translate(0, -101%);
   transition: all 0.2s ease-in-out;
   &.show {
@@ -191,7 +213,7 @@
   .error-holder {
     font-weight: 500;
     font-size: 20px;
-    color: #fff;
+    color: var(--white);
     transition: all 0.2s ease;
   }
   &::after {

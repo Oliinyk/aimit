@@ -37,16 +37,21 @@
     position: relative;
 
     .slider-for {
-      max-width: 310px;
+      max-width: 245px;
       margin: 0 auto;
+      @media (min-width: 640px) {
+        max-width: 310px;
+      }
 
       .img-holder {
         border: 1px solid var(--primary);
         object-fit: cover;
         margin: 0 auto;
-        width: 100px;
+        width: 80px;
         position: relative;
-
+        @media (min-width: 640px) {
+          width: 100px;
+        }
         &::after {
           content: '';
           background: linear-gradient(
@@ -66,7 +71,10 @@
 
       .slick-current {
         .img-holder {
-          width: 144px;
+          width: 116px;
+          @media (min-width: 640px) {
+            width: 144px;
+          }
 
           &::after {
             display: none;
