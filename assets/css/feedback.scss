@@ -113,18 +113,27 @@
     }
 
     .customer-text {
-      font-size: 18px;
+      font-size: 14px;
+      @media (min-width: 640px) {
+        font-size: 18px;
+      }
     }
 
     .customer-name {
       font-weight: 500;
-      font-size: 36px;
+      font-size: 24px;
       margin: 5px 0 0;
+      @media (min-width: 640px) {
+        font-size: 36px;
+      }
     }
 
     .customer-company {
       font-weight: 500;
-      font-size: 18px;
+      font-size: 14px;
+      @media (min-width: 640px) {
+        font-size: 18px;
+      }
     }
   }
 
