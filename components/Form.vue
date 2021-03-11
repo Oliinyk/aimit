@@ -80,17 +80,16 @@
       </div>
     </div>
 
-    <div class="notification" :class="{ show: removeTimeError }">
-      <div v-if="errors.length" class="error-holder">
-        <p>Please fix the errors indicated</p>
-      </div>
-    </div>
+    <Notification :class="{ show: removeTimeError }" />
   </section>
 </template>
 <script>
+import Notification from '~/components/Notification.vue';
 export default {
   name: 'StandardFooter',
-  components: {},
+  components: {
+    Notification,
+  },
   props: {
     content: {
       type: Object,

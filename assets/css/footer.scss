@@ -2,8 +2,6 @@
   background-color: var(--primary);
   color: var(--white);
   padding: 25px 0 0;
-  position: relative;
-  z-index: 1;
   .container {
     @media (min-width: 1450px) {
       padding: 0;
@@ -21,6 +19,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
     .text-holder {
       display: flex;
       flex-wrap: wrap;
@@ -53,6 +53,18 @@
   .social-items {
     .img-holder {
       display: flex;
+      &:hover {
+        a {
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+      a {
+        display: block;
+        transition: 0.3s all;
+      }
     }
 
     .social-item {

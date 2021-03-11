@@ -143,14 +143,18 @@
         </div>
       </div>
     </div>
+
+    <Notification :class="{ show: removeTimeError }" />
   </section>
 </template>
 <script>
+import Notification from '~/components/Notification.vue';
 import ButtonsBlock from '~/components/ButtonsBlock.vue';
 export default {
   name: 'Contacts',
   components: {
     ButtonsBlock,
+    Notification,
   },
   props: {
     content: {

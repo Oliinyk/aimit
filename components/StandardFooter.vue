@@ -173,22 +173,17 @@
       </div>
     </div>
 
-    <!-- <div class="notification" :class="{ show: errors.length }">-->
-    <div class="notification" :class="{ show: removeTimeError }">
-      <div v-if="errors.length" class="error-holder">
-        <p>Please fix the errors indicated</p>
-        <!-- <p>Please correct the following error(s):</p>
-        <ul>
-          <li v-for="error in errors" :key="error.id">{{ error }}</li>
-        </ul> -->
-      </div>
-    </div>
+    <!-- <Notification v-if="errors.length" :class="{ show: removeTimeError }" /> -->
+    <Notification :class="{ show: removeTimeError }" />
   </div>
 </template>
 <script>
+import Notification from '~/components/Notification.vue';
 export default {
   name: 'StandardFooter',
-  components: {},
+  components: {
+    Notification,
+  },
   props: {
     content: {
       type: Object,

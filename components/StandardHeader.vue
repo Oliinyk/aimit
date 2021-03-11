@@ -25,7 +25,11 @@
           </li>
         </ul>
 
-        <ul class="lang-nav">
+        <ul
+          class="lang-nav"
+          :class="{ opened: toggleMobileLang }"
+          @click="toggleMobileLang = !toggleMobileLang"
+        >
           <li
             :class="{ active: curentLang === 'en-us' }"
             @click="setLang('en-us')"
@@ -70,6 +74,7 @@ export default {
       showMobileMenu: false,
       curentLang: '',
       scrollPosition: null,
+      toggleMobileLang: false,
     };
   },
   beforeMount() {
