@@ -1,13 +1,34 @@
 .gallery {
-  padding: 0 0 93px;
+  padding: 0 0 33px;
+  @media (min-width: 768px) {
+    padding: 0 0 93px;
+  }
   .section-title {
-    padding-bottom: 12px;
+    padding-bottom: 25px;
+    @media (min-width: 768px) {
+      padding-bottom: 12px;
+    }
+  }
+  .slider-wrap {
+    max-width: 100%;
+    margin: 0 auto;
+    @media (min-width: 768px) {
+      max-width: calc(100% - 50px);
+    }
+    @media (min-width: 1480px) {
+      max-width: 100%;
+    }
   }
   .slick-list {
-    padding-left: 20% !important;
+    padding-left: calc(33.3% - 10px) !important;
+    @media (min-width: 1024px) {
+      padding-left: 20% !important;
+      margin-right: 10px !important;
+    }
   }
   .slick-slide {
-    padding-left: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .slick-slider {
     .slick-arrow {
@@ -20,11 +41,17 @@
       top: calc(50% - 10px);
     }
     .slick-prev {
-      left: -12px;
+      left: -30px;
+      @media (min-width: 1024px) {
+        left: -20px;
+      }
     }
     .slick-next {
       transform: translate(0%, 0) rotate(180deg);
-      right: -12px;
+      right: -30px;
+      @media (min-width: 1024px) {
+        right: -20px;
+      }
     }
   }
   .item-holder {
@@ -39,16 +66,43 @@
     .date {
       color: var(--white);
       font-weight: 500;
-      font-size: 36px;
-      padding: 9px 40px;
+      font-size: 14px;
+      padding: 9px 20px;
+      @media (min-width: 768px) {
+        font-size: 24px;
+        padding: 9px 30px;
+      }
+      @media (min-width: 1024px) {
+        font-size: 24px;
+        padding: 9px 40px;
+      }
+      @media (min-width: 1280px) {
+        font-size: 36px;
+      }
       &::before {
         content: '';
         background-color: var(--white);
         position: absolute;
-        top: 21px;
-        left: 30px;
-        height: 30px;
-        width: 2px;
+        top: 13px;
+        left: 15px;
+        height: 12px;
+        width: 1px;
+        @media (min-width: 768px) {
+          height: 22px;
+          width: 2px;
+          top: 16px;
+          left: 20px;
+        }
+        @media (min-width: 1024px) {
+          top: 17px;
+          left: 30px;
+          height: 20px;
+        }
+        @media (min-width: 1280px) {
+          top: 21px;
+          left: 30px;
+          height: 30px;
+        }
       }
     }
   }

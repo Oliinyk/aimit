@@ -7,7 +7,7 @@
           {{ content.section_title[0].text }}
         </h2>
 
-        <div>
+        <div class="slider-wrap">
           <VueSlickCarousel v-bind="slickOptions">
             <div
               v-for="item in content.gallery_list"
@@ -51,18 +51,16 @@ export default {
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 2,
-            },
-          },
-          {
-            breakpoint: 640,
-            settings: {
               slidesToShow: 1.5,
             },
           },
-          // You can unslick at a given breakpoint now by adding:
-          // settings: "unslick"
-          // instead of a settings object
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1.5,
+              arrows: false,
+            },
+          },
         ],
       },
     };
