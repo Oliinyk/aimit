@@ -8,7 +8,7 @@
     <ColumnText :content="ColumnText" />
     <TitleButton :content="TitleButton" />
     <Feedback :content="Feedback" />
-    <!-- <Gallery :content="Gallery" /> -->
+    <Gallery :content="Gallery" />
     <StandardFooter :content="Footer" />
   </div>
 </template>
@@ -22,7 +22,7 @@ import Clients from '~/components/Clients.vue';
 import ColumnText from '~/components/ColumnText.vue';
 import TitleButton from '~/components/TitleButton.vue';
 import Feedback from '~/components/Feedback.vue';
-// import Gallery from '~/components/Gallery.vue';
+import Gallery from '~/components/Gallery.vue';
 import StandardFooter from '~/components/StandardFooter.vue';
 export default {
   name: 'About',
@@ -36,7 +36,7 @@ export default {
     ColumnText,
     TitleButton,
     Feedback,
-    // Gallery,
+    Gallery,
     StandardFooter,
   },
   async asyncData({ $siteData, $prismic, error }) {
@@ -48,7 +48,7 @@ export default {
     const ColumnText = (await $prismic.api.getSingle('text_columns')).data;
     const TitleButton = (await $prismic.api.getSingle('title_and_button')).data;
     const Feedback = (await $prismic.api.getSingle('customers_feedback')).data;
-    // const Gallery = (await $prismic.api.getSingle('gallery')).data;
+    const Gallery = (await $prismic.api.getSingle('gallery')).data;
     const Footer = (await $prismic.api.getSingle('footer')).data;
     return {
       Header,
@@ -59,7 +59,7 @@ export default {
       ColumnText,
       TitleButton,
       Feedback,
-      // Gallery,
+      Gallery,
       Footer,
     };
   },

@@ -58,7 +58,6 @@
     "stylelint": "^13.10.0",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
-    "vue-gallery-slideshow": "^1.5.2",
     "vue-slick-carousel": "^1.0.6"
   }
 }
