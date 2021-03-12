@@ -1,7 +1,10 @@
 .specialization {
-  padding: 0 0 85px;
+  padding: 0 0 17px;
   position: relative;
   overflow: hidden;
+  @media (min-width: 640px) {
+    padding: 0 0 85px;
+  }
   &::before,
   &::after {
     content: '';
@@ -22,6 +25,11 @@
     right: 14%;
     top: -35px;
     width: 343px;
+  }
+  .section-title {
+    @media (max-width: 639px) {
+      padding: 0 0 12px 10px;
+    }
   }
   .inner-wrap {
     position: relative;
@@ -56,7 +64,7 @@
       margin-left: 15px;
       margin-bottom: 30px;
     }
-    @media (min-width: 767px) {
+    @media (min-width: 768px) {
       width: calc(33.33% - 30px);
     }
     @media (min-width: 1024px) {

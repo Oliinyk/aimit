@@ -1,10 +1,13 @@
 .title-button {
   background-color: var(--primary);
   position: relative;
-  padding: 33px 0;
-  margin: 0 0 95px;
+  padding: 18px 0;
+  margin: 0 0 35px;
   overflow: hidden;
-
+  @media (min-width: 640px) {
+    padding: 33px 0;
+    margin: 0 0 95px;
+  }
   &::after {
     @media (min-width: 640px) {
       content: '';

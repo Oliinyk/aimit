@@ -1,6 +1,9 @@
 .about {
-  padding: 0 0 52px;
+  padding: 0 0 22px;
   position: relative;
+  @media (min-width: 640px) {
+    padding: 0 0 52px;
+  }
 
   &::after {
     content: '';
@@ -64,10 +67,11 @@
     font-weight: 500;
     font-size: 32px;
     line-height: 1.18;
-    padding: 0 0 46px;
+    padding: 0 0 23px;
     color: var(--primary);
     @media (min-width: 640px) {
       font-size: 54px;
+      padding: 0 0 46px;
     }
     @media (min-width: 1280px) {
       font-size: 64px;
@@ -90,6 +94,9 @@
 
   .btn-holder {
     text-align: right;
-    margin: 22px 0 0;
+    margin: 12px 0 0;
+    @media (min-width: 640px) {
+      margin: 22px 0 0;
+    }
   }
 }

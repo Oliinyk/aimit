@@ -1,5 +1,8 @@
 .team-list {
-  padding: 0 0 80px;
+  padding: 0 0 30px;
+  @media (min-width: 640px) {
+    padding: 0 0 80px;
+  }
   .list-holder {
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +13,7 @@
     max-width: 332px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     width: 100%;
     @media (min-width: 640px) {
       margin: 0 10px 20px;
@@ -32,7 +35,7 @@
     background: rgba(23, 67, 84, 0.96);
     margin: 10px;
     color: var(--white);
-    padding: 23px 33px;
+    padding: 23px 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -46,6 +49,9 @@
     width: calc(100% - 20px);
     height: calc(100% - 20px);
     opacity: 0;
+    @media (min-width: 1480px) {
+      padding: 23px 33px;
+    }
   }
   .user-img {
     object-fit: cover;

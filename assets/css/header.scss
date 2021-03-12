@@ -121,10 +121,13 @@
         font-size: 14px;
       }
       @media (max-width: 767px) {
+        background: var(--white);
         position: absolute;
         top: 100%;
-        left: 0;
+        left: -10px;
         display: none;
+        padding: 0 10px;
+        width: calc(100% + 10px);
         .opened & {
           display: block;
         }
@@ -135,7 +138,10 @@
       @media (max-width: 767px) {
         position: relative;
         top: 0;
+        left: 0;
         display: block;
+        padding: 0;
+        width: 100%;
       }
     }
   }

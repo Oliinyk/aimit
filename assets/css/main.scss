@@ -48,9 +48,10 @@ body {
   font-weight: 500;
   font-size: 24px;
   position: relative;
-  padding: 0 0 55px 10px;
+  padding: 0 0 25px 10px;
   @media (min-width: 640px) {
     font-size: 36px;
+    padding: 0 0 55px 10px;
   }
   @media (min-width: 640px) and (max-width: 1479px) {
     padding: 0 0 55px 15px;
@@ -104,4 +105,19 @@ select {
 
 .light-gray-bg {
   background-color: var(--light-gray);
+}
+
+.slider-nav,
+.slick-arrow {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxOSAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuMjUyNDkgMTAuMDU1NEwxOC4xMTc0IDE1LjY1ODlWMjBMMCAxMS42MDU4TDAgOC4zNzIwOUwxOC4xMTc0IDBWNC4zNDEwOEw0LjI1MjQ5IDEwLjA1NTRaIiBmaWxsPSIjMTc0MzU0Ii8+Cjwvc3ZnPgo=');
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  font-size: 0;
+  top: calc(50% - 10px);
+
+  &.slick-next {
+    transform: translate(0%, 0) rotate(180deg);
+  }
 }

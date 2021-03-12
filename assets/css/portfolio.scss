@@ -1,30 +1,76 @@
 .portfolio {
-  padding: 0 0 62px;
+  padding: 0 0 20px;
+  @media (min-width: 640px) {
+    padding: 0 0 62px;
+  }
 
   .section-title {
-    padding-bottom: 30px;
+    padding-bottom: 18px;
+    @media (min-width: 640px) {
+      padding-bottom: 30px;
+    }
     .portfolio-page & {
       display: none;
     }
   }
 
   .slider-wrap {
-    margin-left: -24px;
     padding: 0 0 20px 0;
+    @media (max-width: 639px) {
+      width: calc(100% + 15px);
+    }
+    @media (min-width: 640px) {
+      margin-left: -10px;
+    }
+    @media (min-width: 1024px) {
+      margin-left: -24px;
+    }
     @media (min-width: 1480px) {
       margin-left: -40px;
+      margin-right: -12px;
     }
 
     .slick-slide {
-      padding-left: 24px;
+      padding-left: 10px;
+      @media (min-width: 1024px) {
+        padding-left: 24px;
+      }
+    }
+    .slick-list {
+      @media (max-width: 639px) {
+        padding-left: 13%;
+      }
+      @media (max-width: 479px) {
+        padding-left: 11%;
+      }
+    }
+
+    .slick-slider {
+      .slick-arrow {
+        background-color: var(--white);
+        top: 12px;
+        z-index: 1;
+      }
+      .slick-prev {
+        left: -16px;
+      }
+      .slick-next {
+        right: -40px;
+      }
     }
   }
 
   .item-holder {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    @media (max-width: 639px) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+    @media (min-width: 1024px) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
     @media (min-width: 1480px) {
       margin-left: -30px;
       margin-right: -30px;
@@ -47,7 +93,10 @@
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
-      width: 20%;
+      width: 110px;
+      @media (min-width: 640px) {
+        width: 20%;
+      }
     }
   }
 
@@ -71,28 +120,39 @@
     background: rgba(23, 67, 84, 0.96);
     margin: 10px;
     color: var(--white);
-    padding: 30px 30px 30px;
+    padding: 38px 15px 30px;
     display: flex;
     flex-wrap: wrap;
     transition: 0.3s all;
     width: 100%;
     opacity: 0;
+    @media (min-width: 640px) {
+      padding: 30px 30px 30px;
+    }
   }
 
   .text-holder {
-    width: 80%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
+    width: calc(100% - 110px);
+    @media (min-width: 640px) {
+      width: 80%;
+    }
   }
 
   .item-title {
     font-weight: 500;
-    font-size: 36px;
-    line-height: 0.8;
+    font-size: 24px;
     margin: 0 0 14px;
-    width: 100%;
+    width: calc(100% + 110px);
+    line-height: 1;
+    @media (min-width: 640px) {
+      font-size: 36px;
+      line-height: 0.8;
+      width: 100%;
+    }
   }
 
   .item-type {
@@ -110,11 +170,18 @@
   .icon-list {
     display: flex;
     flex-wrap: wrap;
+    margin: 25px 0 0;
+    @media (min-width: 640px) {
+      margin: 0;
+    }
 
     .icon-item {
       max-width: 32px;
       max-height: 32px;
-      margin: 0 25px 0 0;
+      margin: 0 10px 10px 0;
+      @media (min-width: 640px) {
+        margin: 0 25px 0 0;
+      }
     }
   }
 
@@ -147,10 +214,15 @@
     transition: 0.3s all;
     width: 100%;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &.active,
     &:hover {
       background-color: var(--primary);
       color: var(--white);
+    }
+    @media (max-width: 479px) {
+      font-size: 16px;
     }
   }
 }

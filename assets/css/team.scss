@@ -1,5 +1,8 @@
 .team {
-  padding: 0 0 74px;
+  padding: 0 0 37px;
+  @media (min-width: 640px) {
+    padding: 0 0 74px;
+  }
   .section-title {
     padding-bottom: 30px;
   }

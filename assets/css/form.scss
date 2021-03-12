@@ -1,9 +1,11 @@
 .form-section {
   background: linear-gradient(0deg, var(--primary), var(--primary)), #369ec7;
   position: relative;
-  margin: 0 0 95px;
+  margin: 0 0 38px;
   overflow: hidden;
-
+  @media (min-width: 640px) {
+    margin: 0 0 95px;
+  }
   &::after {
     @media (min-width: 1280px) {
       content: '';
@@ -28,7 +30,10 @@
 
   .inner-wrap {
     text-align: center;
-    padding: 40px 0 45px;
+    padding: 34px 0 40px;
+    @media (min-width: 640px) {
+      padding: 40px 0 45px;
+    }
     @media (min-width: 768px) {
       padding: 20px 0 45px;
     }
@@ -36,7 +41,10 @@
 
   .section-title {
     color: var(--white);
-    padding: 0 0 36px;
+    padding: 0 0 26px;
+    @media (min-width: 640px) {
+      padding: 0 0 36px;
+    }
     @media (max-width: 767px) {
       text-align: left;
     }

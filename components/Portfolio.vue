@@ -132,21 +132,32 @@ export default {
         slidesToScroll: 1,
         infinite: true,
         dots: false,
-
-        // centerPadding: '24px',
-        // centerMode: true,
-        // arrows: false,
         responsive: [
+          {
+            breakpoint: 1550,
+            settings: {
+              arrows: false,
+            },
+          },
           {
             breakpoint: 1024,
             settings: {
-              slidesToShow: 5,
+              slidesToShow: 4,
+              arrows: false,
             },
           },
           {
             breakpoint: 640,
             settings: {
-              slidesToShow: 2.5,
+              slidesToShow: 3.5,
+              arrows: false,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 2.3,
+              arrows: false,
             },
           },
           // You can unslick at a given breakpoint now by adding:
