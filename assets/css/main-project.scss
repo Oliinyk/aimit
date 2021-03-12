@@ -241,8 +241,11 @@
     }
   }
   .logo-section {
-    padding: 73px 0 75px;
+    padding: 40px 0 50px;
     width: 100%;
+    @media (min-width: 768px) {
+      padding: 73px 0 75px;
+    }
     .logo-wrap {
       display: flex;
       flex-wrap: wrap;
@@ -266,6 +269,7 @@
         max-width: 400px;
         @media (max-width: 767px) {
           margin: 0 auto;
+          max-width: 100%;
         }
       }
     }
