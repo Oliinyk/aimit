@@ -22,21 +22,28 @@
       }
     }
     .block-1 {
-      width: 50%;
       max-width: 715px;
       margin: 0 0 0 auto;
+      @media (min-width: 768px) {
+        width: 50%;
+      }
       .img-holder {
         flex-wrap: nowrap;
       }
     }
     .block-2 {
-      width: 50%;
       max-width: 715px;
       margin: 0 auto 0 0;
+      @media (min-width: 768px) {
+        width: 50%;
+      }
     }
     .block-6 {
       position: relative;
-      margin: 0 0 75px;
+      margin: 0 0 35px;
+      @media (min-width: 768px) {
+        margin: 0 0 75px;
+      }
       &::after {
         content: '';
         background: var(--light-gray);
@@ -51,7 +58,9 @@
       .img-holder {
         padding: 30px 0 0;
         & > div {
-          max-width: 50%;
+          @media (min-width: 768px) {
+            max-width: 50%;
+          }
         }
       }
     }
@@ -65,14 +74,22 @@
   }
   .page-item {
     position: relative;
-    margin: 0 0 85px;
+    @media (max-width: 767px) {
+      margin: 0 0 85px;
+      overflow: hidden;
+    }
   }
   .img-holder {
     margin: 0 0 40px;
-    padding: 0 15px;
+    @media (min-width: 768px) {
+      padding: 0 15px;
+    }
   }
   .col-l {
-    width: 45%;
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 45%;
+    }
     .page-item {
       &:nth-child(1),
       &:nth-child(2),
@@ -115,10 +132,15 @@
   }
   .col-r {
     padding: 60px 0 0;
-    width: 55%;
+    width: 100%;
+    @media (min-width: 768px) {
+      width: 55%;
+    }
     .section-title {
-      margin: 0 0 0 auto;
-      width: 45.3%;
+      @media (min-width: 768px) {
+        margin: 0 0 0 auto;
+        width: 45.3%;
+      }
     }
     .page-item {
       &:nth-child(1) {
@@ -136,6 +158,12 @@
       }
     }
   }
+  .col-bottom {
+    width: 100%;
+    .preview {
+      margin: 0 auto;
+    }
+  }
 
   .typography {
     width: 100%;
@@ -145,7 +173,10 @@
       flex-wrap: wrap;
       justify-content: space-between;
       max-width: 890px;
-      margin: 50px auto 70px;
+      margin: 30px auto 50px;
+      @media (min-width: 768px) {
+        margin: 50px auto 70px;
+      }
     }
     .color-item {
       text-align: center;
@@ -154,9 +185,14 @@
       background-color: #2d4e09;
       box-shadow: 7px 7px 20px rgb(23 67 84 / 15%);
       border-radius: 50%;
-      border: 10px solid var(--white);
-      height: 120px;
-      width: 120px;
+      border: 7px solid var(--white);
+      height: 80px;
+      width: 80px;
+      @media (min-width: 768px) {
+        border: 10px solid var(--white);
+        height: 120px;
+        width: 120px;
+      }
     }
     .color-title {
       font-size: 18px;
@@ -170,7 +206,25 @@
       flex-wrap: wrap;
       justify-content: space-between;
       max-width: 890px;
-      margin: 50px auto 220px;
+      margin: 30px auto 70px;
+      @media (min-width: 576px) {
+        margin: 50px auto 90px;
+      }
+      @media (min-width: 768px) {
+        margin: 50px auto 120px;
+      }
+      @media (min-width: 1024px) {
+        margin: 50px auto 220px;
+      }
+      & > div {
+        @media (max-width: 575px) {
+          margin: 0 0 20px;
+          width: 100%;
+          img {
+            margin: 0 auto;
+          }
+        }
+      }
     }
     .grid-item-wrap {
       display: flex;
@@ -196,18 +250,33 @@
       margin: 8px auto 0;
     }
     .logo-item {
+      @media (max-width: 767px) {
+        text-align: center;
+        width: 100%;
+      }
       & + .logo-item {
-        margin-left: 50px;
+        @media (max-width: 767px) {
+          margin: 50px 0 0;
+        }
+        @media (min-width: 768px) {
+          margin-left: 50px;
+        }
       }
       img {
         max-width: 400px;
+        @media (max-width: 767px) {
+          margin: 0 auto;
+        }
       }
     }
     .logo-item-text {
       color: var(--primary);
       font-size: 18px;
       font-weight: 500;
-      margin: 0 0 35px;
+      margin: 0 0 15px;
+      @media (min-width: 768px) {
+        margin: 0 0 35px;
+      }
     }
   }
 }

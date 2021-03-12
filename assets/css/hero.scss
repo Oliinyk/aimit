@@ -74,11 +74,21 @@
     .text-holder {
       width: auto;
     }
+    .title {
+      @media (max-width: 767px) {
+        padding: 0 0 8px;
+      }
+    }
     .date-holder {
-      margin: 21px 0 0;
+      @media (min-width: 1024px) {
+        margin: 21px 0 0;
+      }
       p {
-        font-size: 36px;
+        font-size: 18px;
         font-weight: 500;
+        @media (min-width: 768px) {
+          font-size: 36px;
+        }
       }
     }
   }

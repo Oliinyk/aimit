@@ -116,7 +116,7 @@
             </div>
           </div>
 
-          <div>
+          <div class="col-bottom">
             <div class="page-item">
               <h2
                 v-if="content.page_title6 && content.page_title6[0]"
@@ -129,7 +129,16 @@
                   v-if="content.page_image6 && content.page_image6.url"
                   :src="content.page_image6.url"
                   :alt="content.page_image6.alt"
-                  class="preview"
+                  class="preview hidden md:block"
+                />
+
+                <img
+                  v-if="
+                    content.page_image6_mobile && content.page_image6_mobile.url
+                  "
+                  :src="content.page_image6_mobile.url"
+                  :alt="content.page_image6_mobile.alt"
+                  class="preview md:hidden"
                 />
               </div>
             </div>
