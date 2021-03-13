@@ -57,7 +57,7 @@
               </div>
               <div class="form-col file-col">
                 <label>
-                  <span>Add a file</span>
+                  <span class="label-title">Add a file</span>
                   <input
                     id="file"
                     ref="file"

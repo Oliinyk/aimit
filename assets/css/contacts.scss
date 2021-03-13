@@ -86,11 +86,23 @@
     }
   }
   .area-col {
-    width: 35%;
+    width: 100%;
+    @media (min-width: 1024px) {
+      width: 35%;
+    }
   }
   .file-col {
-    width: 12%;
-    margin-top: -25px;
+    margin-top: 5px;
+    width: 100%;
+    @media (max-width: 1023px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      margin-top: -25px;
+      width: 12%;
+    }
     label {
       color: var(--primary);
       font-size: 14px;
@@ -100,6 +112,9 @@
       font-size: 16px;
       font-weight: 500;
       margin: 5px 0 0;
+      @media (max-width: 1023px) {
+        margin: 25px 0 0 15px;
+      }
     }
     .file-text {
       color: var(--primary);
@@ -107,6 +122,10 @@
       font-weight: 300;
       line-height: 1.2;
       margin: 8px 0 0;
+      @media (max-width: 1023px) {
+        margin: 25px 0 0 15px;
+        max-width: 100px;
+      }
     }
     input[type='file'] {
       height: 0;
@@ -123,9 +142,18 @@
     }
   }
   .input-col {
-    margin-top: -25px;
+    @media (max-width: 1023px) {
+      margin-top: 30px;
+      width: 100%;
+    }
+    @media (min-width: 1024px) {
+      margin-top: -25px;
+    }
     input {
       min-width: 320px;
+      @media (max-width: 1023px) {
+        width: 100%;
+      }
     }
     .btn {
       padding: 5px 23px;

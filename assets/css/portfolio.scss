@@ -105,9 +105,10 @@
     background-repeat: no-repeat;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     margin-bottom: 20px;
     min-height: 279px;
+    height: calc(100% - 20px);
+    width: 100%;
 
     @media (min-width: 1024px) {
       width: calc(100% - 30px);
