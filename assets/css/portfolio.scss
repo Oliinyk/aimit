@@ -9,9 +9,6 @@
     @media (min-width: 640px) {
       padding-bottom: 30px;
     }
-    .portfolio-page & {
-      display: none;
-    }
   }
 
   .slider-wrap {
@@ -204,6 +201,12 @@
 }
 
 .portfolio-filter {
+  @media (max-width: 1549px) {
+    padding: 0 10px;
+  }
+  @media (max-width: 479px) {
+    padding: 0 5px;
+  }
   button {
     background-color: var(--white);
     border: 1px solid var(--primary);
@@ -217,10 +220,15 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    &.active,
-    &:hover {
+    &.active {
       background-color: var(--primary);
       color: var(--white);
+    }
+    &:hover {
+      @media (min-width: 640px) {
+        background-color: var(--primary);
+        color: var(--white);
+      }
     }
     @media (max-width: 479px) {
       font-size: 16px;

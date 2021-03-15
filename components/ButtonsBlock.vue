@@ -45,44 +45,39 @@ export default {
             breakpoint: 1550,
             settings: {
               slidesToShow: 7,
-              arrows: false,
             },
           },
           {
             breakpoint: 1280,
             settings: {
-              slidesToShow: 6,
-              arrows: false,
+              slidesToShow: 5,
             },
           },
           {
             breakpoint: 1024,
             settings: {
               slidesToShow: 4,
-              arrows: false,
             },
           },
           {
             breakpoint: 768,
             settings: {
-              slidesToShow: 3.5,
-              arrows: false,
+              slidesToShow: 3,
             },
           },
           {
             breakpoint: 640,
             settings: {
-              slidesToShow: 2.5,
-              arrows: false,
-            },
-          },
-          {
-            breakpoint: 480,
-            settings: {
               slidesToShow: 2,
-              arrows: false,
             },
           },
+          // {
+          //   breakpoint: 550,
+          //   settings: {
+          //     slidesToShow: 2,
+          //     // arrows: false,
+          //   },
+          // },
         ],
       },
     };

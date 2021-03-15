@@ -2,7 +2,7 @@
   <section class="contacts">
     <div class="container">
       <div class="inner-wrap">
-        <div class="hero">
+        <div class="hero hero-contact">
           <div class="text-holder">
             <h1 class="title">
               {{ content.hero_title1[0].text }}

@@ -11,9 +11,7 @@
       </a>
       <div class="nav">
         <ul class="header-navigation" :class="{ active: showMobileMenu }">
-          <!-- {{
-          content.nav
-        }} -->
+          <!-- {{ content.nav }} -->
           <li v-for="item in content.nav" :key="item.id" class="nav-item">
             <nuxt-link
               :to="

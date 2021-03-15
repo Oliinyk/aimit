@@ -72,6 +72,8 @@
     input {
       border: 0;
       border-bottom: 1px solid var(--white);
+      border-radius: 0;
+      -webkit-appearance: none;
       background: transparent;
       color: var(--white);
       width: 100%;
@@ -189,6 +191,9 @@
   font-weight: 700;
   color: var(--error);
   text-transform: uppercase;
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .notification {

@@ -163,13 +163,59 @@
     }
   }
   &.hero-portfolio {
-    padding: 50px 0 0;
+    @media (min-width: 640px) {
+      padding: 50px 0 0;
+    }
+    .img-holder {
+      @media (max-width: 1023px) {
+        opacity: 0.5;
+        position: absolute;
+        top: -20px;
+        right: 0;
+        z-index: -1;
+      }
+    }
   }
   &.hero-services {
-    padding: 50px 0 0;
+    @media (min-width: 640px) {
+      padding: 50px 0 0;
+    }
     .img-holder {
+      @media (max-width: 1023px) {
+        opacity: 0.5;
+        position: absolute;
+        top: -50px;
+        right: 0;
+        z-index: -1;
+      }
+      @media (min-width: 640px) and (max-width: 767px) {
+        top: 0;
+      }
+      @media (min-width: 480px) and (max-width: 639px) {
+        top: -50px;
+      }
+      @media (max-width: 479px) {
+        top: 0;
+      }
       img {
-        margin: -80px 40px -130px auto;
+        @media (min-width: 1024px) {
+          margin: -80px 40px -130px auto;
+        }
+      }
+    }
+  }
+  &.hero-contact {
+    position: relative;
+    padding: 50px 0 10px;
+    .img-holder {
+      position: absolute;
+      top: 80px;
+      right: 0;
+      @media (max-width: 1023px) {
+        opacity: 0.5;
+        top: 40px;
+        right: 0;
+        z-index: -1;
       }
     }
   }

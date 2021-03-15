@@ -12,6 +12,7 @@
             ref="slider1"
             v-bind="slickOptionsImg"
             class="slider-for"
+            @swipe="handleSwipe"
           >
             <div
               v-for="item in content.customers"
@@ -32,6 +33,7 @@
             ref="slider2"
             v-bind="slickOptions"
             class="slider-thumb"
+            @swipe="handleSwipe"
           >
             <div
               v-for="item in content.customers"
@@ -91,23 +93,6 @@ export default {
         centerMode: true,
         centerPadding: '0',
         asNavFor: this.$refs.slider1,
-        // responsive: [
-        //   {
-        //     breakpoint: 1024,
-        //     settings: {
-        //       slidesToShow: 5,
-        //     },
-        //   },
-        //   {
-        //     breakpoint: 640,
-        //     settings: {
-        //       slidesToShow: 2.5,
-        //     },
-        //   },
-        //   // You can unslick at a given breakpoint now by adding:
-        //   // settings: "unslick"
-        //   // instead of a settings object
-        // ],
       },
     };
   },
@@ -119,6 +104,16 @@ export default {
     showPrev() {
       this.$refs.slider1.prev();
       this.$refs.slider2.prev();
+    },
+    handleSwipe(touchEvent) {
+      console.log(touchEvent);
+      if (touchEvent === 'right') {
+        this.$refs.slider1.next();
+        this.$refs.slider2.next();
+      } else {
+        this.$refs.slider1.prev();
+        this.$refs.slider2.prev();
+      }
     },
   },
 };
