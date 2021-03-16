@@ -201,6 +201,7 @@
 }
 
 .portfolio-filter {
+  outline: 0;
   @media (max-width: 1549px) {
     padding: 0 10px;
   }
@@ -215,11 +216,11 @@
     font-weight: 500;
     font-size: 18px;
     text-align: center;
+    text-overflow: ellipsis;
     transition: 0.3s all;
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     &.active {
       background-color: var(--primary);
       color: var(--white);
@@ -229,6 +230,9 @@
         background-color: var(--primary);
         color: var(--white);
       }
+    }
+    &:focus {
+      outline: 0;
     }
     @media (max-width: 479px) {
       font-size: 16px;

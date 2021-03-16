@@ -121,3 +121,38 @@ select {
     transform: translate(0%, 0) rotate(180deg);
   }
 }
+
+.scroll-area {
+  .ps__rail-y {
+    background-color: #369ec7 !important;
+    border-radius: 7px;
+    width: 2px;
+    opacity: 1;
+    right: 4px !important;
+  }
+  .ps__thumb-y {
+    background-color: #369ec7;
+    border-radius: 7px;
+    height: 32px;
+    width: 8px;
+    opacity: 1;
+    right: -3px;
+  }
+  .ps--active-y {
+    & > .ps__rail-y {
+      background-color: #369ec7;
+    }
+  }
+  .ps .ps__rail-y.ps--clicking,
+  .ps .ps__rail-y:focus,
+  .ps .ps__rail-y:hover {
+    background-color: #369ec7;
+    opacity: 1;
+  }
+  .ps__rail-y.ps--clicking .ps__thumb-y,
+  .ps__rail-y:focus > .ps__thumb-y,
+  .ps__rail-y:hover > .ps__thumb-y {
+    background-color: #369ec7;
+    width: 8px;
+  }
+}

@@ -74,7 +74,7 @@
       border-bottom: 1px solid var(--white);
       border-radius: 0;
       -webkit-appearance: none;
-      background: transparent;
+      background-color: transparent;
       color: var(--white);
       width: 100%;
       position: relative;
@@ -84,6 +84,8 @@
     select {
       border: 0;
       border-bottom: 1px solid var(--white);
+      border-radius: 0;
+      -webkit-appearance: none;
       background-color: transparent;
       color: var(--white);
       font-size: 14px;
@@ -165,7 +167,9 @@
 
       textarea {
         border: 1px solid var(--white);
-        background: transparent;
+        border-radius: 0;
+        -webkit-appearance: none;
+        background-color: transparent;
         color: var(--white);
         width: 100%;
         min-height: 110px;

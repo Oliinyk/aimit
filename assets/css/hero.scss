@@ -98,6 +98,15 @@
       font-weight: 400;
       max-width: 490px;
     }
+    .scroll-area {
+      position: relative;
+      max-height: 164px;
+      padding-right: 15px;
+      max-width: 490px;
+      p {
+        max-width: 100%;
+      }
+    }
     .list-holder {
       display: flex;
       flex-wrap: wrap;

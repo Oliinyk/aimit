@@ -10,7 +10,13 @@
             <span>{{ content.hero_title1[0].text }}</span>
             {{ content.hero_title2[0].text }}
           </h1>
-          <p class="hero-text">{{ content.hero_text[0].text }}</p>
+          <vue-custom-scrollbar
+            class="scroll-area"
+            :settings="settings"
+            @ps-scroll-y="scrollHanle"
+          >
+            <p class="hero-text">{{ content.hero_text[0].text }}</p>
+          </vue-custom-scrollbar>
         </div>
 
         <ul class="list-holder">
@@ -42,9 +48,13 @@
   </section>
 </template>
 <script>
+import vueCustomScrollbar from 'vue-custom-scrollbar';
+import 'vue-custom-scrollbar/dist/vueScrollbar.css';
 export default {
   name: 'HeroAbout',
-  components: {},
+  components: {
+    vueCustomScrollbar,
+  },
   props: {
     content: {
       type: Object,
@@ -52,7 +62,18 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      settings: {
+        suppressScrollY: false,
+        suppressScrollX: false,
+        wheelPropagation: false,
+      },
+    };
+  },
+  methods: {
+    scrollHanle(evt) {
+      console.log(evt);
+    },
   },
 };
 </script>
